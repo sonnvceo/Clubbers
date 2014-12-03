@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		301BFA001A2EAF6500548B52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BF9FF1A2EAF6500548B52 /* main.m */; };
-		301BFA031A2EAF6500548B52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BFA021A2EAF6500548B52 /* AppDelegate.m */; };
-		301BFA061A2EAF6500548B52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BFA051A2EAF6500548B52 /* ViewController.m */; };
 		301BFA091A2EAF6500548B52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301BFA071A2EAF6500548B52 /* Main.storyboard */; };
-		301BFA0B1A2EAF6500548B52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301BFA0A1A2EAF6500548B52 /* Images.xcassets */; };
 		301BFA0E1A2EAF6500548B52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301BFA0C1A2EAF6500548B52 /* LaunchScreen.xib */; };
 		301BFA1A1A2EAF6500548B52 /* ClubbersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BFA191A2EAF6500548B52 /* ClubbersTests.m */; };
+		301BFA2F1A2EB8DD00548B52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BFA2E1A2EB8DD00548B52 /* ViewController.m */; };
+		301BFA341A2EB95E00548B52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BFA331A2EB95E00548B52 /* AppDelegate.m */; };
+		301BFA361A2EB97C00548B52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301BFA351A2EB97C00548B52 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +30,16 @@
 		301BF9FA1A2EAF6500548B52 /* Clubbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clubbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301BF9FE1A2EAF6500548B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301BF9FF1A2EAF6500548B52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		301BFA011A2EAF6500548B52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		301BFA021A2EAF6500548B52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		301BFA041A2EAF6500548B52 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		301BFA051A2EAF6500548B52 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		301BFA081A2EAF6500548B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		301BFA0A1A2EAF6500548B52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		301BFA0D1A2EAF6500548B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		301BFA131A2EAF6500548B52 /* ClubbersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClubbersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		301BFA181A2EAF6500548B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301BFA191A2EAF6500548B52 /* ClubbersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClubbersTests.m; sourceTree = "<group>"; };
+		301BFA2D1A2EB8DD00548B52 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		301BFA2E1A2EB8DD00548B52 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		301BFA321A2EB95E00548B52 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		301BFA331A2EB95E00548B52 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		301BFA351A2EB97C00548B52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +81,10 @@
 		301BF9FC1A2EAF6500548B52 /* Clubbers */ = {
 			isa = PBXGroup;
 			children = (
-				301BFA011A2EAF6500548B52 /* AppDelegate.h */,
-				301BFA021A2EAF6500548B52 /* AppDelegate.m */,
-				301BFA041A2EAF6500548B52 /* ViewController.h */,
-				301BFA051A2EAF6500548B52 /* ViewController.m */,
+				301BFA371A2EB9DA00548B52 /* Utilities */,
+				301BFA311A2EB91300548B52 /* Resources */,
+				301BFA2C1A2EB8B700548B52 /* Viewcontrollers */,
 				301BFA071A2EAF6500548B52 /* Main.storyboard */,
-				301BFA0A1A2EAF6500548B52 /* Images.xcassets */,
 				301BFA0C1A2EAF6500548B52 /* LaunchScreen.xib */,
 				301BF9FD1A2EAF6500548B52 /* Supporting Files */,
 			);
@@ -117,6 +115,32 @@
 				301BFA181A2EAF6500548B52 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		301BFA2C1A2EB8B700548B52 /* Viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				301BFA321A2EB95E00548B52 /* AppDelegate.h */,
+				301BFA331A2EB95E00548B52 /* AppDelegate.m */,
+				301BFA2D1A2EB8DD00548B52 /* ViewController.h */,
+				301BFA2E1A2EB8DD00548B52 /* ViewController.m */,
+			);
+			path = Viewcontrollers;
+			sourceTree = "<group>";
+		};
+		301BFA311A2EB91300548B52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				301BFA351A2EB97C00548B52 /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		301BFA371A2EB9DA00548B52 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +223,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301BFA361A2EB97C00548B52 /* Images.xcassets in Resources */,
 				301BFA091A2EAF6500548B52 /* Main.storyboard in Resources */,
 				301BFA0E1A2EAF6500548B52 /* LaunchScreen.xib in Resources */,
-				301BFA0B1A2EAF6500548B52 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				301BFA061A2EAF6500548B52 /* ViewController.m in Sources */,
-				301BFA031A2EAF6500548B52 /* AppDelegate.m in Sources */,
+				301BFA2F1A2EB8DD00548B52 /* ViewController.m in Sources */,
 				301BFA001A2EAF6500548B52 /* main.m in Sources */,
+				301BFA341A2EB95E00548B52 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +438,7 @@
 				301BFA1F1A2EAF6500548B52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		301BFA201A2EAF6500548B52 /* Build configuration list for PBXNativeTarget "ClubbersTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +447,7 @@
 				301BFA221A2EAF6500548B52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
