@@ -16,6 +16,17 @@
 		302957FD1A2F11FF00594F69 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302957FB1A2F11FF00594F69 /* MainViewController.xib */; };
 		302958061A2F394800594F69 /* SlideShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302958051A2F394800594F69 /* SlideShowView.m */; };
 		302958081A2F396200594F69 /* SlideShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302958071A2F396200594F69 /* SlideShowView.xib */; };
+		305E85E51A300C8400808E13 /* MTStackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E85E41A300C8400808E13 /* MTStackViewController.m */; };
+		305E85E91A300DAB00808E13 /* TPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E85E81A300DAB00808E13 /* TPMenuViewController.m */; };
+		305E85F41A301E7300808E13 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85EF1A301E7300808E13 /* 1.jpg */; };
+		305E85F51A301E7300808E13 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F01A301E7300808E13 /* 2.jpg */; };
+		305E85F61A301E7300808E13 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F11A301E7300808E13 /* 3.jpg */; };
+		305E85F71A301E7300808E13 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F21A301E7300808E13 /* 4.jpg */; };
+		305E85F81A301E7300808E13 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F31A301E7300808E13 /* 5.jpg */; };
+		305E86081A304FA300808E13 /* JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E86051A304FA300808E13 /* JDSideMenu.m */; };
+		305E86091A304FA300808E13 /* UIViewController+JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E86071A304FA300808E13 /* UIViewController+JDSideMenu.m */; };
+		305E860D1A3050B800808E13 /* JDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E860B1A3050B800808E13 /* JDMenuViewController.m */; };
+		305E860E1A3050B800808E13 /* JDMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E860C1A3050B800808E13 /* JDMenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +56,22 @@
 		302958041A2F394800594F69 /* SlideShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideShowView.h; sourceTree = "<group>"; };
 		302958051A2F394800594F69 /* SlideShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideShowView.m; sourceTree = "<group>"; };
 		302958071A2F396200594F69 /* SlideShowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideShowView.xib; sourceTree = "<group>"; };
+		305E85E31A300C8400808E13 /* MTStackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStackViewController.h; sourceTree = "<group>"; };
+		305E85E41A300C8400808E13 /* MTStackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStackViewController.m; sourceTree = "<group>"; };
+		305E85E71A300DAB00808E13 /* TPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMenuViewController.h; sourceTree = "<group>"; };
+		305E85E81A300DAB00808E13 /* TPMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMenuViewController.m; sourceTree = "<group>"; };
+		305E85EF1A301E7300808E13 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		305E85F01A301E7300808E13 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		305E85F11A301E7300808E13 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		305E85F21A301E7300808E13 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		305E85F31A301E7300808E13 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		305E86041A304FA300808E13 /* JDSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDSideMenu.h; sourceTree = "<group>"; };
+		305E86051A304FA300808E13 /* JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDSideMenu.m; sourceTree = "<group>"; };
+		305E86061A304FA300808E13 /* UIViewController+JDSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JDSideMenu.h"; sourceTree = "<group>"; };
+		305E86071A304FA300808E13 /* UIViewController+JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JDSideMenu.m"; sourceTree = "<group>"; };
+		305E860A1A3050B800808E13 /* JDMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDMenuViewController.h; sourceTree = "<group>"; };
+		305E860B1A3050B800808E13 /* JDMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDMenuViewController.m; sourceTree = "<group>"; };
+		305E860C1A3050B800808E13 /* JDMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JDMenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +152,9 @@
 		301BFA2C1A2EB8B700548B52 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				305E86031A304F8900808E13 /* SideMenu */,
+				305E85E61A300D8F00808E13 /* MenuLeftViewController */,
+				305E85E21A300C6800808E13 /* MTStackViewController */,
 				302958031A2F393F00594F69 /* SubViews */,
 				301BFA321A2EB95E00548B52 /* AppDelegate.h */,
 				301BFA331A2EB95E00548B52 /* AppDelegate.m */,
@@ -138,6 +168,7 @@
 		301BFA311A2EB91300548B52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				305E85CF1A30087B00808E13 /* Images Gallery */,
 				301BFA351A2EB97C00548B52 /* Images.xcassets */,
 			);
 			path = Resources;
@@ -165,6 +196,50 @@
 				302958071A2F396200594F69 /* SlideShowView.xib */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		305E85CF1A30087B00808E13 /* Images Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				305E85EF1A301E7300808E13 /* 1.jpg */,
+				305E85F01A301E7300808E13 /* 2.jpg */,
+				305E85F11A301E7300808E13 /* 3.jpg */,
+				305E85F21A301E7300808E13 /* 4.jpg */,
+				305E85F31A301E7300808E13 /* 5.jpg */,
+			);
+			path = "Images Gallery";
+			sourceTree = "<group>";
+		};
+		305E85E21A300C6800808E13 /* MTStackViewController */ = {
+			isa = PBXGroup;
+			children = (
+				305E85E31A300C8400808E13 /* MTStackViewController.h */,
+				305E85E41A300C8400808E13 /* MTStackViewController.m */,
+			);
+			path = MTStackViewController;
+			sourceTree = "<group>";
+		};
+		305E85E61A300D8F00808E13 /* MenuLeftViewController */ = {
+			isa = PBXGroup;
+			children = (
+				305E860A1A3050B800808E13 /* JDMenuViewController.h */,
+				305E860B1A3050B800808E13 /* JDMenuViewController.m */,
+				305E860C1A3050B800808E13 /* JDMenuViewController.xib */,
+				305E85E71A300DAB00808E13 /* TPMenuViewController.h */,
+				305E85E81A300DAB00808E13 /* TPMenuViewController.m */,
+			);
+			path = MenuLeftViewController;
+			sourceTree = "<group>";
+		};
+		305E86031A304F8900808E13 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				305E86041A304FA300808E13 /* JDSideMenu.h */,
+				305E86051A304FA300808E13 /* JDSideMenu.m */,
+				305E86061A304FA300808E13 /* UIViewController+JDSideMenu.h */,
+				305E86071A304FA300808E13 /* UIViewController+JDSideMenu.m */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,10 +322,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305E85F71A301E7300808E13 /* 4.jpg in Resources */,
+				305E85F51A301E7300808E13 /* 2.jpg in Resources */,
 				301BFA361A2EB97C00548B52 /* Images.xcassets in Resources */,
+				305E85F81A301E7300808E13 /* 5.jpg in Resources */,
 				302958081A2F396200594F69 /* SlideShowView.xib in Resources */,
 				301BFA0E1A2EAF6500548B52 /* LaunchScreen.xib in Resources */,
 				302957FD1A2F11FF00594F69 /* MainViewController.xib in Resources */,
+				305E860E1A3050B800808E13 /* JDMenuViewController.xib in Resources */,
+				305E85F61A301E7300808E13 /* 3.jpg in Resources */,
+				305E85F41A301E7300808E13 /* 1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +349,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305E86091A304FA300808E13 /* UIViewController+JDSideMenu.m in Sources */,
 				302958061A2F394800594F69 /* SlideShowView.m in Sources */,
 				301BFA001A2EAF6500548B52 /* main.m in Sources */,
+				305E86081A304FA300808E13 /* JDSideMenu.m in Sources */,
+				305E860D1A3050B800808E13 /* JDMenuViewController.m in Sources */,
 				301BFA341A2EB95E00548B52 /* AppDelegate.m in Sources */,
+				305E85E51A300C8400808E13 /* MTStackViewController.m in Sources */,
 				302957FC1A2F11FF00594F69 /* MainViewController.m in Sources */,
+				305E85E91A300DAB00808E13 /* TPMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

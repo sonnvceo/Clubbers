@@ -11,7 +11,12 @@
 @protocol SlideShowViewDelegate;
 
 
-@interface SlideShowView : UIView
+@interface SlideShowView : UIView <UIScrollViewDelegate> {
+    UIScrollView *_scrollview;
+    UIPageControl *_pgcontrol;
+    NSArray *_images;
+    UIImageView *_backgroundimageview;
+}
 
 @property (nonatomic, assign) id <SlideShowViewDelegate> delegate;
 - (id)initWithXibFile:(id <SlideShowViewDelegate>)del ;

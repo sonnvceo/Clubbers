@@ -12,4 +12,6 @@
 @interface MainViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIView *slideShowSubView;
+@property (strong, nonatomic) IBOutlet UIView *sideMenuSubView;
+- (IBAction)btnMenu:(id)sender;
 @end

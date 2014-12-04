@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "TPMenuViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,7 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    stackViewController = [[MTStackViewController alloc] initWithNibName:nil bundle:nil];
+    [stackViewController setAnimationDurationProportionalToPosition:YES];
+    
+    TPMenuViewController *menuViewController = [[TPMenuViewController alloc] initWithNibName:nil bundle:nil];
     MainViewController *mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    
+    [stackViewController setLeftViewController:menuViewController];
+    
+    UINavigationController *contentNavigationController = [[UINavigationController alloc]
+                                                           initWithRootViewController:mainViewController];
+    [stackViewController setContentViewController:contentNavigationController];
+
     self.window.rootViewController = mainViewController;
     [self.window makeKeyAndVisible];
     return YES;
