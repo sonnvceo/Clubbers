@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EventTableCell.h"
 @interface TPMenuViewController : UITableViewController
 
 @end

@@ -51,7 +51,10 @@
 }
 
 #pragma mark - Table view data source
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
@@ -59,19 +62,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 10;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"eventTableCell";
+    EventTableCell *cell = (EventTableCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"EventTableCell" owner:self options:nil];
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[EventTableCell class]]) {
+                cell = (EventTableCell *) currentObject;
+                break;
+            }
+        }
+        [cell configureCell];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // Configure the cell...
-    cell.textLabel.text = @"cell";
-    
+    cell.lblTitle.text = @"SonNV";
+    cell.lbDetail.text = @"Cell";
     return cell;
 }
 
