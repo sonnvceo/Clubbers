@@ -7,6 +7,9 @@
 //
 
 #import "TPMenuViewController.h"
+#import "AFNetworking.h"
+#import "TownModel.h"
+#import "DefinitionAPI.h"
 
 @interface TPMenuViewController ()
 
@@ -37,8 +40,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadAllTown];
 }
-
+-(void)loadAllTown
+{
+    
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:URL_BASE]];
+    NSURLRequest *request = [client requestWithMethod:@"GET" path:@"sa_towns_list" parameters:nil];
+    NSLog(@" %@", [request description]);
+    AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
+        NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
+        [[TownModel shareInstance] parseJson:jsonDataArray];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error:%@", error);
+    }];
+    
+    [client enqueueHTTPRequestOperation:operation];
+    
+}
 - (void)viewDidUnload {
     [self.tableView removeFromSuperview];
     [self setTableView:nil];

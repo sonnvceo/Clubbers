@@ -10,8 +10,8 @@
 
 @interface JustincaseModel : NSObject
 
-@property (strong,nonatomic) NSString *townId;
-@property (strong,nonatomic) NSString *justincaseId;
+@property (assign,nonatomic) NSInteger townId;
+@property (assign,nonatomic) NSInteger justincaseId;
 @property (strong,nonatomic) NSString *justincaseName;
 @property (strong,nonatomic) NSString *justincaseImage;
 @property (strong,nonatomic) NSString *thumbImage;
@@ -20,5 +20,5 @@
 @property (strong,nonatomic) NSString *justincaseLon;
 
 +(JustincaseModel*) shareInstance;
--(JustincaseModel*)setValuesFromDictionary:(NSDictionary*)dict;
+-(NSMutableArray*)parseJson:(NSArray*)listJson;
 @end

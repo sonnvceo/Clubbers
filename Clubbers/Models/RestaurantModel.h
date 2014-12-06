@@ -10,8 +10,8 @@
 
 @interface RestaurantModel : NSObject
 
-@property (strong,nonatomic) NSString *townId;
-@property (strong,nonatomic) NSString *restaurantId;
+@property (assign,nonatomic) NSInteger townId;
+@property (assign,nonatomic) NSInteger restaurantId;
 @property (strong,nonatomic) NSString *restaurantName;
 @property (strong,nonatomic) NSString *restaurantImage;
 @property (strong,nonatomic) NSString *thumbImage;
@@ -20,5 +20,5 @@
 @property (strong,nonatomic) NSString *restaurantLon;
 
 +(RestaurantModel*) shareInstance;
--(RestaurantModel*)setValuesFromDictionary:(NSDictionary*)dict;
+-(NSMutableArray*)parseJson:(NSArray*)listJson;
 @end

@@ -22,14 +22,21 @@ static PhotoGalleryModel* _instance = nil;
     }
     return _instance;
 }
--(PhotoGalleryModel*)setValuesFromDictionary:(NSDictionary*)dict {
-        PhotoGalleryModel *photoGalleryModel = [[PhotoGalleryModel alloc]init];
-    if (![[dict objectForKey:@"id"] isKindOfClass:[NSNull class]])
-        photoGalleryModel.photoId = [[dict objectForKey:@"id"] stringValue];
-    if (![[dict objectForKey:@"thumb_image"] isKindOfClass:[NSNull class]])
-        photoGalleryModel.thumbImage = [dict objectForKey:@"thumb_image"];
-    if (![[dict objectForKey:@"large_image"] isKindOfClass:[NSNull class]])
-        photoGalleryModel.largeImage = [[dict objectForKey:@"large_image"] stringValue];
-        return photoGalleryModel;
+-(NSMutableArray*)parseJson:(NSArray*)listJson {
+    NSMutableArray *listPhotoGallerys = [[NSMutableArray alloc]init];
+    for (NSDictionary *dict in listJson) {
+            PhotoGalleryModel *photoGalleryModel = [[PhotoGalleryModel alloc]init];
+        if (![[dict objectForKey:@"id"] isKindOfClass:[NSNull class]])
+            photoGalleryModel.photoId = [[dict objectForKey:@"id"] intValue];
+        if (![[dict objectForKey:@"thumb_image"] isKindOfClass:[NSNull class]])
+            photoGalleryModel.thumbImage = [dict objectForKey:@"thumb_image"];
+        if (![[dict objectForKey:@"large_image"] isKindOfClass:[NSNull class]])
+            photoGalleryModel.largeImage = [[dict objectForKey:@"large_image"] stringValue];
+        
+        if (photoGalleryModel) {
+            [listPhotoGallerys addObject:photoGalleryModel];
+        }
+    }
+    return listPhotoGallerys;
 }
 @end

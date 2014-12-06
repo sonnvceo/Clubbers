@@ -10,8 +10,8 @@
 
 @interface ShoppingModel : NSObject
 
-@property (strong,nonatomic) NSString *townId;
-@property (strong,nonatomic) NSString *shoppingId;
+@property (assign,nonatomic) NSInteger townId;
+@property (assign,nonatomic) NSInteger shoppingId;
 @property (strong,nonatomic) NSString *shoppingName;
 @property (strong,nonatomic) NSString *shoppingImage;
 @property (strong,nonatomic) NSString *thumbImage;
@@ -20,5 +20,5 @@
 @property (strong,nonatomic) NSString *shoppingLon;
 
 +(ShoppingModel*) shareInstance;
--(ShoppingModel*)setValuesFromDictionary:(NSDictionary*)dict;
+-(NSMutableArray*)parseJson:(NSArray*)listJson ;
 @end

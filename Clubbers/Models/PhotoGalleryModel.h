@@ -10,10 +10,10 @@
 
 @interface PhotoGalleryModel : NSObject
 
-@property (strong,nonatomic) NSString *photoId;
+@property (assign,nonatomic) NSInteger photoId;
 @property (strong,nonatomic) NSString *thumbImage;
 @property (strong,nonatomic) NSString *largeImage;
 
 +(PhotoGalleryModel*) shareInstance;
--(PhotoGalleryModel*)setValuesFromDictionary:(NSDictionary*)dict;
+-(NSMutableArray*)parseJson:(NSArray*)listJson;
 @end

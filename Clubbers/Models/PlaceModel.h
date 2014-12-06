@@ -10,8 +10,8 @@
 
 @interface PlaceModel : NSObject
 
-@property (strong,nonatomic) NSString *townId;
-@property (strong,nonatomic) NSString *placeId;
+@property (assign,nonatomic) NSInteger townId;
+@property (assign,nonatomic) NSInteger placeId;
 @property (strong,nonatomic) NSString *placeName;
 @property (strong,nonatomic) NSString *placeImage;
 @property (strong,nonatomic) NSString *thumbImage;
@@ -20,5 +20,5 @@
 @property (strong,nonatomic) NSString *placeLon;
 
 +(PlaceModel*) shareInstance;
--(PlaceModel*)setValuesFromDictionary:(NSDictionary*)dict;
+-(NSMutableArray*)parseJson:(NSArray*)listJson;
 @end

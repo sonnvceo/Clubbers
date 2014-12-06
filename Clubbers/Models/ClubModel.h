@@ -10,8 +10,8 @@
 
 @interface ClubModel : NSObject
 
-@property (strong,nonatomic) NSString *clubId;
-@property (strong,nonatomic) NSString *townId;
+@property (assign,nonatomic) NSInteger clubId;
+@property (assign,nonatomic) NSInteger townId;
 @property (strong,nonatomic) NSString *clubName;
 @property (strong,nonatomic) NSString *clubPhone;
 @property (strong,nonatomic) NSString *thumbImage;
@@ -27,5 +27,5 @@
 @property (strong,nonatomic) NSString *clubHeaderTitle;
 @property (strong,nonatomic) NSString *clubHeaderDetail;
 +(ClubModel*) shareInstance;
--(ClubModel*)setValuesFromDictionary:(NSDictionary*)dict;
+-(NSMutableArray*)parseJson:(NSArray*)listJson;
 @end

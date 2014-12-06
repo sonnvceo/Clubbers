@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-// http://archive.org/download/WaltDisneyCartoons-MickeyMouseMinnieMouseDonaldDuckGoofyAndPluto/WaltDisneyCartoons-MickeyMouseMinnieMouseDonaldDuckGoofyAndPluto-HawaiianHoliday1937-Video.mp4
 
-// @"http://video.nexttv.com.tw/e/w/20130312/10638792.mp4"
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -21,25 +19,27 @@
 
 
 #pragma API
+#define URL_BASE @"http://www.clubbersapptoibiza.com/api/"
 
-#define EVENTS_EVENTS @"http://www.ufightlive.tv/events/api_index"
-#define CHANNELBYCATEGORIES @"http://www.ufightlive.tv/channels/api_channelsByCategory/%@/%@"
-#define CATEGORIES_CATEGORIES @"http://www.ufightlive.tv/category/api_index/all"
-#define EVENTSBYCATEGORIES @"http://www.ufightlive.tv/events/api_eventsBycategory/%@/%@"
-#define SEARCH @"http://www.ufightlive.tv/search/api_searchChannelsByKeyword/%@"
-#define MYACCOUNT @"http://www.ufightlive.tv/api_user/api_myAccount/%@"
-#define MYFAVOURITE @"http://www.ufightlive.tv/api_user/api_favorites/%@"
-#define VIDEO @"http://www.ufightlive.tv/videos/api_index"
-#define NEWS  @"http://www.ufightlive.tv/news/api_index"
-#define FOLLOWED @"http://www.ufightlive.tv/api_user/api_followed/%@"
-#define MYCHANNEL @"http://www.ufightlive.tv/api_user/api_myChannels/%@" 
-#define MYEVENT   @"http://www.ufightlive.tv/api_user/api_myEvents/%@"
-#define MYVIDEO   @"http://www.ufightlive.tv/api_user/api_myVideos/%@"
-#define MYINFO    @"http://www.ufightlive.tv/api_user/api_myInfo/%@"
+#define URL_TOWN @"http://www.clubbersapptoibiza.com/api/sa_towns_list"
 
-#define LOGIN @"http://www.ufightlive.tv/home/api_login2/%@/%@"
-#define LOGOUT @"http://www.ufightlive.tv/home/api_logout/%@"
-#define SINGUP @"http://www.ufightlive.tv/register"
+#define URL_TOWNDETAIL @"http://www.clubbersapptoibiza.com/api/sa_town_details/?town_id=1"
+
+#define URL_CLUBS @"http://www.clubbersapptoibiza.com/api/sa_clubs_list/?town_id=1"
+
+#define URL_SHOPPING @"http://www.clubbersapptoibiza.com/api/sa_shoppings_list/?town_id=1"
+
+#define URL_RESTAURANTS @"http://www.clubbersapptoibiza.com/api/sa_restaurants_list/?town_id=1"
+
+#define URL_PLACES @"http://www.clubbersapptoibiza.com/api/sa_places_list/?town_id=1"
+
+#define URL_THINGS @"http://www.ufightlive.tv/api_user/api_favorites/%@"
+
+#define URL_JUSTINCASE @"http://www.clubbersapptoibiza.com/api/sa_justincases_list/?town_id=1"
+
+#define URL_ALL_CLUBS  @"http://www.clubbersapptoibiza.com/api/sa_all_clubs"
+
+#define URL_PHOTO_GALLERY @"http://www.clubbersapptoibiza.com/api/sa_photos_gallery"
 
 @interface DefinitionAPI : NSObject
 @end

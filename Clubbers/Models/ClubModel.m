@@ -36,40 +36,47 @@ static ClubModel* _instance = nil;
     }
     return _instance;
 }
--(ClubModel*)setValuesFromDictionary:(NSDictionary*)dict {
-        ClubModel *clubModel = [[ClubModel alloc]init];
-    if (![[dict objectForKey:@"club_id"] isKindOfClass:[NSNull class]])
-        clubModel.clubId = [[dict objectForKey:@"club_id"] stringValue];
-    if (![[dict objectForKey:@"town_id"] isKindOfClass:[NSNull class]])
-        clubModel.townId = [[dict objectForKey:@"town_id"] stringValue];
-    if (![[dict objectForKey:@"club_name"] isKindOfClass:[NSNull class]])
-        clubModel.clubName = [dict objectForKey:@"club_name"];
-    if (![[dict objectForKey:@"club_phone"] isKindOfClass:[NSNull class]])
-        clubModel.clubPhone = [[dict objectForKey:@"club_phone"] stringValue];
-    if (![[dict objectForKey:@"club_image"] isKindOfClass:[NSNull class]])
-        clubModel.thumbImage = [dict objectForKey:@"club_image"];
-    if (![[dict objectForKey:@"club_description"] isKindOfClass:[NSNull class]])
-        clubModel.clubDescription = [dict objectForKey:@"club_description"];
-    if (![[dict objectForKey:@"club_lat"] isKindOfClass:[NSNull class]])
-        clubModel.clubLat = [[dict objectForKey:@"club_lat"] stringValue];
-    if (![[dict objectForKey:@"club_lon"] isKindOfClass:[NSNull class]])
-        clubModel.clubLon = [[dict objectForKey:@"club_lon"] stringValue];
-    if (![[dict objectForKey:@"short_overview"] isKindOfClass:[NSNull class]])
-        clubModel.shortOverview = [[dict objectForKey:@"short_overview"] stringValue];
-    if (![[dict objectForKey:@"full_overview"] isKindOfClass:[NSNull class]])
-        clubModel.fullOverview = [[dict objectForKey:@"full_overview"] stringValue];
-    if (![[dict objectForKey:@"club_features"] isKindOfClass:[NSNull class]])
-        clubModel.clubFeatures = [[dict objectForKey:@"club_features"] stringValue];
-    if (![[dict objectForKey:@"club_address"] isKindOfClass:[NSNull class]])
-        clubModel.clubAddress = [[dict objectForKey:@"club_address"] stringValue];
-    if (![[dict objectForKey:@"club_email"] isKindOfClass:[NSNull class]])
-        clubModel.clubEmail = [[dict objectForKey:@"club_email"] stringValue];
-    if (![[dict objectForKey:@"club_siteurl"] isKindOfClass:[NSNull class]])
-        clubModel.clubSiteurl = [[dict objectForKey:@"club_siteurl"] stringValue];
-    if (![[dict objectForKey:@"club_header_title"] isKindOfClass:[NSNull class]])
-        clubModel.clubHeaderTitle = [[dict objectForKey:@"club_header_title"] stringValue];
-    if (![[dict objectForKey:@"club_header_detail"] isKindOfClass:[NSNull class]])
-        clubModel.clubHeaderDetail = [[dict objectForKey:@"club_header_detail"] stringValue];
-    return clubModel;
+-(NSMutableArray*)parseJson:(NSArray*)listJson {
+    NSMutableArray *listClub = [[NSMutableArray alloc]init];
+    for (NSDictionary *dict in listJson) {
+            ClubModel *clubModel = [[ClubModel alloc]init];
+        if (![[dict objectForKey:@"club_id"] isKindOfClass:[NSNull class]])
+            clubModel.clubId = [[dict objectForKey:@"club_id"] intValue];
+        if (![[dict objectForKey:@"town_id"] isKindOfClass:[NSNull class]])
+            clubModel.townId = [[dict objectForKey:@"town_id"] intValue];
+        if (![[dict objectForKey:@"club_name"] isKindOfClass:[NSNull class]])
+            clubModel.clubName = [dict objectForKey:@"club_name"];
+        if (![[dict objectForKey:@"club_phone"] isKindOfClass:[NSNull class]])
+            clubModel.clubPhone = [dict objectForKey:@"club_phone"];
+        if (![[dict objectForKey:@"club_image"] isKindOfClass:[NSNull class]])
+            clubModel.thumbImage = [dict objectForKey:@"club_image"];
+        if (![[dict objectForKey:@"club_description"] isKindOfClass:[NSNull class]])
+            clubModel.clubDescription = [dict objectForKey:@"club_description"];
+        if (![[dict objectForKey:@"club_lat"] isKindOfClass:[NSNull class]])
+            clubModel.clubLat = [dict objectForKey:@"club_lat"];
+        if (![[dict objectForKey:@"club_lon"] isKindOfClass:[NSNull class]])
+            clubModel.clubLon = [dict objectForKey:@"club_lon"];
+        if (![[dict objectForKey:@"short_overview"] isKindOfClass:[NSNull class]])
+            clubModel.shortOverview = [dict objectForKey:@"short_overview"];
+        if (![[dict objectForKey:@"full_overview"] isKindOfClass:[NSNull class]])
+            clubModel.fullOverview = [dict objectForKey:@"full_overview"];
+        if (![[dict objectForKey:@"club_features"] isKindOfClass:[NSNull class]])
+            clubModel.clubFeatures = [dict objectForKey:@"club_features"];
+        if (![[dict objectForKey:@"club_address"] isKindOfClass:[NSNull class]])
+            clubModel.clubAddress = [dict objectForKey:@"club_address"];
+        if (![[dict objectForKey:@"club_email"] isKindOfClass:[NSNull class]])
+            clubModel.clubEmail = [dict objectForKey:@"club_email"];
+        if (![[dict objectForKey:@"club_siteurl"] isKindOfClass:[NSNull class]])
+            clubModel.clubSiteurl = [dict objectForKey:@"club_siteurl"];
+        if (![[dict objectForKey:@"club_header_title"] isKindOfClass:[NSNull class]])
+            clubModel.clubHeaderTitle = [dict objectForKey:@"club_header_title"];
+        if (![[dict objectForKey:@"club_header_detail"] isKindOfClass:[NSNull class]])
+            clubModel.clubHeaderDetail = [dict objectForKey:@"club_header_detail"];
+        
+        if (clubModel) {
+            [listClub addObject:clubModel];
+        }
+    }
+    return listClub;
 }
 @end

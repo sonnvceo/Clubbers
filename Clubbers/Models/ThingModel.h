@@ -10,8 +10,8 @@
 
 @interface ThingModel : NSObject
 
-@property (strong,nonatomic) NSString *townId;
-@property (strong,nonatomic) NSString *thingId;
+@property (assign,nonatomic) NSInteger townId;
+@property (assign,nonatomic) NSInteger thingId;
 @property (strong,nonatomic) NSString *thingName;
 @property (strong,nonatomic) NSString *thingImage;
 @property (strong,nonatomic) NSString *thumbImage;
@@ -20,5 +20,5 @@
 @property (strong,nonatomic) NSString *thingLon;
 
 +(ThingModel*) shareInstance;
--(ThingModel*)setValuesFromDictionary:(NSDictionary*)dict;
+-(NSMutableArray*)parseJson:(NSArray*)listJson;
 @end

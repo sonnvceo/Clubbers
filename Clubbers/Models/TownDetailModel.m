@@ -29,28 +29,35 @@ static TownDetailModel* _instance = nil;
     }
     return _instance;
 }
--(TownDetailModel*)setValuesFromDictionary:(NSDictionary*)dict {
+-(NSMutableArray*)parseJson:(NSArray*)listJson {
+    NSMutableArray *listTownDetail = [[NSMutableArray alloc]init];
+    for (NSDictionary *dict in listJson) {
         TownDetailModel *townDetailModel = [[TownDetailModel alloc]init];
-    if (![[dict objectForKey:@"town_id"] isKindOfClass:[NSNull class]])
-        townDetailModel.townId = [[dict objectForKey:@"town_id"] stringValue];
-    if (![[dict objectForKey:@"town_name"] isKindOfClass:[NSNull class]])
-        townDetailModel.townName = [dict objectForKey:@"town_name"];
-    if (![[dict objectForKey:@"town_image"] isKindOfClass:[NSNull class]])
-        townDetailModel.townImage = [[dict objectForKey:@"town_image"] stringValue];
-    if (![[dict objectForKey:@"thumb_image"] isKindOfClass:[NSNull class]])
-        townDetailModel.thumbImage = [dict objectForKey:@"thumb_image"];
-    if (![[dict objectForKey:@"town_description"] isKindOfClass:[NSNull class]])
-        townDetailModel.townDescription = [dict objectForKey:@"town_description"];
-    if (![[dict objectForKey:@"short_overview"] isKindOfClass:[NSNull class]])
-        townDetailModel.shortOverview = [[dict objectForKey:@"short_overview"] stringValue];
-    if (![[dict objectForKey:@"full_overview"] isKindOfClass:[NSNull class]])
-        townDetailModel.fullOverview = [[dict objectForKey:@"full_overview"] stringValue];
-    if (![[dict objectForKey:@"town_header_title"] isKindOfClass:[NSNull class]])
-        townDetailModel.townHeaderTitle = [[dict objectForKey:@"town_header_title"] stringValue];
-    if (![[dict objectForKey:@"town_header_detail"] isKindOfClass:[NSNull class]])
-        townDetailModel.townDeaderDetail = [[dict objectForKey:@"town_header_detail"] stringValue];
-    if (![[dict objectForKey:@"image_gallery"] isKindOfClass:[NSArray class]])
-        townDetailModel.imageGallerys = (NSArray*)[dict objectForKey:@"town_header_detail"];
-    return townDetailModel;
+        if (![[dict objectForKey:@"town_id"] isKindOfClass:[NSNull class]])
+            townDetailModel.townId = [[dict objectForKey:@"town_id"] intValue];
+        if (![[dict objectForKey:@"town_name"] isKindOfClass:[NSNull class]])
+            townDetailModel.townName = [dict objectForKey:@"town_name"];
+        if (![[dict objectForKey:@"town_image"] isKindOfClass:[NSNull class]])
+            townDetailModel.townImage = [dict objectForKey:@"town_image"];
+        if (![[dict objectForKey:@"thumb_image"] isKindOfClass:[NSNull class]])
+            townDetailModel.thumbImage = [dict objectForKey:@"thumb_image"];
+        if (![[dict objectForKey:@"town_description"] isKindOfClass:[NSNull class]])
+            townDetailModel.townDescription = [dict objectForKey:@"town_description"];
+        if (![[dict objectForKey:@"short_overview"] isKindOfClass:[NSNull class]])
+            townDetailModel.shortOverview = [dict objectForKey:@"short_overview"];
+        if (![[dict objectForKey:@"full_overview"] isKindOfClass:[NSNull class]])
+            townDetailModel.fullOverview = [dict objectForKey:@"full_overview"];
+        if (![[dict objectForKey:@"town_header_title"] isKindOfClass:[NSNull class]])
+            townDetailModel.townHeaderTitle = [dict objectForKey:@"town_header_title"];
+        if (![[dict objectForKey:@"town_header_detail"] isKindOfClass:[NSNull class]])
+            townDetailModel.townDeaderDetail = [dict objectForKey:@"town_header_detail"];
+        if (![[dict objectForKey:@"image_gallery"] isKindOfClass:[NSArray class]])
+            townDetailModel.imageGallerys = (NSArray*)[dict objectForKey:@"town_header_detail"];
+        
+        if (townDetailModel) {
+            [listTownDetail addObject:townDetailModel];
+        }
+    }
+    return listTownDetail;
 }
 @end

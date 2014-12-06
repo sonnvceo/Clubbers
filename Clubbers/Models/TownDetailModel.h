@@ -10,7 +10,7 @@
 
 @interface TownDetailModel : NSObject
 
-@property (strong,nonatomic) NSString *townId;
+@property (assign,nonatomic) NSInteger townId;
 @property (strong,nonatomic) NSString *townName;
 @property (strong,nonatomic) NSString *townImage;
 @property (strong,nonatomic) NSString *thumbImage;
@@ -21,5 +21,5 @@
 @property (strong,nonatomic) NSString *townDeaderDetail;
 @property (strong,nonatomic) NSArray  *imageGallerys;
 +(TownDetailModel*) shareInstance;
--(TownDetailModel*)setValuesFromDictionary:(NSDictionary*)dict;
+-(NSMutableArray*)parseJson:(NSArray*)listJson;
 @end
