@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SlideShowView.h"
-#import "TPMenuViewController.h"
-#import "TownDetailViewController.h" 
 
-@interface MainViewController : UIViewController<SlideShowViewDelegate,
-                                                 TPMenuViewControllerDelegate>
+@interface TownDetailViewController : UIViewController<SlideShowViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *slideShowSubView;
 @property (strong, nonatomic) IBOutlet UIView *sideMenuSubView;
 
+- (IBAction)btnDismiss:(id)sender;
 @end

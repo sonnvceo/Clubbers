@@ -10,9 +10,17 @@
 #import "CityTableCell.h"
 #import "MBProgressHUD.h"
 
+@protocol TPMenuViewControllerDelegate;
+
 @interface TPMenuViewController : UITableViewController<MBProgressHUDDelegate> {
     MBProgressHUD *HUD;
     NSArray *tableDatasource;
 }
+@property (nonatomic, assign) id <TPMenuViewControllerDelegate> delegate;
 @property(assign, nonatomic) NSInteger kindOfTableView;
 @end
+@protocol TPMenuViewControllerDelegate
+@optional
+- (void) presentToViewController;
+@end
+

@@ -6,18 +6,20 @@
 //  Copyright (c) 2014 Clubbers. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "TownDetailViewController.h"
 #import "JDSideMenu.h"
 #import "JDMenuViewController.h"
+#import "TPMenuViewController.h"
 
-@interface MainViewController () {
+
+@interface TownDetailViewController () {
     SlideShowView *slideShowView;
     JDSideMenu *sideMenu;
     
 }
 @end
 
-@implementation MainViewController
+@implementation TownDetailViewController
 @synthesize slideShowSubView;
 @synthesize sideMenuSubView;
 - (void)viewDidLoad {
@@ -27,21 +29,23 @@
     self.view.layer.cornerRadius = 5;
     self.view.layer.masksToBounds = YES;
     
+    self.navigationController.navigationBarHidden = YES;
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
     [slideShowSubView addSubview:slideShowView];
     
     UIViewController *menuController = [[JDMenuViewController alloc] init];
     TPMenuViewController *contentController = [[TPMenuViewController alloc] init];
-    contentController.delegate = self;
     sideMenu = [[JDSideMenu alloc] initWithContentController:contentController
                                               menuController:menuController];
-    [sideMenuSubView addSubview:sideMenu.view];
+//    [sideMenuSubView addSubview:sideMenu.view];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    
+}
+- (IBAction)btnDismiss:(id)sender {
+    [self removeFromParentViewController];
 }
 #pragma mark - SlideShowViewDelegate
 - (void) showMenuLeft{
@@ -49,11 +53,5 @@
 }
 - (void)showMenuRight {
     [sideMenu hideMenuAnimated:YES];
-}
-- (void) presentToViewController {
-    TownDetailViewController *townDetailViewController = [[TownDetailViewController alloc]
-                                                          initWithNibName:@"TownDetailViewController"
-                                                          bundle:nil];
-    [self presentViewController:townDetailViewController animated:NO completion:nil];
 }
 @end

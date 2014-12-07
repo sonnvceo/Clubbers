@@ -17,6 +17,7 @@
 
 @implementation TPMenuViewController
 @synthesize kindOfTableView;
+@synthesize delegate;
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
@@ -38,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
     [self.navigationController.view addSubview:HUD];
     
@@ -163,13 +165,16 @@
 }
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    UINavigationController *navigationController = (UINavigationController *)[[self stackViewController] contentViewController];
-//    if ([self contentViewcontrollerForIndexPath:indexPath]!= nil) {
-//        [navigationController setViewControllers:@[[self contentViewcontrollerForIndexPath:indexPath]]];
-//        
-//        [[self stackViewController] hideLeftViewController];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (kindOfTableView == kCityViewController) {
+        if (delegate) {
+            [delegate presentToViewController];
+        }
+    }
+    else if (kindOfTableView == kClubViewController) {
+        
+    }
+   
 }
 
 @end

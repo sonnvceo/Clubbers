@@ -166,6 +166,14 @@
 		841A62191A3423F300773107 /* main_page5.png in Resources */ = {isa = PBXBuildFile; fileRef = 841A62131A3423F300773107 /* main_page5.png */; };
 		841A621A1A3423F300773107 /* main_page6.png in Resources */ = {isa = PBXBuildFile; fileRef = 841A62141A3423F300773107 /* main_page6.png */; };
 		841A621C1A34242100773107 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 841A621B1A34242100773107 /* ic_launcher.png */; };
+		842C816C1A34993900836910 /* NewAndEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C816A1A34993900836910 /* NewAndEventViewController.m */; };
+		842C816D1A34993900836910 /* NewAndEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C816B1A34993900836910 /* NewAndEventViewController.xib */; };
+		842C81711A34A96500836910 /* CustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C816F1A34A96500836910 /* CustomTableCell.m */; };
+		842C81721A34A96500836910 /* CustomTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C81701A34A96500836910 /* CustomTableCell.xib */; };
+		842C81831A34BE5B00836910 /* LbizaMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C81811A34BE5B00836910 /* LbizaMapViewController.m */; };
+		842C81841A34BE5B00836910 /* LbizaMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C81821A34BE5B00836910 /* LbizaMapViewController.xib */; };
+		849A946B1A34648E00EE02E4 /* TownDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A94691A34648E00EE02E4 /* TownDetailViewController.m */; };
+		849A946C1A34648E00EE02E4 /* TownDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849A946A1A34648E00EE02E4 /* TownDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -373,6 +381,18 @@
 		841A62131A3423F300773107 /* main_page5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page5.png; sourceTree = "<group>"; };
 		841A62141A3423F300773107 /* main_page6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page6.png; sourceTree = "<group>"; };
 		841A621B1A34242100773107 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
+		842C81691A34993900836910 /* NewAndEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAndEventViewController.h; sourceTree = "<group>"; };
+		842C816A1A34993900836910 /* NewAndEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAndEventViewController.m; sourceTree = "<group>"; };
+		842C816B1A34993900836910 /* NewAndEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAndEventViewController.xib; sourceTree = "<group>"; };
+		842C816E1A34A96500836910 /* CustomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableCell.h; sourceTree = "<group>"; };
+		842C816F1A34A96500836910 /* CustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableCell.m; sourceTree = "<group>"; };
+		842C81701A34A96500836910 /* CustomTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableCell.xib; sourceTree = "<group>"; };
+		842C81801A34BE5B00836910 /* LbizaMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LbizaMapViewController.h; sourceTree = "<group>"; };
+		842C81811A34BE5B00836910 /* LbizaMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LbizaMapViewController.m; sourceTree = "<group>"; };
+		842C81821A34BE5B00836910 /* LbizaMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LbizaMapViewController.xib; sourceTree = "<group>"; };
+		849A94681A34648E00EE02E4 /* TownDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TownDetailViewController.h; path = Clubbers/Viewcontrollers/TownDetailViewController.h; sourceTree = SOURCE_ROOT; };
+		849A94691A34648E00EE02E4 /* TownDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TownDetailViewController.m; path = Clubbers/Viewcontrollers/TownDetailViewController.m; sourceTree = SOURCE_ROOT; };
+		849A946A1A34648E00EE02E4 /* TownDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TownDetailViewController.xib; path = Clubbers/Viewcontrollers/TownDetailViewController.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,6 +473,9 @@
 		301BFA2C1A2EB8B700548B52 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				842C817F1A34BE5300836910 /* LbizaMapViewController */,
+				842C81681A34990700836910 /* NewAndEventController */,
+				849A946D1A34655300EE02E4 /* TownDetailViewController */,
 				305E86031A304F8900808E13 /* SideMenu */,
 				305E85E61A300D8F00808E13 /* MenuLeftViewController */,
 				305E85E21A300C6800808E13 /* MTStackViewController */,
@@ -761,6 +784,39 @@
 			path = "Main Page";
 			sourceTree = "<group>";
 		};
+		842C81681A34990700836910 /* NewAndEventController */ = {
+			isa = PBXGroup;
+			children = (
+				842C81691A34993900836910 /* NewAndEventViewController.h */,
+				842C816A1A34993900836910 /* NewAndEventViewController.m */,
+				842C816B1A34993900836910 /* NewAndEventViewController.xib */,
+				842C816E1A34A96500836910 /* CustomTableCell.h */,
+				842C816F1A34A96500836910 /* CustomTableCell.m */,
+				842C81701A34A96500836910 /* CustomTableCell.xib */,
+			);
+			path = NewAndEventController;
+			sourceTree = "<group>";
+		};
+		842C817F1A34BE5300836910 /* LbizaMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				842C81801A34BE5B00836910 /* LbizaMapViewController.h */,
+				842C81811A34BE5B00836910 /* LbizaMapViewController.m */,
+				842C81821A34BE5B00836910 /* LbizaMapViewController.xib */,
+			);
+			path = LbizaMapViewController;
+			sourceTree = "<group>";
+		};
+		849A946D1A34655300EE02E4 /* TownDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				849A94681A34648E00EE02E4 /* TownDetailViewController.h */,
+				849A94691A34648E00EE02E4 /* TownDetailViewController.m */,
+				849A946A1A34648E00EE02E4 /* TownDetailViewController.xib */,
+			);
+			path = TownDetailViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -854,6 +910,7 @@
 				841A61F91A34239A00773107 /* ic_menu_disable.png in Resources */,
 				841A61911A3422F200773107 /* menu_shape_1_normal.png in Resources */,
 				841A61F21A34239A00773107 /* ic_map_fav_selected.png in Resources */,
+				842C816D1A34993900836910 /* NewAndEventViewController.xib in Resources */,
 				841A61F11A34239A00773107 /* ic_map_fav_normal.png in Resources */,
 				841A61621A34224A00773107 /* town15.jpg in Resources */,
 				841A618B1A3422F200773107 /* menu_item_3_normal.png in Resources */,
@@ -912,6 +969,7 @@
 				841A61941A3422F200773107 /* menu_shape_2.png in Resources */,
 				841A62001A34239A00773107 /* ic_ne_offers_normal.png in Resources */,
 				841A61FD1A34239A00773107 /* ic_ne_home.png in Resources */,
+				849A946C1A34648E00EE02E4 /* TownDetailViewController.xib in Resources */,
 				302958081A2F396200594F69 /* SlideShowView.xib in Resources */,
 				841A61131A34220600773107 /* main_pic_bg1.jpg in Resources */,
 				841A616E1A34224A00773107 /* town8_2.jpg in Resources */,
@@ -921,6 +979,7 @@
 				841A620A1A34239A00773107 /* magnifier.png in Resources */,
 				841A616A1A34224A00773107 /* town5.jpg in Resources */,
 				841A61151A34220600773107 /* main_pic_bg3.jpg in Resources */,
+				842C81841A34BE5B00836910 /* LbizaMapViewController.xib in Resources */,
 				841A61671A34224A00773107 /* town2.jpg in Resources */,
 				301BFA0E1A2EAF6500548B52 /* LaunchScreen.xib in Resources */,
 				841A610F1A34220600773107 /* listing_pic_bg2.jpg in Resources */,
@@ -932,6 +991,7 @@
 				302957FD1A2F11FF00594F69 /* MainViewController.xib in Resources */,
 				841A610E1A34220600773107 /* listing_pic_bg1.jpg in Resources */,
 				841A61EB1A34239A00773107 /* ic_heart.png in Resources */,
+				842C81721A34A96500836910 /* CustomTableCell.xib in Resources */,
 				841A61E11A34239A00773107 /* ic_bar_share.png in Resources */,
 				841A61FE1A34239A00773107 /* ic_ne_news_normal.png in Resources */,
 				841A61881A3422F200773107 /* menu_item_1_selected.png in Resources */,
@@ -986,6 +1046,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30299F341A31B17B00C4687C /* RestaurantModel.m in Sources */,
+				842C81711A34A96500836910 /* CustomTableCell.m in Sources */,
 				305E86091A304FA300808E13 /* UIViewController+JDSideMenu.m in Sources */,
 				30299D961A31428500C4687C /* DefinitionAPI.m in Sources */,
 				30299DBB1A31477B00C4687C /* AFPropertyListRequestOperation.m in Sources */,
@@ -994,12 +1055,15 @@
 				301BFA001A2EAF6500548B52 /* main.m in Sources */,
 				30299F371A31B42900C4687C /* PlaceModel.m in Sources */,
 				30299F3D1A31B61100C4687C /* JustincaseModel.m in Sources */,
+				842C81831A34BE5B00836910 /* LbizaMapViewController.m in Sources */,
 				30299DB61A31477B00C4687C /* AFHTTPClient.m in Sources */,
 				305E86081A304FA300808E13 /* JDSideMenu.m in Sources */,
 				30299DB81A31477B00C4687C /* AFImageRequestOperation.m in Sources */,
 				30299DBA1A31477B00C4687C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				30299DB71A31477B00C4687C /* AFHTTPRequestOperation.m in Sources */,
 				305E860D1A3050B800808E13 /* JDMenuViewController.m in Sources */,
+				842C816C1A34993900836910 /* NewAndEventViewController.m in Sources */,
+				849A946B1A34648E00EE02E4 /* TownDetailViewController.m in Sources */,
 				30299F3A1A31B53300C4687C /* ThingModel.m in Sources */,
 				30299D991A3143F300C4687C /* TownModel.m in Sources */,
 				30299F401A31BBD500C4687C /* PhotoGalleryModel.m in Sources */,
