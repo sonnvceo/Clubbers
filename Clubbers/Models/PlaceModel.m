@@ -32,9 +32,9 @@ static PlaceModel* _instance = nil;
     for (NSDictionary *dict in listJson) {
             PlaceModel *placeModel = [[PlaceModel alloc]init];
         if (![[dict objectForKey:@"town_id"] isKindOfClass:[NSNull class]])
-            placeModel.townId = [[dict objectForKey:@"town_id"] stringValue];
+            placeModel.townId = [[dict objectForKey:@"town_id"] intValue];
         if (![[dict objectForKey:@"place_id"] isKindOfClass:[NSNull class]])
-            placeModel.placeId = [dict objectForKey:@"place_id"];
+            placeModel.placeId = [[dict objectForKey:@"place_id"] intValue];
         if (![[dict objectForKey:@"place_name"] isKindOfClass:[NSNull class]])
             placeModel.placeName = [[dict objectForKey:@"place_name"] stringValue];
         if (![[dict objectForKey:@"place_image"] isKindOfClass:[NSNull class]])

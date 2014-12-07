@@ -16,14 +16,15 @@
     UIPageControl *_pgcontrol;
     NSArray *_images;
     UIImageView *_backgroundimageview;
+    UIButton *btnMenu;
+    UIButton *btnBack;
 }
 
 @property (nonatomic, assign) id <SlideShowViewDelegate> delegate;
 - (id)initWithXibFile:(id <SlideShowViewDelegate>)del ;
-//- (IBAction)btnInfo:(id)sender;
 @end
 @protocol SlideShowViewDelegate
-
 @optional
-
+- (void) showMenuLeft;
+- (void) showMenuRight;
 @end

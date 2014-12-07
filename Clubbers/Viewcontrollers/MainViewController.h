@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SlideShowView.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<SlideShowViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *slideShowSubView;
 @property (strong, nonatomic) IBOutlet UIView *sideMenuSubView;
-- (IBAction)btnMenu:(id)sender;
+
 @end

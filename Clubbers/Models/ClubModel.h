@@ -14,6 +14,7 @@
 @property (assign,nonatomic) NSInteger townId;
 @property (strong,nonatomic) NSString *clubName;
 @property (strong,nonatomic) NSString *clubPhone;
+@property (strong,nonatomic) NSString *clubImage;
 @property (strong,nonatomic) NSString *thumbImage;
 @property (strong,nonatomic) NSString *clubDescription;
 @property (strong,nonatomic) NSString *clubLat;

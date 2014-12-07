@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventTableCell : UITableViewCell
+@interface CityTableCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgIcon;
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;

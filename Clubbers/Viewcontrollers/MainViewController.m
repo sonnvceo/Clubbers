@@ -10,9 +10,12 @@
 #import "JDSideMenu.h"
 #import "JDMenuViewController.h"
 #import "TPMenuViewController.h"
+
+
 @interface MainViewController () {
     SlideShowView *slideShowView;
     JDSideMenu *sideMenu;
+    
 }
 @end
 
@@ -22,6 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //
+    self.view.layer.cornerRadius = 5;
+    self.view.layer.masksToBounds = YES;
+    
     self.navigationController.navigationBarHidden = YES;
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
     [slideShowSubView addSubview:slideShowView];
@@ -30,17 +37,6 @@
     TPMenuViewController *contentController = [[TPMenuViewController alloc] init];
     sideMenu = [[JDSideMenu alloc] initWithContentController:contentController
                                               menuController:menuController];
-    UIButton *btnMenu = [UIButton buttonWithType: UIButtonTypeCustom];
-    [btnMenu setFrame: CGRectMake(280.0f, 10.0f, 30.0f, 20.0f)];
-    [[btnMenu layer] setBackgroundColor: [[UIColor redColor] CGColor]];
-    [btnMenu addTarget:self action:@selector(btnMenu:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview: btnMenu];
-    
-    UIButton *btnBack = [UIButton buttonWithType: UIButtonTypeCustom];
-    [btnBack setFrame: CGRectMake(10.0f, 10.0f, 30.0f, 20.0f)];
-    [[btnBack layer] setBackgroundColor: [[UIColor blueColor] CGColor]];
-    [btnBack addTarget:self action:@selector(btnBackMenu:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview: btnBack];
     [sideMenuSubView addSubview:sideMenu.view];
 }
 
@@ -49,22 +45,11 @@
     // Dispose of any resources that can be recreated.
     
 }
-- (IBAction)btnMenu:(id)sender
-{
+#pragma mark - SlideShowViewDelegate
+- (void) showMenuLeft{
     [sideMenu showMenuAnimated:YES];
 }
-- (IBAction)btnBackMenu:(id)sender
-{
+- (void)showMenuRight {
     [sideMenu hideMenuAnimated:YES];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

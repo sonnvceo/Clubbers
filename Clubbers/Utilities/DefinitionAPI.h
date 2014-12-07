@@ -25,7 +25,7 @@
 
 #define URL_TOWNDETAIL @"http://www.clubbersapptoibiza.com/api/sa_town_details/?town_id=1"
 
-#define URL_CLUBS @"http://www.clubbersapptoibiza.com/api/sa_clubs_list/?town_id=1"
+#define URL_CLUBS @"http://www.clubbersapptoibiza.com/api/"
 
 #define URL_SHOPPING @"http://www.clubbersapptoibiza.com/api/sa_shoppings_list/?town_id=1"
 
@@ -40,6 +40,11 @@
 #define URL_ALL_CLUBS  @"http://www.clubbersapptoibiza.com/api/sa_all_clubs"
 
 #define URL_PHOTO_GALLERY @"http://www.clubbersapptoibiza.com/api/sa_photos_gallery"
+
+enum {
+    kCityViewController,
+    kClubViewController
+} KKindOfViewController;
 
 @interface DefinitionAPI : NSObject
 @end

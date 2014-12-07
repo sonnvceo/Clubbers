@@ -7,9 +7,9 @@
 //
 
 #import "UIViewController+JDSideMenu.h"
-
+#import "DefinitionAPI.h"
 #import "JDMenuViewController.h"
-
+#import "TPMenuViewController.h"
 @interface JDMenuViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)switchController:(id)sender;
@@ -25,9 +25,29 @@
 
 - (IBAction)switchController:(id)sender;
 {
-    CGFloat randomHue = (arc4random()%256/256.0);
-    UIViewController *viewController = [[UIViewController alloc] init];
-    viewController.view.backgroundColor = [UIColor colorWithHue:randomHue saturation:1.0 brightness:1.0 alpha:1.0];
+    TPMenuViewController *viewController;
+    switch ([sender tag]) {
+        case 0:
+            viewController = [[TPMenuViewController alloc] init];
+            viewController.kindOfTableView = kCityViewController;
+            break;
+        case 1:
+            viewController = [[TPMenuViewController alloc] init];
+            viewController.kindOfTableView = kClubViewController;
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            
+            break;
+            
+        default:
+            break;
+    }
     [self.sideMenuController setContentController:viewController animated:YES];
 }
 

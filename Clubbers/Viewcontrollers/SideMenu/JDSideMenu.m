@@ -54,7 +54,11 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
     [self.contentController didMoveToParentViewController:self];
     
     // add subviews
-    _containerView = [[UIView alloc] initWithFrame:self.view.bounds];
+    _containerView = [[UIView alloc] initWithFrame:CGRectMake(10,
+                                                              self.view.bounds.origin.y,
+                                                              self.view.bounds.size.width,
+                                                              self.view.bounds.size.height)];
+//    _containerView = [[UIView alloc] initWithFrame:self.view.bounds];
     _containerView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
     [self.containerView addSubview:self.contentController.view];
     self.contentController.view.frame = self.containerView.bounds;

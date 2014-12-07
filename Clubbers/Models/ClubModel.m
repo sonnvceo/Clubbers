@@ -13,6 +13,7 @@
 townId,
 clubName,
 clubPhone,
+clubImage,
 thumbImage,
 clubDescription,
 clubLat,
@@ -49,7 +50,9 @@ static ClubModel* _instance = nil;
         if (![[dict objectForKey:@"club_phone"] isKindOfClass:[NSNull class]])
             clubModel.clubPhone = [dict objectForKey:@"club_phone"];
         if (![[dict objectForKey:@"club_image"] isKindOfClass:[NSNull class]])
-            clubModel.thumbImage = [dict objectForKey:@"club_image"];
+            clubModel.clubImage = [dict objectForKey:@"club_image"];
+        if (![[dict objectForKey:@"thumb_image"] isKindOfClass:[NSNull class]])
+            clubModel.thumbImage = [dict objectForKey:@"thumb_image"];
         if (![[dict objectForKey:@"club_description"] isKindOfClass:[NSNull class]])
             clubModel.clubDescription = [dict objectForKey:@"club_description"];
         if (![[dict objectForKey:@"club_lat"] isKindOfClass:[NSNull class]])

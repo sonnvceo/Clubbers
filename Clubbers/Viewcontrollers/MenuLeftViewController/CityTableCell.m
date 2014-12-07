@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 gilgameshvn. All rights reserved.
 //
 
-#import "EventTableCell.h"
+#import "CityTableCell.h"
 
-@implementation EventTableCell
+@implementation CityTableCell
 @synthesize imgIcon,lblTitle,lbDetail;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

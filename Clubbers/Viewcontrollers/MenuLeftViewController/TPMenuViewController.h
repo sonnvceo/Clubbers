@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EventTableCell.h"
-@interface TPMenuViewController : UITableViewController
+#import "CityTableCell.h"
+#import "MBProgressHUD.h"
 
+@interface TPMenuViewController : UITableViewController<MBProgressHUDDelegate> {
+    MBProgressHUD *HUD;
+    NSArray *tableDatasource;
+}
+@property(assign, nonatomic) NSInteger kindOfTableView;
 @end
