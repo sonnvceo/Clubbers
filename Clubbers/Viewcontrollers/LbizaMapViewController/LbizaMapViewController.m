@@ -11,7 +11,7 @@
 #import "JDMenuViewController.h"
 #import "TPMenuViewController.h"
 #import "CustomTableCell.h"
-
+#import <GoogleMaps/GoogleMaps.h>
 @interface LbizaMapViewController () {
     SlideShowView *slideShowView;
     JDSideMenu *sideMenu;
@@ -19,7 +19,9 @@
 }
 @end
 
-@implementation LbizaMapViewController
+@implementation LbizaMapViewController  {
+    GMSMapView *mapView;
+}
 @synthesize btnBack;
 @synthesize button1;
 @synthesize buttonClub;
@@ -56,6 +58,20 @@
     
     [buttonFavourite setBackgroundImage:[UIImage imageNamed:@"ic_map_fav_normal.png"] forState:UIControlStateDisabled];
     [buttonFavourite setBackgroundImage:[UIImage imageNamed:@"ic_map_fav_selected"] forState:UIControlStateNormal];
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
+                                                            longitude:151.20
+                                                                 zoom:6];
+    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView.myLocationEnabled = YES;
+    self.view = mapView;
+    
+    // Creates a marker in the center of the map.
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(-33.86, 151.20);
+    marker.title = @"Sydney";
+    marker.snippet = @"Australia";
+    marker.map = mapView;
 }
 - (IBAction)btnBackMenu:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

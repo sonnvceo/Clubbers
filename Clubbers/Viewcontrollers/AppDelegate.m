@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "TPMenuViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
+
 @interface AppDelegate ()
 
 @end
@@ -18,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [GMSServices provideAPIKey:@"AIzaSyAdaqVF8Ghn99SdREhUOm4I4CmGeBM4op8"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     stackViewController = [[MTStackViewController alloc] initWithNibName:nil bundle:nil];
