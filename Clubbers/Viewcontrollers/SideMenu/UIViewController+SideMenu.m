@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 Markus Emrich. All rights reserved.
 //
 
-#import "UIViewController+JDSideMenu.h"
+#import "UIViewController+SideMenu.h"
 
-@implementation UIViewController (JDSideMenu)
+@implementation UIViewController (SideMenu)
 
-- (JDSideMenu*)sideMenuController;
+- (SideMenu*)sideMenuController;
 {
     UIViewController *controller = self.parentViewController;
     while (controller) {
-        if ([controller isKindOfClass:[JDSideMenu class]]) {
-            return (JDSideMenu*)controller;
+        if ([controller isKindOfClass:[SideMenu class]]) {
+            return (SideMenu*)controller;
         }
         controller = controller.parentViewController;
     }

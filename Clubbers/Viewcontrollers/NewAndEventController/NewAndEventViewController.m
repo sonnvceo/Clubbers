@@ -7,14 +7,14 @@
 //
 
 #import "NewAndEventViewController.h"
-#import "JDSideMenu.h"
-#import "JDMenuViewController.h"
+#import "SideMenu.h"
+#import "LeftMenuViewController.h"
 #import "TPMenuViewController.h"
 #import "CustomTableCell.h"
 
 @interface NewAndEventViewController () {
     SlideShowView *slideShowView;
-    JDSideMenu *sideMenu;
+    SideMenu *sideMenu;
     UIButton *btnBack;
 }
 @end
@@ -51,7 +51,7 @@
     tableview.autoresizingMask = UIViewAutoresizingFlexibleHeight;
 }
 - (IBAction)btnBackMenu:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (IBAction)btnNews:(id)sender {
     [self stateOfButonNews:NO andButtonEvents:YES andButonOffers:YES];

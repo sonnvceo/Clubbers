@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JDSideMenu : UIViewController
+@interface SideMenu : UIViewController
 
 @property (nonatomic, readonly) UIViewController *contentController;
 @property (nonatomic, readonly) UIViewController *menuController;

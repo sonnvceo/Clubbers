@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Markus Emrich. All rights reserved.
 //
 
-#import "JDSideMenu.h"
+#import "SideMenu.h"
 
-@interface UIViewController (JDSideMenu)
+@interface UIViewController (SideMenu)
 
-- (JDSideMenu*)sideMenuController;
+- (SideMenu*)sideMenuController;
 
 @end

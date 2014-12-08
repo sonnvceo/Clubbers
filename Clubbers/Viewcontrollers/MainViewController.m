@@ -7,11 +7,11 @@
 //
 
 #import "MainViewController.h"
-#import "JDSideMenu.h"
+#import "SideMenu.h"
 
 @interface MainViewController () {
     SlideShowView *slideShowView;
-    JDSideMenu *sideMenu;
+    SideMenu *sideMenu;
     
 }
 @end
@@ -35,16 +35,19 @@
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
     [slideShowSubView addSubview:slideShowView];
     
-    JDMenuViewController *menuController = [[JDMenuViewController alloc] init];
+    LeftMenuViewController *menuController = [[LeftMenuViewController alloc] init];
     menuController.delegate = self;
     TPMenuViewController *contentController = [[TPMenuViewController alloc] init];
     contentController.delegate = self;
-    sideMenu = [[JDSideMenu alloc] initWithContentController:contentController
+    sideMenu = [[SideMenu alloc] initWithContentController:contentController
                                               menuController:menuController];
+//    [menuController.view setFrame:sideMenuSubView.frame];
+//    [contentController.view setFrame:sideMenuSubView.frame];
     [sideMenuSubView addSubview:sideMenu.view];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self showMenuRight];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

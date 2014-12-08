@@ -6,18 +6,17 @@
 //  Copyright (c) 2013 Markus Emrich. All rights reserved.
 //
 
-#import "UIViewController+JDSideMenu.h"
+#import "UIViewController+SideMenu.h"
 #import "DefinitionAPI.h"
-#import "JDMenuViewController.h"
+#import "LeftMenuViewController.h"
 #import "TPMenuViewController.h"
 #import "NewAndEventViewController.h"
 #import "LbizaMapViewController.h"
-@interface JDMenuViewController ()
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@interface LeftMenuViewController ()
 - (IBAction)switchController:(id)sender;
 @end
 
-@implementation JDMenuViewController
+@implementation LeftMenuViewController
 @synthesize delegate;
 - (void)viewDidLayoutSubviews;
 {
@@ -33,11 +32,13 @@
     switch ([sender tag]) {
         case 0:
             viewController = [[TPMenuViewController alloc] init];
+            viewController.delegate = (id)delegate;
             viewController.kindOfTableView = kCityViewController;
             [self.sideMenuController setContentController:viewController animated:YES];
             break;
         case 1:
             viewController = [[TPMenuViewController alloc] init];
+            viewController.delegate = (id)delegate;
             viewController.kindOfTableView = kClubViewController;
             [self.sideMenuController setContentController:viewController animated:YES];
             break;

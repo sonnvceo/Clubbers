@@ -7,14 +7,14 @@
 //
 
 #import "LbizaMapViewController.h"
-#import "JDSideMenu.h"
-#import "JDMenuViewController.h"
+#import "SideMenu.h"
+#import "LeftMenuViewController.h"
 #import "TPMenuViewController.h"
 #import "CustomTableCell.h"
 #import <GoogleMaps/GoogleMaps.h>
 @interface LbizaMapViewController () {
     SlideShowView *slideShowView;
-    JDSideMenu *sideMenu;
+    SideMenu *sideMenu;
     UIButton *btnBack;
     MapView* mapView;
 }

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Markus Emrich. All rights reserved.
 //
 
-#import "JDSideMenu.h"
+#import "SideMenu.h"
 
 // constants
 const CGFloat JDSideMenuMinimumRelativePanDistanceToOpen = 0.33;
@@ -17,14 +17,14 @@ const CGFloat JDSideMenuDefaultDamping = 0.5;
 const CGFloat JDSideMenuDefaultOpenAnimationTime = 1.0;
 const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
 
-@interface JDSideMenu ()
+@interface SideMenu ()
 @property (nonatomic, strong) UIImageView *backgroundView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 @property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
 @end
 
-@implementation JDSideMenu
+@implementation SideMenu
 
 - (id)initWithContentController:(UIViewController*)contentController
                  menuController:(UIViewController*)menuController;
@@ -54,11 +54,11 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
     [self.contentController didMoveToParentViewController:self];
     
     // add subviews
-    _containerView = [[UIView alloc] initWithFrame:CGRectMake(10,
-                                                              self.view.bounds.origin.y,
-                                                              self.view.bounds.size.width,
-                                                              self.view.bounds.size.height)];
-//    _containerView = [[UIView alloc] initWithFrame:self.view.bounds];
+//    _containerView = [[UIView alloc] initWithFrame:CGRectMake(10,
+//                                                              self.view.bounds.origin.y,
+//                                                              self.view.bounds.size.width,
+//                                                              self.view.bounds.size.height)];
+    _containerView = [[UIView alloc] initWithFrame:self.view.bounds];
     _containerView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
     [self.containerView addSubview:self.contentController.view];
     self.contentController.view.frame = self.containerView.bounds;
@@ -174,10 +174,11 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
     if (self.menuController.view.superview == nil) {
         CGRect menuFrame, restFrame;
         CGRectDivide(self.view.bounds, &menuFrame, &restFrame, self.menuWidth, CGRectMinXEdge);
-        self.menuController.view.frame = CGRectMake(10,
-                                                    menuFrame.origin.y,
-                                                    menuFrame.size.width,
-                                                    menuFrame.size.height);
+//        self.menuController.view.frame = CGRectMake(10,
+//                                                    menuFrame.origin.y,
+//                                                    menuFrame.size.width,
+//                                                    menuFrame.size.height);
+        self.menuController.view.frame = menuFrame;
         self.menuController.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
         self.view.backgroundColor = self.menuController.view.backgroundColor;
         if (self.backgroundView) [self.view insertSubview:self.menuController.view aboveSubview:self.backgroundView];

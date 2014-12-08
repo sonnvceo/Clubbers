@@ -10,7 +10,7 @@
 #import "SlideShowView.h"
 #import "TPMenuViewController.h"
 #import "TownDetailViewController.h" 
-#import "JDMenuViewController.h"
+#import "LeftMenuViewController.h"
 @interface MainViewController : UIViewController<SlideShowViewDelegate,
                                                  TPMenuViewControllerDelegate,
                                                  JDMenuViewControllerDelegate>

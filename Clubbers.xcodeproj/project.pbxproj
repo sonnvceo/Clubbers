@@ -14,7 +14,6 @@
 		301BFA1A1A2EAF6500548B52 /* ClubbersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BFA191A2EAF6500548B52 /* ClubbersTests.m */; };
 		301BFA341A2EB95E00548B52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BFA331A2EB95E00548B52 /* AppDelegate.m */; };
 		301BFA361A2EB97C00548B52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301BFA351A2EB97C00548B52 /* Images.xcassets */; };
-		3022B99F1A35D73A00D255AE /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 		302957FC1A2F11FF00594F69 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302957FA1A2F11FF00594F69 /* MainViewController.m */; };
 		302957FD1A2F11FF00594F69 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302957FB1A2F11FF00594F69 /* MainViewController.xib */; };
 		302958061A2F394800594F69 /* SlideShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302958051A2F394800594F69 /* SlideShowView.m */; };
@@ -46,10 +45,10 @@
 		305E85F61A301E7300808E13 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F11A301E7300808E13 /* 3.jpg */; };
 		305E85F71A301E7300808E13 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F21A301E7300808E13 /* 4.jpg */; };
 		305E85F81A301E7300808E13 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F31A301E7300808E13 /* 5.jpg */; };
-		305E86081A304FA300808E13 /* JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E86051A304FA300808E13 /* JDSideMenu.m */; };
-		305E86091A304FA300808E13 /* UIViewController+JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E86071A304FA300808E13 /* UIViewController+JDSideMenu.m */; };
-		305E860D1A3050B800808E13 /* JDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E860B1A3050B800808E13 /* JDMenuViewController.m */; };
-		305E860E1A3050B800808E13 /* JDMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E860C1A3050B800808E13 /* JDMenuViewController.xib */; };
+		305E86081A304FA300808E13 /* SideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E86051A304FA300808E13 /* SideMenu.m */; };
+		305E86091A304FA300808E13 /* UIViewController+SideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E86071A304FA300808E13 /* UIViewController+SideMenu.m */; };
+		305E860D1A3050B800808E13 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E860B1A3050B800808E13 /* LeftMenuViewController.m */; };
+		305E860E1A3050B800808E13 /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E860C1A3050B800808E13 /* LeftMenuViewController.xib */; };
 		30A900771A35890B00B657C3 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A900751A35890B00B657C3 /* MapView.m */; };
 		30A900781A35890B00B657C3 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A900761A35890B00B657C3 /* MapView.xib */; };
 		841A61021A34071000773107 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A61011A34071000773107 /* MBProgressHUD.m */; };
@@ -173,6 +172,7 @@
 		842C816D1A34993900836910 /* NewAndEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C816B1A34993900836910 /* NewAndEventViewController.xib */; };
 		842C81711A34A96500836910 /* CustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C816F1A34A96500836910 /* CustomTableCell.m */; };
 		842C81721A34A96500836910 /* CustomTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C81701A34A96500836910 /* CustomTableCell.xib */; };
+		8464CA661A35F0E60016746B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 		846C692D1A34D4E500F8D31A /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 846C692C1A34D4E500F8D31A /* GoogleMaps.bundle */; };
 		846C692F1A34D55300F8D31A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C692E1A34D55300F8D31A /* AVFoundation.framework */; };
 		846C69311A34D55800F8D31A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69301A34D55800F8D31A /* CoreData.framework */; };
@@ -269,13 +269,13 @@
 		305E85F11A301E7300808E13 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		305E85F21A301E7300808E13 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		305E85F31A301E7300808E13 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
-		305E86041A304FA300808E13 /* JDSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDSideMenu.h; sourceTree = "<group>"; };
-		305E86051A304FA300808E13 /* JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDSideMenu.m; sourceTree = "<group>"; };
-		305E86061A304FA300808E13 /* UIViewController+JDSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JDSideMenu.h"; sourceTree = "<group>"; };
-		305E86071A304FA300808E13 /* UIViewController+JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JDSideMenu.m"; sourceTree = "<group>"; };
-		305E860A1A3050B800808E13 /* JDMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDMenuViewController.h; sourceTree = "<group>"; };
-		305E860B1A3050B800808E13 /* JDMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDMenuViewController.m; sourceTree = "<group>"; };
-		305E860C1A3050B800808E13 /* JDMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JDMenuViewController.xib; sourceTree = "<group>"; };
+		305E86041A304FA300808E13 /* SideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenu.h; sourceTree = "<group>"; };
+		305E86051A304FA300808E13 /* SideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenu.m; sourceTree = "<group>"; };
+		305E86061A304FA300808E13 /* UIViewController+SideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SideMenu.h"; sourceTree = "<group>"; };
+		305E86071A304FA300808E13 /* UIViewController+SideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SideMenu.m"; sourceTree = "<group>"; };
+		305E860A1A3050B800808E13 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		305E860B1A3050B800808E13 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		305E860C1A3050B800808E13 /* LeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuViewController.xib; sourceTree = "<group>"; };
 		30A900691A35706700B657C3 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "Clubbers/Utilities/GoogleMaps framework/GoogleMaps.framework"; sourceTree = "<group>"; };
 		30A900741A35890B00B657C3 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
 		30A900751A35890B00B657C3 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
@@ -428,7 +428,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3022B99F1A35D73A00D255AE /* GoogleMaps.framework in Frameworks */,
+				8464CA661A35F0E60016746B /* GoogleMaps.framework in Frameworks */,
 				846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */,
 				846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */,
 				846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */,
@@ -498,9 +498,9 @@
 			children = (
 				301BFA381A2ED94E00548B52 /* Models */,
 				301BFA371A2EB9DA00548B52 /* Utilities */,
-				301BFA311A2EB91300548B52 /* Resources */,
 				301BFA2C1A2EB8B700548B52 /* Viewcontrollers */,
 				301BFA0C1A2EAF6500548B52 /* LaunchScreen.xib */,
+				301BFA311A2EB91300548B52 /* Resources */,
 				301BF9FD1A2EAF6500548B52 /* Supporting Files */,
 			);
 			path = Clubbers;
@@ -655,9 +655,9 @@
 		305E85E61A300D8F00808E13 /* MenuLeftViewController */ = {
 			isa = PBXGroup;
 			children = (
-				305E860A1A3050B800808E13 /* JDMenuViewController.h */,
-				305E860B1A3050B800808E13 /* JDMenuViewController.m */,
-				305E860C1A3050B800808E13 /* JDMenuViewController.xib */,
+				305E860A1A3050B800808E13 /* LeftMenuViewController.h */,
+				305E860B1A3050B800808E13 /* LeftMenuViewController.m */,
+				305E860C1A3050B800808E13 /* LeftMenuViewController.xib */,
 				305E85E71A300DAB00808E13 /* TPMenuViewController.h */,
 				305E85E81A300DAB00808E13 /* TPMenuViewController.m */,
 				30299DBF1A3148E400C4687C /* CityTableCell.h */,
@@ -670,10 +670,10 @@
 		305E86031A304F8900808E13 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				305E86041A304FA300808E13 /* JDSideMenu.h */,
-				305E86051A304FA300808E13 /* JDSideMenu.m */,
-				305E86061A304FA300808E13 /* UIViewController+JDSideMenu.h */,
-				305E86071A304FA300808E13 /* UIViewController+JDSideMenu.m */,
+				305E86041A304FA300808E13 /* SideMenu.h */,
+				305E86051A304FA300808E13 /* SideMenu.m */,
+				305E86061A304FA300808E13 /* UIViewController+SideMenu.h */,
+				305E86071A304FA300808E13 /* UIViewController+SideMenu.m */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -1077,7 +1077,7 @@
 				841A61F01A34239A00773107 /* ic_map_club_selected.png in Resources */,
 				841A61101A34220600773107 /* listing_pic_bg3.jpg in Resources */,
 				841A61EC1A34239A00773107 /* ic_item1_pin.png in Resources */,
-				305E860E1A3050B800808E13 /* JDMenuViewController.xib in Resources */,
+				305E860E1A3050B800808E13 /* LeftMenuViewController.xib in Resources */,
 				841A61651A34224A00773107 /* town18.jpg in Resources */,
 				841A61FF1A34239A00773107 /* ic_ne_news_selected.png in Resources */,
 				841A62021A34239A00773107 /* ic_phone_gray.png in Resources */,
@@ -1112,7 +1112,7 @@
 			files = (
 				30299F341A31B17B00C4687C /* RestaurantModel.m in Sources */,
 				842C81711A34A96500836910 /* CustomTableCell.m in Sources */,
-				305E86091A304FA300808E13 /* UIViewController+JDSideMenu.m in Sources */,
+				305E86091A304FA300808E13 /* UIViewController+SideMenu.m in Sources */,
 				30299D961A31428500C4687C /* DefinitionAPI.m in Sources */,
 				30299DBB1A31477B00C4687C /* AFPropertyListRequestOperation.m in Sources */,
 				302958061A2F394800594F69 /* SlideShowView.m in Sources */,
@@ -1122,11 +1122,11 @@
 				30299F371A31B42900C4687C /* PlaceModel.m in Sources */,
 				30299F3D1A31B61100C4687C /* JustincaseModel.m in Sources */,
 				30299DB61A31477B00C4687C /* AFHTTPClient.m in Sources */,
-				305E86081A304FA300808E13 /* JDSideMenu.m in Sources */,
+				305E86081A304FA300808E13 /* SideMenu.m in Sources */,
 				30299DB81A31477B00C4687C /* AFImageRequestOperation.m in Sources */,
 				30299DBA1A31477B00C4687C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				30299DB71A31477B00C4687C /* AFHTTPRequestOperation.m in Sources */,
-				305E860D1A3050B800808E13 /* JDMenuViewController.m in Sources */,
+				305E860D1A3050B800808E13 /* LeftMenuViewController.m in Sources */,
 				842C816C1A34993900836910 /* NewAndEventViewController.m in Sources */,
 				849A946B1A34648E00EE02E4 /* TownDetailViewController.m in Sources */,
 				30299F3A1A31B53300C4687C /* ThingModel.m in Sources */,
@@ -1273,6 +1273,8 @@
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 				);
 				INFOPLIST_FILE = Clubbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1288,6 +1290,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",

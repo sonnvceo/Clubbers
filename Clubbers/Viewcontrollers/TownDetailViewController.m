@@ -7,14 +7,14 @@
 //
 
 #import "TownDetailViewController.h"
-#import "JDSideMenu.h"
-#import "JDMenuViewController.h"
+#import "SideMenu.h"
+#import "LeftMenuViewController.h"
 #import "TPMenuViewController.h"
 
 
 @interface TownDetailViewController () {
     SlideShowView *slideShowView;
-    JDSideMenu *sideMenu;
+    SideMenu *sideMenu;
     
 }
 @end
@@ -33,9 +33,9 @@
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
     [slideShowSubView addSubview:slideShowView];
     
-    UIViewController *menuController = [[JDMenuViewController alloc] init];
+    UIViewController *menuController = [[LeftMenuViewController alloc] init];
     TPMenuViewController *contentController = [[TPMenuViewController alloc] init];
-    sideMenu = [[JDSideMenu alloc] initWithContentController:contentController
+    sideMenu = [[SideMenu alloc] initWithContentController:contentController
                                               menuController:menuController];
 //    [sideMenuSubView addSubview:sideMenu.view];
 }

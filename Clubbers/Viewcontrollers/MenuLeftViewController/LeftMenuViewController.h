@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @protocol JDMenuViewControllerDelegate;
 
-@interface JDMenuViewController : UIViewController
+@interface LeftMenuViewController : UIViewController
 
 @property (nonatomic, assign) id <JDMenuViewControllerDelegate> delegate;
 @end
