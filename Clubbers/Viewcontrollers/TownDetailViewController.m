@@ -39,13 +39,12 @@
                                               menuController:menuController];
 //    [sideMenuSubView addSubview:sideMenu.view];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)btnDismiss:(id)sender {
-    [self removeFromParentViewController];
+   [self.navigationController popToRootViewControllerAnimated:YES];
 }
 #pragma mark - SlideShowViewDelegate
 - (void) showMenuLeft{

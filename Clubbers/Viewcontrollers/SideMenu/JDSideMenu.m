@@ -54,7 +54,7 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
     [self.contentController didMoveToParentViewController:self];
     
     // add subviews
-    _containerView = [[UIView alloc] initWithFrame:CGRectMake(0,
+    _containerView = [[UIView alloc] initWithFrame:CGRectMake(10,
                                                               self.view.bounds.origin.y,
                                                               self.view.bounds.size.width,
                                                               self.view.bounds.size.height)];
@@ -174,7 +174,10 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
     if (self.menuController.view.superview == nil) {
         CGRect menuFrame, restFrame;
         CGRectDivide(self.view.bounds, &menuFrame, &restFrame, self.menuWidth, CGRectMinXEdge);
-        self.menuController.view.frame = menuFrame;
+        self.menuController.view.frame = CGRectMake(10,
+                                                    menuFrame.origin.y,
+                                                    menuFrame.size.width,
+                                                    menuFrame.size.height);
         self.menuController.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
         self.view.backgroundColor = self.menuController.view.backgroundColor;
         if (self.backgroundView) [self.view insertSubview:self.menuController.view aboveSubview:self.backgroundView];

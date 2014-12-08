@@ -10,9 +10,10 @@
 #import "SlideShowView.h"
 #import "TPMenuViewController.h"
 #import "TownDetailViewController.h" 
-
+#import "JDMenuViewController.h"
 @interface MainViewController : UIViewController<SlideShowViewDelegate,
-                                                 TPMenuViewControllerDelegate>
+                                                 TPMenuViewControllerDelegate,
+                                                 JDMenuViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *slideShowSubView;
 @property (strong, nonatomic) IBOutlet UIView *sideMenuSubView;

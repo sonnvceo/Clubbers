@@ -18,7 +18,7 @@
 @end
 
 @implementation JDMenuViewController
-
+@synthesize delegate;
 - (void)viewDidLayoutSubviews;
 {
     [super viewDidLayoutSubviews];
@@ -42,13 +42,17 @@
             [self.sideMenuController setContentController:viewController animated:YES];
             break;
         case 2:
-            [self presentViewController:lbizaMapViewController animated:NO completion:nil];
+            if (delegate) {
+                [delegate presentToViewController:lbizaMapViewController];
+            }
             break;
         case 3:
 
             break;
         case 4:
-            [self presentViewController:newAndEventViewController animated:NO completion:nil];
+            if (delegate) {
+                [delegate presentToViewController:newAndEventViewController];
+            }
             break;
             
         default:

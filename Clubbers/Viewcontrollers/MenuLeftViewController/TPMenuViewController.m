@@ -11,7 +11,7 @@
 #import "TownModel.h"
 #import "ClubModel.h"
 #import "DefinitionAPI.h"
-
+#import "TownDetailViewController.h"
 @interface TPMenuViewController ()
 @end
 
@@ -184,6 +184,10 @@
         if (delegate) {
             [delegate presentToViewController];
         }
+//        TownDetailViewController *townDetailViewController = [[TownDetailViewController alloc]
+//                                                              initWithNibName:@"TownDetailViewController"
+//                                                              bundle:nil];
+//        [self presentViewController:townDetailViewController animated:NO completion:nil];
     }
     else if (kindOfTableView == kClubViewController) {
         

@@ -75,7 +75,7 @@
     [subMapView addSubview:mapView];
 }
 - (IBAction)btnBackMenu:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (IBAction)button1:(id)sender {
     [self stateOfButon1:NO

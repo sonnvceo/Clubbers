@@ -8,7 +8,6 @@
 
 #import "MainViewController.h"
 #import "JDSideMenu.h"
-#import "JDMenuViewController.h"
 
 @interface MainViewController () {
     SlideShowView *slideShowView;
@@ -24,25 +23,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //
-    UIBezierPath *maskPath;
-    maskPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(10.0, 10.0)];
-    
-    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-    maskLayer.frame = self.view.bounds;
-    maskLayer.path = maskPath.CGPath;
-    self.view.layer.mask = maskLayer;
+//    UIBezierPath *maskPath;
+//    maskPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(10.0, 10.0)];
+//    
+//    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+//    maskLayer.frame = self.view.bounds;
+//    maskLayer.path = maskPath.CGPath;
+//    self.view.layer.mask = maskLayer;
+    self.navigationController.navigationBarHidden = YES;
     
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
     [slideShowSubView addSubview:slideShowView];
     
-    UIViewController *menuController = [[JDMenuViewController alloc] init];
+    JDMenuViewController *menuController = [[JDMenuViewController alloc] init];
+    menuController.delegate = self;
     TPMenuViewController *contentController = [[TPMenuViewController alloc] init];
     contentController.delegate = self;
     sideMenu = [[JDSideMenu alloc] initWithContentController:contentController
                                               menuController:menuController];
     [sideMenuSubView addSubview:sideMenu.view];
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -59,6 +62,11 @@
     TownDetailViewController *townDetailViewController = [[TownDetailViewController alloc]
                                                           initWithNibName:@"TownDetailViewController"
                                                           bundle:nil];
-    [self presentViewController:townDetailViewController animated:NO completion:nil];
+    [self.navigationController pushViewController:townDetailViewController animated:YES];
+}
+#pragma mark - JDMenuViewControllerDelegate
+- (void) presentToViewController:(UIViewController*) viewController {
+    if (viewController)
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 @end
