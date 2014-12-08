@@ -50,7 +50,6 @@
         [HUD showWhileExecuting:@selector(loadAllTowns) onTarget:self withObject:nil animated:YES];
     else if (kindOfTableView == kClubViewController)
         [HUD showWhileExecuting:@selector(loadAllClubs) onTarget:self withObject:nil animated:YES];
-        
     
 }
 -(void)loadAllTowns {
@@ -120,6 +119,9 @@
             }
         }
         [cell configureCell];
+    }
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        tblSearch.separatorInset = UIEdgeInsetsZero;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // Configure the cell...

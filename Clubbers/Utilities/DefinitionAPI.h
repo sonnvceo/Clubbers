@@ -17,6 +17,10 @@
 #define isiPhone5  ([[UIScreen mainScreen] bounds].size.height == 568)?TRUE:FALSE
 #define verionIOS [[[UIDevice currentDevice] systemVersion] floatValue]
 
+#define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
+
+#define IS_IPHONE6 ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] && fabs( ( double )[ [ UIScreen mainScreen ] nativeBounds ].size.height - ( double )1334 ) < DBL_EPSILON )
+#define IS_IPHONE6_PLUS ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] && fabs( ( double )[ [ UIScreen mainScreen ] nativeBounds ].size.height - ( double )2208 ) < DBL_EPSILON )
 
 #pragma API
 #define URL_BASE @"http://www.clubbersapptoibiza.com/api/"

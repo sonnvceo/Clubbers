@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300896D51A3544B7002F007F /* LbizaMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300896D31A3544B7002F007F /* LbizaMapViewController.m */; };
+		300896D61A3544B7002F007F /* LbizaMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300896D41A3544B7002F007F /* LbizaMapViewController.xib */; };
 		301BFA001A2EAF6500548B52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BF9FF1A2EAF6500548B52 /* main.m */; };
 		301BFA0E1A2EAF6500548B52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301BFA0C1A2EAF6500548B52 /* LaunchScreen.xib */; };
 		301BFA1A1A2EAF6500548B52 /* ClubbersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BFA191A2EAF6500548B52 /* ClubbersTests.m */; };
@@ -170,8 +172,6 @@
 		842C816D1A34993900836910 /* NewAndEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C816B1A34993900836910 /* NewAndEventViewController.xib */; };
 		842C81711A34A96500836910 /* CustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C816F1A34A96500836910 /* CustomTableCell.m */; };
 		842C81721A34A96500836910 /* CustomTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C81701A34A96500836910 /* CustomTableCell.xib */; };
-		842C81831A34BE5B00836910 /* LbizaMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C81811A34BE5B00836910 /* LbizaMapViewController.m */; };
-		842C81841A34BE5B00836910 /* LbizaMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C81821A34BE5B00836910 /* LbizaMapViewController.xib */; };
 		846C692B1A34D48D00F8D31A /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C692A1A34D48D00F8D31A /* GoogleMaps.framework */; };
 		846C692D1A34D4E500F8D31A /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 846C692C1A34D4E500F8D31A /* GoogleMaps.bundle */; };
 		846C692F1A34D55300F8D31A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C692E1A34D55300F8D31A /* AVFoundation.framework */; };
@@ -201,6 +201,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300896D21A3544B7002F007F /* LbizaMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LbizaMapViewController.h; sourceTree = "<group>"; };
+		300896D31A3544B7002F007F /* LbizaMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LbizaMapViewController.m; sourceTree = "<group>"; };
+		300896D41A3544B7002F007F /* LbizaMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LbizaMapViewController.xib; sourceTree = "<group>"; };
 		301BF9FA1A2EAF6500548B52 /* Clubbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clubbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301BF9FE1A2EAF6500548B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301BF9FF1A2EAF6500548B52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -401,9 +404,6 @@
 		842C816E1A34A96500836910 /* CustomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableCell.h; sourceTree = "<group>"; };
 		842C816F1A34A96500836910 /* CustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableCell.m; sourceTree = "<group>"; };
 		842C81701A34A96500836910 /* CustomTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableCell.xib; sourceTree = "<group>"; };
-		842C81801A34BE5B00836910 /* LbizaMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LbizaMapViewController.h; sourceTree = "<group>"; };
-		842C81811A34BE5B00836910 /* LbizaMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LbizaMapViewController.m; sourceTree = "<group>"; };
-		842C81821A34BE5B00836910 /* LbizaMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LbizaMapViewController.xib; sourceTree = "<group>"; };
 		846C692A1A34D48D00F8D31A /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		846C692C1A34D4E500F8D31A /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		846C692E1A34D55300F8D31A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -428,6 +428,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846C692B1A34D48D00F8D31A /* GoogleMaps.framework in Frameworks */,
 				846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */,
 				846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */,
 				846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */,
@@ -440,7 +441,6 @@
 				846C69331A34D55F00F8D31A /* CoreLocation.framework in Frameworks */,
 				846C69311A34D55800F8D31A /* CoreData.framework in Frameworks */,
 				846C692F1A34D55300F8D31A /* AVFoundation.framework in Frameworks */,
-				846C692B1A34D48D00F8D31A /* GoogleMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +454,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		301BF9F11A2EAF6500548B52 = {
+		300896CF1A353EE3002F007F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				846C69441A34D5C200F8D31A /* SystemConfiguration.framework */,
@@ -469,8 +469,16 @@
 				846C69321A34D55F00F8D31A /* CoreLocation.framework */,
 				846C69301A34D55800F8D31A /* CoreData.framework */,
 				846C692E1A34D55300F8D31A /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		301BF9F11A2EAF6500548B52 = {
+			isa = PBXGroup;
+			children = (
 				301BF9FC1A2EAF6500548B52 /* Clubbers */,
 				301BFA161A2EAF6500548B52 /* ClubbersTests */,
+				300896CF1A353EE3002F007F /* Frameworks */,
 				301BF9FB1A2EAF6500548B52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -854,9 +862,9 @@
 		842C817F1A34BE5300836910 /* LbizaMapViewController */ = {
 			isa = PBXGroup;
 			children = (
-				842C81801A34BE5B00836910 /* LbizaMapViewController.h */,
-				842C81811A34BE5B00836910 /* LbizaMapViewController.m */,
-				842C81821A34BE5B00836910 /* LbizaMapViewController.xib */,
+				300896D21A3544B7002F007F /* LbizaMapViewController.h */,
+				300896D31A3544B7002F007F /* LbizaMapViewController.m */,
+				300896D41A3544B7002F007F /* LbizaMapViewController.xib */,
 			);
 			path = LbizaMapViewController;
 			sourceTree = "<group>";
@@ -989,6 +997,7 @@
 				841A61991A3422F200773107 /* menu_shape_5_normal.png in Resources */,
 				841A62061A34239A00773107 /* ic_shopping_pin.png in Resources */,
 				841A61EF1A34239A00773107 /* ic_map_club_normal.png in Resources */,
+				300896D61A3544B7002F007F /* LbizaMapViewController.xib in Resources */,
 				841A61DE1A34239A00773107 /* ic_bar_auto_navi.png in Resources */,
 				841A61871A3422F200773107 /* menu_item_1_normal.png in Resources */,
 				841A61EE1A34239A00773107 /* ic_location.png in Resources */,
@@ -1042,7 +1051,6 @@
 				841A620A1A34239A00773107 /* magnifier.png in Resources */,
 				841A616A1A34224A00773107 /* town5.jpg in Resources */,
 				841A61151A34220600773107 /* main_pic_bg3.jpg in Resources */,
-				842C81841A34BE5B00836910 /* LbizaMapViewController.xib in Resources */,
 				841A61671A34224A00773107 /* town2.jpg in Resources */,
 				301BFA0E1A2EAF6500548B52 /* LaunchScreen.xib in Resources */,
 				841A610F1A34220600773107 /* listing_pic_bg2.jpg in Resources */,
@@ -1115,11 +1123,11 @@
 				30299D961A31428500C4687C /* DefinitionAPI.m in Sources */,
 				30299DBB1A31477B00C4687C /* AFPropertyListRequestOperation.m in Sources */,
 				302958061A2F394800594F69 /* SlideShowView.m in Sources */,
+				300896D51A3544B7002F007F /* LbizaMapViewController.m in Sources */,
 				30299DBC1A31477B00C4687C /* AFURLConnectionOperation.m in Sources */,
 				301BFA001A2EAF6500548B52 /* main.m in Sources */,
 				30299F371A31B42900C4687C /* PlaceModel.m in Sources */,
 				30299F3D1A31B61100C4687C /* JustincaseModel.m in Sources */,
-				842C81831A34BE5B00836910 /* LbizaMapViewController.m in Sources */,
 				30299DB61A31477B00C4687C /* AFHTTPClient.m in Sources */,
 				305E86081A304FA300808E13 /* JDSideMenu.m in Sources */,
 				30299DB81A31477B00C4687C /* AFImageRequestOperation.m in Sources */,
@@ -1263,6 +1271,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 				);
 				INFOPLIST_FILE = Clubbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1278,6 +1288,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
 				);
