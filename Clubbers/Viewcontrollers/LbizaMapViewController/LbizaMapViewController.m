@@ -16,19 +16,18 @@
     SlideShowView *slideShowView;
     JDSideMenu *sideMenu;
     UIButton *btnBack;
+    MapView* mapView;
 }
 @end
 
-@implementation LbizaMapViewController  {
-    GMSMapView *mapView;
-}
+@implementation LbizaMapViewController
 @synthesize btnBack;
 @synthesize button1;
 @synthesize buttonClub;
 @synthesize buttonShopping;
 @synthesize buttonRestaurant;
 @synthesize buttonFavourite;
-
+@synthesize subMapView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -59,19 +58,21 @@
     [buttonFavourite setBackgroundImage:[UIImage imageNamed:@"ic_map_fav_normal.png"] forState:UIControlStateDisabled];
     [buttonFavourite setBackgroundImage:[UIImage imageNamed:@"ic_map_fav_selected"] forState:UIControlStateNormal];
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:21.0229
-                                                            longitude:105.836
-                                                                 zoom:14];
-    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView.myLocationEnabled = YES;
-    self.view = mapView;
-    
-    // Creates a marker in the center of the map.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(21.0229, 105.836);
-    marker.title = @"Sydney";
-    marker.snippet = @"Australia";
-    marker.map = mapView;
+//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:21.0229
+//                                                            longitude:105.836
+//                                                                 zoom:14];
+//    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+//    mapView.myLocationEnabled = YES;
+//    self.view = mapView;
+//    
+//    // Creates a marker in the center of the map.
+//    GMSMarker *marker = [[GMSMarker alloc] init];
+//    marker.position = CLLocationCoordinate2DMake(21.0229, 105.836);
+//    marker.title = @"Sydney";
+//    marker.snippet = @"Australia";
+//    marker.map = mapView;
+    mapView = [[MapView alloc] initWithXibFile:self];
+    [subMapView addSubview:mapView];
 }
 - (IBAction)btnBackMenu:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -41,7 +41,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
-    [self.navigationController.view addSubview:HUD];
+    [self.view addSubview:HUD];
     
     HUD.delegate = (id)self;
     HUD.labelText = @"Loading...";
@@ -50,7 +50,7 @@
         [HUD showWhileExecuting:@selector(loadAllTowns) onTarget:self withObject:nil animated:YES];
     else if (kindOfTableView == kClubViewController)
         [HUD showWhileExecuting:@selector(loadAllClubs) onTarget:self withObject:nil animated:YES];
-    
+    [self.tableView setHidden:YES];
 }
 -(void)loadAllTowns {
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:URL_BASE]];
@@ -59,6 +59,7 @@
     AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
         NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
        tableDatasource = [[TownModel shareInstance] parseJson:jsonDataArray];
+        [self.tableView setHidden:NO];
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error:%@", error);
@@ -73,6 +74,7 @@
     AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
         NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
         tableDatasource = [[ClubModel shareInstance] parseJson:jsonDataArray];
+        [self.tableView setHidden:NO];
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error:%@", error);
@@ -120,9 +122,6 @@
         }
         [cell configureCell];
     }
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        tblSearch.separatorInset = UIEdgeInsetsZero;
-    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // Configure the cell...
     NSString *lblTitleCell;
@@ -149,7 +148,20 @@
     cell.lbDetail.text = lblDetailCell;
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
 - (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];

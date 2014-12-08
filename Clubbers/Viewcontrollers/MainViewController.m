@@ -24,8 +24,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //
-    self.view.layer.cornerRadius = 5;
-    self.view.layer.masksToBounds = YES;
+    UIBezierPath *maskPath;
+    maskPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(10.0, 10.0)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.view.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.view.layer.mask = maskLayer;
     
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
     [slideShowSubView addSubview:slideShowView];

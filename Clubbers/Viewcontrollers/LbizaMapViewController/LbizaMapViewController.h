@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SlideShowView.h"
-
+#import "MapView.h"
 @interface LbizaMapViewController : UIViewController<SlideShowViewDelegate,
                                                         UITableViewDelegate,
-                                                        UITableViewDataSource>
+                                                        UITableViewDataSource,
+                                                        MapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *btnBack;
 @property (strong, nonatomic) IBOutlet UIButton *button1;
@@ -20,5 +21,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonRestaurant;
 @property (strong, nonatomic) IBOutlet UIButton *buttonFavourite;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
+@property (retain, nonatomic) IBOutlet UIView* subMapView;
 
 @end
