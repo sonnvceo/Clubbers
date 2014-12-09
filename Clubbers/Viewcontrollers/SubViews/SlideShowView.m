@@ -7,7 +7,7 @@
 //
 
 #import "SlideShowView.h"
-
+#import "DefinitionAPI.h"
 @interface SlideShowView ()
 {
  }
@@ -15,6 +15,7 @@
 
 @implementation SlideShowView
 @synthesize delegate;
+@synthesize typeOfViewController;
 static SlideShowView* _instance = nil;
 
 +(SlideShowView*) sharedInstance
@@ -175,16 +176,23 @@ static SlideShowView* _instance = nil;
     [self addSubview:labelDescription];
 }
 - (IBAction)btnMenu:(id)sender {
-    if (delegate) {
-        [delegate showMenuLeft];
-    }
-    [self stateOfButonMenuAndButtonBack:NO];
+        if (delegate) {
+            [delegate showMenuLeft];
+        }
+        [self stateOfButonMenuAndButtonBack:NO];
 }
 - (IBAction)btnBackMenu:(id)sender {
-    if (delegate) {
-        [delegate showMenuRight];
+    if (kMasterViewController == typeOfViewController) {
+        if (delegate) {
+            [delegate showMenuRight];
+        }
+        [self stateOfButonMenuAndButtonBack:YES];
     }
-    [self stateOfButonMenuAndButtonBack:YES];
+    else if (kDetailViewController == typeOfViewController) {
+        if (delegate) {
+            [delegate popToRootViewController];
+        }
+    }
 }
 - (void) stateOfButonMenuAndButtonBack:(BOOL) isEnable {
     if (isEnable) {

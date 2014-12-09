@@ -7,14 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol JDMenuViewControllerDelegate;
+@protocol LeftMenuViewControllerDelegate;
 
 @interface LeftMenuViewController : UIViewController
 
-@property (nonatomic, assign) id <JDMenuViewControllerDelegate> delegate;
+@property (nonatomic, assign) id <LeftMenuViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UIButton *btnCities;
+@property (strong, nonatomic) IBOutlet UIButton *btnClubs;
+@property (strong, nonatomic) IBOutlet UIButton *btnIbizaMap;
+@property (strong, nonatomic) IBOutlet UIButton *btnMyFav;
+@property (strong, nonatomic) IBOutlet UIButton *btnNewsAndEvents;
 @end
 
-@protocol JDMenuViewControllerDelegate
+@protocol LeftMenuViewControllerDelegate
 @optional
 - (void) presentToViewController:(UIViewController*) viewController;
 @end

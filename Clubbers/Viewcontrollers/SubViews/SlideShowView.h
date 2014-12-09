@@ -21,10 +21,13 @@
 }
 
 @property (nonatomic, assign) id <SlideShowViewDelegate> delegate;
+@property(assign, nonatomic) NSInteger typeOfViewController;
 - (id)initWithXibFile:(id <SlideShowViewDelegate>)del ;
+- (void) stateOfButonMenuAndButtonBack:(BOOL) isEnable ;
 @end
 @protocol SlideShowViewDelegate
 @optional
 - (void) showMenuLeft;
 - (void) showMenuRight;
+- (void) popToRootViewController;
 @end

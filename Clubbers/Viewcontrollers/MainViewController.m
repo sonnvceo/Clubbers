@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "SideMenu.h"
-
+#import "DefinitionAPI.h"
 @interface MainViewController () {
     SlideShowView *slideShowView;
     SideMenu *sideMenu;
@@ -33,6 +33,7 @@
     self.navigationController.navigationBarHidden = YES;
     
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
+    slideShowView.typeOfViewController = kMasterViewController;
     [slideShowSubView addSubview:slideShowView];
     
     LeftMenuViewController *menuController = [[LeftMenuViewController alloc] init];
@@ -48,6 +49,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self showMenuRight];
+    [slideShowView stateOfButonMenuAndButtonBack:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -50,5 +50,10 @@ enum {
     kClubViewController
 } KKindOfViewController;
 
+enum {
+    kMasterViewController,
+    kDetailViewController
+} KTypeOfViewController;
+
 @interface DefinitionAPI : NSObject
 @end

@@ -11,10 +11,13 @@
 #import "TPMenuViewController.h"
 #import "TownDetailViewController.h" 
 #import "LeftMenuViewController.h"
+#import "MBProgressHUD.h"
+
 @interface MainViewController : UIViewController<SlideShowViewDelegate,
                                                  TPMenuViewControllerDelegate,
-                                                 JDMenuViewControllerDelegate>
-
+                                                 LeftMenuViewControllerDelegate> {
+    MBProgressHUD *HUD;
+  }
 @property (strong, nonatomic) IBOutlet UIView *slideShowSubView;
 @property (strong, nonatomic) IBOutlet UIView *sideMenuSubView;
 

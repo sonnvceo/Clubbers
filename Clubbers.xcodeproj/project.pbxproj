@@ -39,6 +39,10 @@
 		30299F3A1A31B53300C4687C /* ThingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30299F391A31B53300C4687C /* ThingModel.m */; };
 		30299F3D1A31B61100C4687C /* JustincaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30299F3C1A31B61100C4687C /* JustincaseModel.m */; };
 		30299F401A31BBD500C4687C /* PhotoGalleryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30299F3F1A31BBD500C4687C /* PhotoGalleryModel.m */; };
+		303641AF1A36D87600A8BC1E /* TownDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303641AD1A36D87600A8BC1E /* TownDetailViewController.m */; };
+		303641B01A36D87600A8BC1E /* TownDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303641AE1A36D87600A8BC1E /* TownDetailViewController.xib */; };
+		303641B41A36D88200A8BC1E /* TownDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 303641B21A36D88200A8BC1E /* TownDetailCell.m */; };
+		303641B51A36D88300A8BC1E /* TownDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303641B31A36D88200A8BC1E /* TownDetailCell.xib */; };
 		305E85E91A300DAB00808E13 /* TPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E85E81A300DAB00808E13 /* TPMenuViewController.m */; };
 		305E85F41A301E7300808E13 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85EF1A301E7300808E13 /* 1.jpg */; };
 		305E85F51A301E7300808E13 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F01A301E7300808E13 /* 2.jpg */; };
@@ -51,6 +55,7 @@
 		305E860E1A3050B800808E13 /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E860C1A3050B800808E13 /* LeftMenuViewController.xib */; };
 		30A900771A35890B00B657C3 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A900751A35890B00B657C3 /* MapView.m */; };
 		30A900781A35890B00B657C3 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A900761A35890B00B657C3 /* MapView.xib */; };
+		30ED74E31A371E3F00625B50 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 		841A61021A34071000773107 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A61011A34071000773107 /* MBProgressHUD.m */; };
 		841A610E1A34220600773107 /* listing_pic_bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61041A34220600773107 /* listing_pic_bg1.jpg */; };
 		841A610F1A34220600773107 /* listing_pic_bg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61051A34220600773107 /* listing_pic_bg2.jpg */; };
@@ -172,7 +177,6 @@
 		842C816D1A34993900836910 /* NewAndEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C816B1A34993900836910 /* NewAndEventViewController.xib */; };
 		842C81711A34A96500836910 /* CustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C816F1A34A96500836910 /* CustomTableCell.m */; };
 		842C81721A34A96500836910 /* CustomTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C81701A34A96500836910 /* CustomTableCell.xib */; };
-		8464CA661A35F0E60016746B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 		846C692D1A34D4E500F8D31A /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 846C692C1A34D4E500F8D31A /* GoogleMaps.bundle */; };
 		846C692F1A34D55300F8D31A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C692E1A34D55300F8D31A /* AVFoundation.framework */; };
 		846C69311A34D55800F8D31A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69301A34D55800F8D31A /* CoreData.framework */; };
@@ -186,8 +190,6 @@
 		846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69401A34D5AD00F8D31A /* OpenGLES.framework */; };
 		846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69421A34D5B500F8D31A /* QuartzCore.framework */; };
 		846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69441A34D5C200F8D31A /* SystemConfiguration.framework */; };
-		849A946B1A34648E00EE02E4 /* TownDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A94691A34648E00EE02E4 /* TownDetailViewController.m */; };
-		849A946C1A34648E00EE02E4 /* TownDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849A946A1A34648E00EE02E4 /* TownDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -262,6 +264,12 @@
 		30299F3C1A31B61100C4687C /* JustincaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JustincaseModel.m; sourceTree = "<group>"; };
 		30299F3E1A31BBD500C4687C /* PhotoGalleryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGalleryModel.h; sourceTree = "<group>"; };
 		30299F3F1A31BBD500C4687C /* PhotoGalleryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGalleryModel.m; sourceTree = "<group>"; };
+		303641AC1A36D87600A8BC1E /* TownDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownDetailViewController.h; sourceTree = "<group>"; };
+		303641AD1A36D87600A8BC1E /* TownDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TownDetailViewController.m; sourceTree = "<group>"; };
+		303641AE1A36D87600A8BC1E /* TownDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TownDetailViewController.xib; sourceTree = "<group>"; };
+		303641B11A36D88200A8BC1E /* TownDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownDetailCell.h; sourceTree = "<group>"; };
+		303641B21A36D88200A8BC1E /* TownDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TownDetailCell.m; sourceTree = "<group>"; };
+		303641B31A36D88200A8BC1E /* TownDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TownDetailCell.xib; sourceTree = "<group>"; };
 		305E85E71A300DAB00808E13 /* TPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMenuViewController.h; sourceTree = "<group>"; };
 		305E85E81A300DAB00808E13 /* TPMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMenuViewController.m; sourceTree = "<group>"; };
 		305E85EF1A301E7300808E13 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -418,9 +426,6 @@
 		846C69401A34D5AD00F8D31A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		846C69421A34D5B500F8D31A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		846C69441A34D5C200F8D31A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		849A94681A34648E00EE02E4 /* TownDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TownDetailViewController.h; path = Clubbers/Viewcontrollers/TownDetailViewController.h; sourceTree = SOURCE_ROOT; };
-		849A94691A34648E00EE02E4 /* TownDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TownDetailViewController.m; path = Clubbers/Viewcontrollers/TownDetailViewController.m; sourceTree = SOURCE_ROOT; };
-		849A946A1A34648E00EE02E4 /* TownDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TownDetailViewController.xib; path = Clubbers/Viewcontrollers/TownDetailViewController.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,7 +433,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8464CA661A35F0E60016746B /* GoogleMaps.framework in Frameworks */,
+				30ED74E31A371E3F00625B50 /* GoogleMaps.framework in Frameworks */,
 				846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */,
 				846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */,
 				846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */,
@@ -535,9 +540,9 @@
 		301BFA2C1A2EB8B700548B52 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				303641A61A36D7C600A8BC1E /* TownDetailViewController */,
 				842C817F1A34BE5300836910 /* LbizaMapViewController */,
 				842C81681A34990700836910 /* NewAndEventController */,
-				849A946D1A34655300EE02E4 /* TownDetailViewController */,
 				305E86031A304F8900808E13 /* SideMenu */,
 				305E85E61A300D8F00808E13 /* MenuLeftViewController */,
 				302958031A2F393F00594F69 /* SubViews */,
@@ -638,6 +643,19 @@
 				30299DB51A31477B00C4687C /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		303641A61A36D7C600A8BC1E /* TownDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				303641AC1A36D87600A8BC1E /* TownDetailViewController.h */,
+				303641AD1A36D87600A8BC1E /* TownDetailViewController.m */,
+				303641AE1A36D87600A8BC1E /* TownDetailViewController.xib */,
+				303641B11A36D88200A8BC1E /* TownDetailCell.h */,
+				303641B21A36D88200A8BC1E /* TownDetailCell.m */,
+				303641B31A36D88200A8BC1E /* TownDetailCell.xib */,
+			);
+			path = TownDetailViewController;
 			sourceTree = "<group>";
 		};
 		305E85CF1A30087B00808E13 /* Images Gallery */ = {
@@ -870,16 +888,6 @@
 			path = "GoogleMaps framework";
 			sourceTree = "<group>";
 		};
-		849A946D1A34655300EE02E4 /* TownDetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				849A94681A34648E00EE02E4 /* TownDetailViewController.h */,
-				849A94691A34648E00EE02E4 /* TownDetailViewController.m */,
-				849A946A1A34648E00EE02E4 /* TownDetailViewController.xib */,
-			);
-			path = TownDetailViewController;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1024,6 +1032,7 @@
 				841A61E61A34239A00773107 /* ic_conner_left.png in Resources */,
 				841A61DF1A34239A00773107 /* ic_bar_fav.png in Resources */,
 				841A615D1A34224A00773107 /* town10.jpg in Resources */,
+				303641B51A36D88300A8BC1E /* TownDetailCell.xib in Resources */,
 				841A619C1A34230B00773107 /* start_screen_background.png in Resources */,
 				841A61FC1A34239A00773107 /* ic_ne_events_selected.png in Resources */,
 				841A61931A3422F200773107 /* menu_shape_2_normal.png in Resources */,
@@ -1034,13 +1043,13 @@
 				841A61941A3422F200773107 /* menu_shape_2.png in Resources */,
 				841A62001A34239A00773107 /* ic_ne_offers_normal.png in Resources */,
 				841A61FD1A34239A00773107 /* ic_ne_home.png in Resources */,
-				849A946C1A34648E00EE02E4 /* TownDetailViewController.xib in Resources */,
 				302958081A2F396200594F69 /* SlideShowView.xib in Resources */,
 				841A61131A34220600773107 /* main_pic_bg1.jpg in Resources */,
 				841A616E1A34224A00773107 /* town8_2.jpg in Resources */,
 				841A61F71A34239A00773107 /* ic_map_shopping_normal.png in Resources */,
 				841A615E1A34224A00773107 /* town11.jpg in Resources */,
 				841A61981A3422F200773107 /* menu_shape_4.png in Resources */,
+				303641B01A36D87600A8BC1E /* TownDetailViewController.xib in Resources */,
 				841A620A1A34239A00773107 /* magnifier.png in Resources */,
 				841A616A1A34224A00773107 /* town5.jpg in Resources */,
 				841A61151A34220600773107 /* main_pic_bg3.jpg in Resources */,
@@ -1128,7 +1137,6 @@
 				30299DB71A31477B00C4687C /* AFHTTPRequestOperation.m in Sources */,
 				305E860D1A3050B800808E13 /* LeftMenuViewController.m in Sources */,
 				842C816C1A34993900836910 /* NewAndEventViewController.m in Sources */,
-				849A946B1A34648E00EE02E4 /* TownDetailViewController.m in Sources */,
 				30299F3A1A31B53300C4687C /* ThingModel.m in Sources */,
 				30299D991A3143F300C4687C /* TownModel.m in Sources */,
 				30299F401A31BBD500C4687C /* PhotoGalleryModel.m in Sources */,
@@ -1140,6 +1148,8 @@
 				30299DBD1A31477B00C4687C /* AFXMLRequestOperation.m in Sources */,
 				30299DB91A31477B00C4687C /* AFJSONRequestOperation.m in Sources */,
 				30299DBE1A31477B00C4687C /* UIImageView+AFNetworking.m in Sources */,
+				303641B41A36D88200A8BC1E /* TownDetailCell.m in Sources */,
+				303641AF1A36D87600A8BC1E /* TownDetailViewController.m in Sources */,
 				305E85E91A300DAB00808E13 /* TPMenuViewController.m in Sources */,
 				30299F2E1A31A4AB00C4687C /* ClubModel.m in Sources */,
 				30299DC21A3148E400C4687C /* CityTableCell.m in Sources */,
@@ -1275,6 +1285,12 @@
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 				);
 				INFOPLIST_FILE = Clubbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1290,6 +1306,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",

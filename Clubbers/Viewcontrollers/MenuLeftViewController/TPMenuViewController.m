@@ -40,8 +40,8 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
-    HUD = [[MBProgressHUD alloc] initWithView:self.view];
-    [self.view addSubview:HUD];
+    HUD = [[MBProgressHUD alloc] initWithView:self.tableView];
+    [self.tableView addSubview:HUD];
     
     HUD.delegate = (id)self;
     HUD.labelText = @"Loading...";
@@ -50,7 +50,7 @@
         [HUD showWhileExecuting:@selector(loadAllTowns) onTarget:self withObject:nil animated:YES];
     else if (kindOfTableView == kClubViewController)
         [HUD showWhileExecuting:@selector(loadAllClubs) onTarget:self withObject:nil animated:YES];
-    [self.tableView setHidden:YES];
+    [self.tableView setHidden:NO];
 }
 -(void)loadAllTowns {
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:URL_BASE]];

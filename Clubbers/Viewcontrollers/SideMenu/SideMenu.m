@@ -122,7 +122,7 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
         [blockSelf hideMenuAnimated:YES];
     }];
 }
-
+/*
 #pragma mark Animation
 
 - (void)tapRecognized:(UITapGestureRecognizer*)recognizer
@@ -168,7 +168,7 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
             break;
     }
 }
-
+*/
 - (void)addMenuControllerView;
 {
     if (self.menuController.view.superview == nil) {
@@ -181,7 +181,8 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
         self.menuController.view.frame = menuFrame;
         self.menuController.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
         self.view.backgroundColor = self.menuController.view.backgroundColor;
-        if (self.backgroundView) [self.view insertSubview:self.menuController.view aboveSubview:self.backgroundView];
+        if (self.backgroundView)
+            [self.view insertSubview:self.menuController.view aboveSubview:self.backgroundView];
         else [self.view insertSubview:self.menuController.view atIndex:0];
     }
 }
