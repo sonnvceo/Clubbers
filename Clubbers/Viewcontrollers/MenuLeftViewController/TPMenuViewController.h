@@ -22,5 +22,6 @@
 @protocol TPMenuViewControllerDelegate
 @optional
 - (void) presentToViewController;
+- (void) disableBackMenuButton;
 @end
 

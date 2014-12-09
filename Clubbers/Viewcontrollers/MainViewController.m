@@ -74,4 +74,7 @@
     if (viewController)
     [self.navigationController pushViewController:viewController animated:YES];
 }
+- (void) disableBackMenuButton {
+    [slideShowView stateOfButonMenuAndButtonBack:YES];
+}
 @end

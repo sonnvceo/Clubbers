@@ -100,6 +100,7 @@ static SlideShowView* _instance = nil;
     _scrollview.layer.borderColor = [UIColor colorWithWhite:0.8 alpha:1].CGColor;
     _scrollview.showsHorizontalScrollIndicator = false;
     _scrollview.layer.cornerRadius = 2;
+    _scrollview.userInteractionEnabled = NO;
     [self addSubview:_scrollview];
     
     _pgcontrol = [[UIPageControl alloc] initWithFrame:CGRectZero];

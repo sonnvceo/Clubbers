@@ -40,12 +40,13 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
+    if (delegate) {
+        [delegate disableBackMenuButton];
+    }
     HUD = [[MBProgressHUD alloc] initWithView:self.tableView];
     [self.tableView addSubview:HUD];
-    
     HUD.delegate = (id)self;
     HUD.labelText = @"Loading...";
-    
     if (kindOfTableView == kCityViewController)
         [HUD showWhileExecuting:@selector(loadAllTowns) onTarget:self withObject:nil animated:YES];
     else if (kindOfTableView == kClubViewController)

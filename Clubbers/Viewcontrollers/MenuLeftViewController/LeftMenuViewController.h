@@ -17,6 +17,11 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnIbizaMap;
 @property (strong, nonatomic) IBOutlet UIButton *btnMyFav;
 @property (strong, nonatomic) IBOutlet UIButton *btnNewsAndEvents;
+- (void) stateOfButonCities:(BOOL) isEnablebtnCities
+             andButtonClubs:(BOOL) isEnablebtnClubs
+           andButonIbizaMap:(BOOL) isEnablebtnIbizaMap
+              andButonMyFav:(BOOL) isEnablebtnMyFav
+      andButonNewsAndEvents:(BOOL) isEnablebtnNewsAndEvents;
 @end
 
 @protocol LeftMenuViewControllerDelegate
