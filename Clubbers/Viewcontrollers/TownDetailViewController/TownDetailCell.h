@@ -14,7 +14,8 @@
 
 @property (nonatomic) id<TownDetailCellDelegate> delegate;
 
-@property (nonatomic) NSIndexPath * indexPath;
+@property (nonatomic, strong) NSIndexPath *indexPath;
+- (void) creatSubviews;
 - (IBAction)readMore:(id)sender;
 @end
 

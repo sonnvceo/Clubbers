@@ -30,10 +30,19 @@
 //    maskLayer.frame = self.view.bounds;
 //    maskLayer.path = maskPath.CGPath;
 //    self.view.layer.mask = maskLayer;
+    
+    UIImage*i1 = [UIImage imageNamed:@"1.jpg"];
+    UIImage*i2 = [UIImage imageNamed:@"2.jpg"];
+    UIImage*i3 = [UIImage imageNamed:@"3.jpg"];
+    UIImage*i4 = [UIImage imageNamed:@"4.jpg"];
+    UIImage*i5 = [UIImage imageNamed:@"5.jpg"];
+    NSArray *images = @[i1,i2,i3,i4,i5];
+                        
     self.navigationController.navigationBarHidden = YES;
     
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
     slideShowView.typeOfViewController = kMasterViewController;
+    [slideShowView autoSlideShowAnimation:images];
     [slideShowSubView addSubview:slideShowView];
     
     LeftMenuViewController *menuController = [[LeftMenuViewController alloc] init];

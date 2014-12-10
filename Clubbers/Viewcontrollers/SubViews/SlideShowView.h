@@ -24,6 +24,7 @@
 @property(assign, nonatomic) NSInteger typeOfViewController;
 - (id)initWithXibFile:(id <SlideShowViewDelegate>)del ;
 - (void) stateOfButonMenuAndButtonBack:(BOOL) isEnable ;
+- (void) autoSlideShowAnimation:(NSArray*) arrayImage;
 @end
 @protocol SlideShowViewDelegate
 @optional

@@ -35,25 +35,24 @@ static SlideShowView* _instance = nil;
     if (self) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"SlideShowView" owner:self options:nil] objectAtIndex:0];
         [self setDelegate:del];
-        [self createSubviews];
+    }
+    return self;
+}
+- (void) autoSlideShowAnimation:(NSArray*) arrayImages {
+    [self createSubviews: arrayImages];
+    if (typeOfViewController != kDetailViewController) {
         [[NSTimer scheduledTimerWithTimeInterval:3
                                           target:self
                                         selector:@selector(autoSlideShow)
                                         userInfo:Nil
                                          repeats:YES] fire];
     }
-    return self;
+    else
+        [_pgcontrol removeFromSuperview];
 }
-- (void) createSubviews {
+- (void) createSubviews:(NSArray*) images{
     //check views length
-    UIImage*i1 = [UIImage imageNamed:@"1.jpg"];
-    UIImage*i2 = [UIImage imageNamed:@"2.jpg"];
-    UIImage*i3 = [UIImage imageNamed:@"3.jpg"];
-    UIImage*i4 = [UIImage imageNamed:@"4.jpg"];
-    UIImage*i5 = [UIImage imageNamed:@"5.jpg"];
-    NSArray *images = @[i1,i2,i3,i4,i5];
     NSAssert(images.count!=0, @".views's length is zero.");
-    
     /**
      *  setup viewcontroller
      */

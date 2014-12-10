@@ -23,17 +23,31 @@
 @synthesize slideShowSubView;
 @synthesize sideMenuSubView;
 
-
+- (NSMutableArray *) readMoreCells {
+    if (!_readMoreCells) {
+        _readMoreCells = [@[] mutableCopy];
+    }
+    
+    return _readMoreCells;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //
+    UIImage*i1 = [UIImage imageNamed:@"1.jpg"];
+    UIImage*i2 = [UIImage imageNamed:@"2.jpg"];
+    UIImage*i3 = [UIImage imageNamed:@"3.jpg"];
+    UIImage*i4 = [UIImage imageNamed:@"4.jpg"];
+    UIImage*i5 = [UIImage imageNamed:@"5.jpg"];
+    NSArray *images = @[i1,i2,i3,i4,i5];
+    
     self.view.layer.cornerRadius = 5;
     self.view.layer.masksToBounds = YES;
     
     self.navigationController.navigationBarHidden = YES;
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
     slideShowView.typeOfViewController = kDetailViewController;
+    [slideShowView autoSlideShowAnimation:images];
     [slideShowView stateOfButonMenuAndButtonBack:NO];
     [slideShowSubView addSubview:slideShowView];
 
@@ -49,11 +63,11 @@
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.readMoreCells containsObject:@(indexPath.row)]) {
-        return 300;
-    }
-    
-    return 100;
+//    if ([self.readMoreCells containsObject:@(indexPath.row)]) {
+//        return 300;
+//    }
+
+    return 212;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -62,7 +76,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 3;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,7 +130,11 @@
         }
         cell.indexPath = indexPath;
         cell.delegate = self;
+        if (indexPath.row ==0) {
+            [cell creatSubviews];
+        }
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
