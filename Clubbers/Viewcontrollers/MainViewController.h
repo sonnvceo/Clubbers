@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "SlideShowView.h"
-#import "TPMenuViewController.h"
+#import "ContentViewController.h"
 #import "TownDetailViewController.h" 
 #import "LeftMenuViewController.h"
 #import "MBProgressHUD.h"
 
 @interface MainViewController : UIViewController<SlideShowViewDelegate,
-                                                 TPMenuViewControllerDelegate,
-                                                 LeftMenuViewControllerDelegate> {
+                                                 ContentViewControllerDelegate,
+                                                 LeftMenuViewControllerDelegate,
+                                                 MBProgressHUDDelegate> {
     MBProgressHUD *HUD;
   }
 @property (strong, nonatomic) IBOutlet UIView *slideShowSubView;

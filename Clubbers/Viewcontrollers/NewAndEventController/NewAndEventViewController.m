@@ -9,7 +9,7 @@
 #import "NewAndEventViewController.h"
 #import "SideMenu.h"
 #import "LeftMenuViewController.h"
-#import "TPMenuViewController.h"
+#import "ContentViewController.h"
 #import "CustomTableCell.h"
 
 @interface NewAndEventViewController () {

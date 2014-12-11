@@ -16,50 +16,101 @@
 
 
 @implementation TownDetailCell
-@synthesize btnReadMore;
 @synthesize textView;
 @synthesize contentView;
 @synthesize isBtnReadmore;
-- (void)layoutSubviews {
 
+- (void) configueCellAtIndexPath:(NSIndexPath*) indexPath {
+    switch (indexPath.row) {
+        case 0:
+            
+            break;
+        case 1:
+            [self creatSubviews];
+            break;
+        default:
+            break;
+    }
 }
 - (void) creatSubviews {
-    // add buttons
-    UIButton* btnreadMore = [UIButton buttonWithType: UIButtonTypeCustom];
-    [btnreadMore setFrame: CGRectMake(10.0f, 20.0f, 30.0f, 30.0f)];
-    [btnreadMore setBackgroundImage:[UIImage imageNamed:@"ic_back_disable.png"] forState:UIControlStateNormal];
-    [btnreadMore addTarget:self action:@selector(readMore:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview: btnreadMore];
-    //
-    CGRect textViewFrame = CGRectMake(20.0f, 20.0f, 280.0f, 124.0f);
+    
+    [self hideContentOfCell];
+    CGRect textViewFrame = CGRectMake(10.0f, 15.0f, 280.0f, 50.0f);
     textView = [[UITextView alloc] initWithFrame:textViewFrame];
     textView.returnKeyType = UIReturnKeyDone;
-    textView.text = @"Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation:";
+    textView.userInteractionEnabled = NO;
+    textView.showsHorizontalScrollIndicator = NO;
+    textView.scrollEnabled = NO;
+    textView.text = @"Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation: Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation:";
     [self addSubview:textView];
+    // add buttons
+     btnreadMore = [UIButton buttonWithType: UIButtonTypeCustom];
+    [btnreadMore setFrame: CGRectMake(10.0f,
+                                      textView.frame.origin.y + textView.frame.size.height,
+                                      100.0f,
+                                      20.0f)];
+    [btnreadMore setTitle:@"Read more..." forState:UIControlStateNormal];
+    btnreadMore.backgroundColor = [UIColor clearColor];
+    [btnreadMore setTitleColor:[UIColor blackColor] forState:UIControlStateNormal ];
+    btnreadMore.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+    btnreadMore.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [btnreadMore addTarget:self action:@selector(readMore:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview: btnreadMore];
     
     CGRect frame = CGRectMake(0, 0, kWidth, kHeight);
     CGRect contentViewFrame = CGRectMake(0, 88, self.frame.size.width, 212);
     contentView = [[UIView alloc] initWithFrame:contentViewFrame];
-    contentView.backgroundColor = [UIColor grayColor];
-    [self addSubview:contentView];
+    contentView.backgroundColor = [UIColor clearColor];
+    
     for (int j=0; j<kNumRow; j++) {
         for (int i=0; i<kNumColumn; i++) {
-            CGPoint origin = CGPointMake((kWidth + kInterval) * i,(kHeight + kInterval) * j);
+            CGPoint origin = CGPointMake((kWidth + kInterval) * i,88+(kHeight + kInterval) * j);
             frame.origin = origin;
             UIImageView *imageView = [self generateUIImageViewWithFrame:frame];
             UILabel *label = [self generateUILabelWithFrame:CGRectMake(0, frame.size.height-20, kWidth, 20)];
             label.adjustsFontSizeToFitWidth = YES;
+            UIView *subView = [[UIView alloc] initWithFrame:label.frame];
+            subView.backgroundColor = [UIColor blackColor];
+            subView.alpha = 0.7;
+            [imageView addSubview:subView];
             [imageView addSubview:label];
             [contentView addSubview:imageView];
         }
     }
+    // add title lable
+    UILabel *lbOverView = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 30)];
+    lbOverView.textColor = [UIColor blackColor];
+    lbOverView.backgroundColor=[UIColor clearColor];
+    lbOverView.textColor=[UIColor grayColor];
+    lbOverView.userInteractionEnabled=NO;
+    lbOverView.font = [UIFont boldSystemFontOfSize:13];
+    lbOverView.numberOfLines = 1;
+    lbOverView.text= @"Overview";
+    [self addSubview:lbOverView];
+    [self addSubview:contentView];
+    [self addSubview: btnreadMore];
+    float size = [self textViewHeightForAttributedText:textView.attributedText andWidth:textView.frame.size.width];
     if (isBtnReadmore) {
+        [btnreadMore setFrame:CGRectMake(btnreadMore.frame.origin.x,
+                                      size,
+                                      btnreadMore.frame.size.width,
+                                      btnreadMore.frame.size.height)];
+        [textView setFrame:CGRectMake(textView.frame.origin.x,
+                                      textView.frame.origin.y,
+                                      textView.frame.size.width,
+                                      size)];
         [contentView setFrame:CGRectMake(contentView.frame.origin.x,
-                                         contentView.frame.origin.y+200,
+                                         size + btnreadMore.frame.size.height,
                                          contentView.frame.size.width,
                                          contentView.frame.size.height)];
     }
     
+}
+- (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
+    UITextView *calculationView = [[UITextView alloc] init];
+    [calculationView setAttributedText:text];
+    CGSize size = [calculationView sizeThatFits:CGSizeMake(width, FLT_MAX)];
+    return size.height;
 }
 #pragma mark -------------------------------------------------------------------
 #pragma mark Private
@@ -75,16 +126,21 @@
 - (UILabel *)generateUILabelWithFrame:(CGRect)frame {
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.textAlignment = UITextAlignmentCenter;
-    label.backgroundColor = [UIColor blackColor];
-    label.alpha = 0.7;
+    label.backgroundColor = [UIColor clearColor];
     label.textColor = [UIColor whiteColor];
-    label.font = [UIFont fontWithName:@"Futura-Medium" size:17.0f];
-    //    label.text = @"SonNV";
+    label.font = [UIFont boldSystemFontOfSize:12];//[UIFont fontWithName:@"Futura-Medium" size:13.0f];
+    label.text = @"Town Guide";
     return label;
 }
 
 - (IBAction)readMore:(id)sender {
   [self.delegate didActivateReadMoreForCell:self];
 }
-
+- (void) hideContentOfCell {
+    self.lblTitle.hidden = YES;
+    self.lblTemperature.hidden = YES;
+    self.lblDescription.hidden = YES;
+    self.imgTemperature.hidden = YES;
+    self.imgWeatherCloundly. hidden = YES;
+}
 @end

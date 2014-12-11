@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "TPMenuViewController.h"
+#import "ContentViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface AppDelegate ()

@@ -22,6 +22,9 @@
 - (void) configureCell {
     imgIcon.layer.cornerRadius = imgIcon.frame.size.width / 2;
     imgIcon.clipsToBounds = YES;
+    self.lblTitle.adjustsFontSizeToFitWidth = NO;
+//    self.lblTitle.lineBreakMode = UILineBreakModeTailTruncation;
+
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

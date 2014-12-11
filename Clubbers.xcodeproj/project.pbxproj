@@ -43,7 +43,7 @@
 		303641B01A36D87600A8BC1E /* TownDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303641AE1A36D87600A8BC1E /* TownDetailViewController.xib */; };
 		303641B41A36D88200A8BC1E /* TownDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 303641B21A36D88200A8BC1E /* TownDetailCell.m */; };
 		303641B51A36D88300A8BC1E /* TownDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303641B31A36D88200A8BC1E /* TownDetailCell.xib */; };
-		305E85E91A300DAB00808E13 /* TPMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E85E81A300DAB00808E13 /* TPMenuViewController.m */; };
+		305E85E91A300DAB00808E13 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E85E81A300DAB00808E13 /* ContentViewController.m */; };
 		305E85F41A301E7300808E13 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85EF1A301E7300808E13 /* 1.jpg */; };
 		305E85F51A301E7300808E13 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F01A301E7300808E13 /* 2.jpg */; };
 		305E85F61A301E7300808E13 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 305E85F11A301E7300808E13 /* 3.jpg */; };
@@ -55,7 +55,6 @@
 		305E860E1A3050B800808E13 /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E860C1A3050B800808E13 /* LeftMenuViewController.xib */; };
 		30A900771A35890B00B657C3 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A900751A35890B00B657C3 /* MapView.m */; };
 		30A900781A35890B00B657C3 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A900761A35890B00B657C3 /* MapView.xib */; };
-		30BC8FE71A39B96900326668 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 		841A61021A34071000773107 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A61011A34071000773107 /* MBProgressHUD.m */; };
 		841A610E1A34220600773107 /* listing_pic_bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61041A34220600773107 /* listing_pic_bg1.jpg */; };
 		841A610F1A34220600773107 /* listing_pic_bg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61051A34220600773107 /* listing_pic_bg2.jpg */; };
@@ -190,6 +189,7 @@
 		846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69401A34D5AD00F8D31A /* OpenGLES.framework */; };
 		846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69421A34D5B500F8D31A /* QuartzCore.framework */; };
 		846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69441A34D5C200F8D31A /* SystemConfiguration.framework */; };
+		84A10BD01A39FAA70090869D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,8 +270,8 @@
 		303641B11A36D88200A8BC1E /* TownDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownDetailCell.h; sourceTree = "<group>"; };
 		303641B21A36D88200A8BC1E /* TownDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TownDetailCell.m; sourceTree = "<group>"; };
 		303641B31A36D88200A8BC1E /* TownDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TownDetailCell.xib; sourceTree = "<group>"; };
-		305E85E71A300DAB00808E13 /* TPMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPMenuViewController.h; sourceTree = "<group>"; };
-		305E85E81A300DAB00808E13 /* TPMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPMenuViewController.m; sourceTree = "<group>"; };
+		305E85E71A300DAB00808E13 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		305E85E81A300DAB00808E13 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		305E85EF1A301E7300808E13 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		305E85F01A301E7300808E13 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		305E85F11A301E7300808E13 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BC8FE71A39B96900326668 /* GoogleMaps.framework in Frameworks */,
+				84A10BD01A39FAA70090869D /* GoogleMaps.framework in Frameworks */,
 				846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */,
 				846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */,
 				846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */,
@@ -676,8 +676,8 @@
 				305E860A1A3050B800808E13 /* LeftMenuViewController.h */,
 				305E860B1A3050B800808E13 /* LeftMenuViewController.m */,
 				305E860C1A3050B800808E13 /* LeftMenuViewController.xib */,
-				305E85E71A300DAB00808E13 /* TPMenuViewController.h */,
-				305E85E81A300DAB00808E13 /* TPMenuViewController.m */,
+				305E85E71A300DAB00808E13 /* ContentViewController.h */,
+				305E85E81A300DAB00808E13 /* ContentViewController.m */,
 				30299DBF1A3148E400C4687C /* CityTableCell.h */,
 				30299DC01A3148E400C4687C /* CityTableCell.m */,
 				30299DC11A3148E400C4687C /* CityTableCell.xib */,
@@ -1150,7 +1150,7 @@
 				30299DBE1A31477B00C4687C /* UIImageView+AFNetworking.m in Sources */,
 				303641B41A36D88200A8BC1E /* TownDetailCell.m in Sources */,
 				303641AF1A36D87600A8BC1E /* TownDetailViewController.m in Sources */,
-				305E85E91A300DAB00808E13 /* TPMenuViewController.m in Sources */,
+				305E85E91A300DAB00808E13 /* ContentViewController.m in Sources */,
 				30299F2E1A31A4AB00C4687C /* ClubModel.m in Sources */,
 				30299DC21A3148E400C4687C /* CityTableCell.m in Sources */,
 				30299F2B1A31A03300C4687C /* TownDetailModel.m in Sources */,

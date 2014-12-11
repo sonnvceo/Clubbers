@@ -9,7 +9,7 @@
 #import "UIViewController+SideMenu.h"
 #import "DefinitionAPI.h"
 #import "LeftMenuViewController.h"
-#import "TPMenuViewController.h"
+#import "ContentViewController.h"
 #import "NewAndEventViewController.h"
 #import "LbizaMapViewController.h"
 @interface LeftMenuViewController ()
@@ -49,12 +49,12 @@
 
 - (IBAction)switchController:(id)sender;
 {
-    TPMenuViewController *viewController;
+    ContentViewController *viewController;
     NewAndEventViewController *newAndEventViewController = [[NewAndEventViewController alloc] initWithNibName:@"NewAndEventViewController" bundle:nil];
     LbizaMapViewController *lbizaMapViewController = [[LbizaMapViewController alloc] initWithNibName:@"LbizaMapViewController" bundle:nil];
     switch ([sender tag]) {
         case 0:
-            viewController = [[TPMenuViewController alloc] init];
+            viewController = [[ContentViewController alloc] init];
             viewController.delegate = (id)delegate;
             viewController.kindOfTableView = kCityViewController;
             [self.sideMenuController setContentController:viewController animated:YES];
@@ -65,7 +65,7 @@
                andButonNewsAndEvents:YES];
             break;
         case 1:
-            viewController = [[TPMenuViewController alloc] init];
+            viewController = [[ContentViewController alloc] init];
             viewController.delegate = (id)delegate;
             viewController.kindOfTableView = kClubViewController;
             [self.sideMenuController setContentController:viewController animated:YES];

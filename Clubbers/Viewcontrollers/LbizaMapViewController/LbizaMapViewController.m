@@ -9,7 +9,7 @@
 #import "LbizaMapViewController.h"
 #import "SideMenu.h"
 #import "LeftMenuViewController.h"
-#import "TPMenuViewController.h"
+#import "ContentViewController.h"
 #import "CustomTableCell.h"
 #import <GoogleMaps/GoogleMaps.h>
 @interface LbizaMapViewController () {
@@ -42,7 +42,6 @@
     [btnBack addTarget:self action:@selector(btnBackMenu:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview: btnBack];
 
-    
     [button1 setBackgroundImage:[UIImage imageNamed:@"ic_map_item1_normal.png"] forState:UIControlStateDisabled];
     [button1 setBackgroundImage:[UIImage imageNamed:@"ic_map_item1_selected.png"] forState:UIControlStateNormal];
     

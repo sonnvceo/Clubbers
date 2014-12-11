@@ -1,21 +1,21 @@
 //
-//  TPMenuViewController.m
+//  ContentViewController.m
 //  HiTaxi
 //
 //  Created by Nguyễn Hữu Hoà on 4/11/13.
 //  Copyright (c) 2013 TOPPRO. All rights reserved.
 //
 
-#import "TPMenuViewController.h"
+#import "ContentViewController.h"
 #import "AFNetworking.h"
 #import "TownModel.h"
 #import "ClubModel.h"
 #import "DefinitionAPI.h"
 #import "TownDetailViewController.h"
-@interface TPMenuViewController ()
+@interface ContentViewController ()
 @end
 
-@implementation TPMenuViewController
+@implementation ContentViewController
 @synthesize kindOfTableView;
 @synthesize delegate;
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -42,16 +42,13 @@
     self.navigationController.navigationBarHidden = YES;
     if (delegate) {
         [delegate disableBackMenuButton];
+        [delegate showMBProgressHUD];
     }
-    HUD = [[MBProgressHUD alloc] initWithView:self.tableView];
-    [self.tableView addSubview:HUD];
-    HUD.delegate = (id)self;
-    HUD.labelText = @"Loading...";
     if (kindOfTableView == kCityViewController)
-        [HUD showWhileExecuting:@selector(loadAllTowns) onTarget:self withObject:nil animated:YES];
+        [self loadAllTowns];
     else if (kindOfTableView == kClubViewController)
-        [HUD showWhileExecuting:@selector(loadAllClubs) onTarget:self withObject:nil animated:YES];
-    [self.tableView setHidden:NO];
+        [self loadAllClubs];
+    [self.tableView setHidden:YES];
 }
 -(void)loadAllTowns {
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:URL_BASE]];
@@ -61,6 +58,9 @@
         NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
        tableDatasource = [[TownModel shareInstance] parseJson:jsonDataArray];
         [self.tableView setHidden:NO];
+        if (delegate) {
+            [delegate dismissMBProgressHUD];
+        }
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error:%@", error);
@@ -76,6 +76,9 @@
         NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
         tableDatasource = [[ClubModel shareInstance] parseJson:jsonDataArray];
         [self.tableView setHidden:NO];
+        if (delegate) {
+            [delegate dismissMBProgressHUD];
+        }
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error:%@", error);

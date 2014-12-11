@@ -13,7 +13,7 @@
                                                         UITableViewDelegate,
                                                         UITableViewDataSource,
                                                         TownDetailCellDelegate> {
-    
+   BOOL isBtnReadmoreDelegate;
 }
 
 @property (strong, nonatomic) IBOutlet UIView *slideShowSubView;

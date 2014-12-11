@@ -9,7 +9,7 @@
 #import "TownDetailViewController.h"
 #import "SideMenu.h"
 #import "LeftMenuViewController.h"
-#import "TPMenuViewController.h"
+#import "ContentViewController.h"
 #import "DefinitionAPI.h"
 @interface TownDetailViewController () {
     SlideShowView *slideShowView;
@@ -69,7 +69,7 @@
     float heightOfCell;
     switch (indexPath.row) {
         case 0:
-            heightOfCell = 100;
+            heightOfCell = 60;
             break;
         case 1:
             heightOfCell = 300;
@@ -143,10 +143,13 @@
         }
         cell.indexPath = indexPath;
         cell.delegate = self;
-        if (indexPath.row ==1) {
-            [cell creatSubviews];
-        }
+//        if (indexPath.row ==1) {
+//            if (isBtnReadmoreDelegate)
+//                cell.isBtnReadmore = YES;
+//            [cell creatSubviews];
+//        }
     }
+    [cell configueCellAtIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -188,9 +191,7 @@
 #pragma mark - TownDetailCell Delegate
 
 - (void) didActivateReadMoreForCell:(TownDetailCell*)cell {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:YES forKey:@"clickedbuttonreadmore"];
-    [defaults synchronize];
+    isBtnReadmoreDelegate = YES;
     [_readMoreCells addObject:cell.indexPath];
     [self.tableView reloadRowsAtIndexPaths:_readMoreCells withRowAnimation:UITableViewRowAnimationAutomatic];
 }

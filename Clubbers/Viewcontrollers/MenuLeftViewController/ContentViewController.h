@@ -1,5 +1,5 @@
 //
-//  TPMenuViewController.h
+//  ContentViewController.h
 //  HiTaxi
 //
 //  Created by Nguyễn Hữu Hoà on 4/11/13.
@@ -9,19 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "CityTableCell.h"
 #import "MBProgressHUD.h"
+@protocol ContentViewControllerDelegate;
 
-@protocol TPMenuViewControllerDelegate;
-
-@interface TPMenuViewController : UITableViewController<MBProgressHUDDelegate> {
-    MBProgressHUD *HUD;
+@interface ContentViewController : UITableViewController {
     NSArray *tableDatasource;
 }
-@property (nonatomic, assign) id <TPMenuViewControllerDelegate> delegate;
+@property (nonatomic, assign) id <ContentViewControllerDelegate> delegate;
 @property(assign, nonatomic) NSInteger kindOfTableView;
 @end
-@protocol TPMenuViewControllerDelegate
+@protocol ContentViewControllerDelegate
 @optional
 - (void) presentToViewController;
 - (void) disableBackMenuButton;
+- (void) showMBProgressHUD;
+- (void) dismissMBProgressHUD;
 @end
 

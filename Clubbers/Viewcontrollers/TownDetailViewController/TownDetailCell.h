@@ -10,16 +10,24 @@
 
 @protocol TownDetailCellDelegate;
 
-@interface TownDetailCell : UITableViewCell
+@interface TownDetailCell : UITableViewCell {
+    UIButton* btnreadMore;
+}
 
 @property (nonatomic) id<TownDetailCellDelegate> delegate;
-@property(nonatomic, strong) IBOutlet UIButton *btnReadMore ;
 @property(nonatomic, strong) IBOutlet UITextView *textView;
+@property(nonatomic, strong) IBOutlet UILabel *lblTitle;
+@property(nonatomic, strong) IBOutlet UILabel *lblDescription;
+@property(nonatomic, strong) IBOutlet UILabel *lblTemperature;
+@property(nonatomic, strong) IBOutlet UIImageView *imgTemperature;
+@property(nonatomic, strong) IBOutlet UIImageView *imgWeatherCloundly;
+
 @property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) BOOL isBtnReadmore;
 - (void) creatSubviews;
 - (IBAction)readMore:(id)sender;
+- (void) configueCellAtIndexPath:(NSIndexPath*) indexPath;
 @end
 
 @protocol TownDetailCellDelegate <NSObject>

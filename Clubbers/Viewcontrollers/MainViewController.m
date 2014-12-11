@@ -39,6 +39,11 @@
     NSArray *images = @[i1,i2,i3,i4,i5];
                         
     self.navigationController.navigationBarHidden = YES;
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.delegate = (id)self;
+    HUD.labelText = @"Loading...";
+    [self showMBProgressHUD];
     
     slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
     slideShowView.typeOfViewController = kMasterViewController;
@@ -47,7 +52,7 @@
     
     LeftMenuViewController *menuController = [[LeftMenuViewController alloc] init];
     menuController.delegate = self;
-    TPMenuViewController *contentController = [[TPMenuViewController alloc] init];
+    ContentViewController *contentController = [[ContentViewController alloc] init];
     contentController.delegate = self;
     sideMenu = [[SideMenu alloc] initWithContentController:contentController
                                               menuController:menuController];
@@ -85,5 +90,12 @@
 }
 - (void) disableBackMenuButton {
     [slideShowView stateOfButonMenuAndButtonBack:YES];
+}
+#pragma mark - ContentViewControllerDelegate
+- (void)dismissMBProgressHUD {
+    [HUD hide:TRUE];
+}
+- (void)showMBProgressHUD {
+    [HUD show:TRUE];
 }
 @end
