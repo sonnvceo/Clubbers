@@ -12,7 +12,9 @@
 @interface TownDetailViewController : UIViewController< SlideShowViewDelegate,
                                                         UITableViewDelegate,
                                                         UITableViewDataSource,
-                                                        TownDetailCellDelegate>
+                                                        TownDetailCellDelegate> {
+    
+}
 
 @property (strong, nonatomic) IBOutlet UIView *slideShowSubView;
 @property (strong, nonatomic) IBOutlet UIView *sideMenuSubView;

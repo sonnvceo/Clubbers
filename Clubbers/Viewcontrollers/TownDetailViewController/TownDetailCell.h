@@ -13,8 +13,11 @@
 @interface TownDetailCell : UITableViewCell
 
 @property (nonatomic) id<TownDetailCellDelegate> delegate;
-
+@property(nonatomic, strong) IBOutlet UIButton *btnReadMore ;
+@property(nonatomic, strong) IBOutlet UITextView *textView;
 @property (nonatomic, strong) NSIndexPath *indexPath;
+@property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, assign) BOOL isBtnReadmore;
 - (void) creatSubviews;
 - (IBAction)readMore:(id)sender;
 @end

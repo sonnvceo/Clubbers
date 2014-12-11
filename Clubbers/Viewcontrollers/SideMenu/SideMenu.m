@@ -183,7 +183,7 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
         self.view.backgroundColor = self.menuController.view.backgroundColor;
         if (self.backgroundView)
             [self.view insertSubview:self.menuController.view aboveSubview:self.backgroundView];
-        else [self.view insertSubview:self.menuController.view atIndex:10];
+        else [self.view insertSubview:self.menuController.view atIndex:0];
     }
 }
 

@@ -66,8 +66,21 @@
 //    if ([self.readMoreCells containsObject:@(indexPath.row)]) {
 //        return 300;
 //    }
-
-    return 212;
+    float heightOfCell;
+    switch (indexPath.row) {
+        case 0:
+            heightOfCell = 100;
+            break;
+        case 1:
+            heightOfCell = 300;
+            break;
+        default:
+            break;
+    }
+    if ([self.readMoreCells containsObject:indexPath]) {
+        heightOfCell += 200;
+    }
+    return heightOfCell;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -130,7 +143,7 @@
         }
         cell.indexPath = indexPath;
         cell.delegate = self;
-        if (indexPath.row ==0) {
+        if (indexPath.row ==1) {
             [cell creatSubviews];
         }
     }
@@ -172,20 +185,14 @@
     
     
 }
-#pragma mark - CZAPTableViewCell Delegate
+#pragma mark - TownDetailCell Delegate
 
 - (void) didActivateReadMoreForCell:(TownDetailCell*)cell {
-    
-    NSLog(@"Clicked Cell %d", cell.indexPath.row);
-    
-    if ([self.readMoreCells containsObject:@(cell.indexPath.row)]) {
-        [self.readMoreCells removeObject:@(cell.indexPath.row)];
-    } else {
-        [self.readMoreCells addObject:@(cell.indexPath.row)];
-    }
-    
-    [self.tableView reloadRowsAtIndexPaths:[self.tableView indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:YES forKey:@"clickedbuttonreadmore"];
+    [defaults synchronize];
+    [_readMoreCells addObject:cell.indexPath];
+    [self.tableView reloadRowsAtIndexPaths:_readMoreCells withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 #pragma mark - SlideShowViewDelegate
 - (void) showMenuLeft{
