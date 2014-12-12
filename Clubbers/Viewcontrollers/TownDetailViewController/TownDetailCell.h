@@ -23,8 +23,9 @@
 @property(nonatomic, strong) IBOutlet UIImageView *imgWeatherCloundly;
 
 @property (nonatomic, strong) NSIndexPath *indexPath;
-@property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, strong) UIView *contentSubView;
 @property (nonatomic, assign) BOOL isBtnReadmore;
+@property (nonatomic, assign) float realHeightOfTextView;
 - (void) creatSubviews;
 - (IBAction)readMore:(id)sender;
 - (void) configueCellAtIndexPath:(NSIndexPath*) indexPath;

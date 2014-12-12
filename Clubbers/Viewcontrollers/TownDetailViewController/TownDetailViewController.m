@@ -78,7 +78,7 @@
             break;
     }
     if ([self.readMoreCells containsObject:indexPath]) {
-        heightOfCell += 200;
+        heightOfCell += expandHeightCell - 65.0f;
     }
     return heightOfCell;
 }
@@ -149,6 +149,8 @@
 //            [cell creatSubviews];
 //        }
     }
+    if (isBtnReadmoreDelegate)
+        cell.isBtnReadmore = YES;
     [cell configueCellAtIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -193,6 +195,7 @@
 - (void) didActivateReadMoreForCell:(TownDetailCell*)cell {
     isBtnReadmoreDelegate = YES;
     [_readMoreCells addObject:cell.indexPath];
+    expandHeightCell = cell.realHeightOfTextView;
     [self.tableView reloadRowsAtIndexPaths:_readMoreCells withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 #pragma mark - SlideShowViewDelegate

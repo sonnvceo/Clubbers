@@ -17,8 +17,9 @@
 
 @implementation TownDetailCell
 @synthesize textView;
-@synthesize contentView;
+@synthesize contentSubView;
 @synthesize isBtnReadmore;
+@synthesize realHeightOfTextView;
 
 - (void) configueCellAtIndexPath:(NSIndexPath*) indexPath {
     switch (indexPath.row) {
@@ -41,7 +42,7 @@
     textView.userInteractionEnabled = NO;
     textView.showsHorizontalScrollIndicator = NO;
     textView.scrollEnabled = NO;
-    textView.text = @"Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation: Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation:";
+    textView.text = @"Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation: Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation: Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation:";
     [self addSubview:textView];
     // add buttons
      btnreadMore = [UIButton buttonWithType: UIButtonTypeCustom];
@@ -58,13 +59,13 @@
     [self addSubview: btnreadMore];
     
     CGRect frame = CGRectMake(0, 0, kWidth, kHeight);
-    CGRect contentViewFrame = CGRectMake(0, 88, self.frame.size.width, 212);
-    contentView = [[UIView alloc] initWithFrame:contentViewFrame];
-    contentView.backgroundColor = [UIColor clearColor];
-    
+    CGRect contentSubViewFrame = CGRectMake(0, 88, self.frame.size.width, 212);
+    contentSubView = [[UIView alloc] initWithFrame:contentSubViewFrame];
+    contentSubView.backgroundColor = [UIColor clearColor];
+    [self addSubview:contentSubView];
     for (int j=0; j<kNumRow; j++) {
         for (int i=0; i<kNumColumn; i++) {
-            CGPoint origin = CGPointMake((kWidth + kInterval) * i,88+(kHeight + kInterval) * j);
+            CGPoint origin = CGPointMake((kWidth + kInterval) * i,(kHeight + kInterval) * j);
             frame.origin = origin;
             UIImageView *imageView = [self generateUIImageViewWithFrame:frame];
             UILabel *label = [self generateUILabelWithFrame:CGRectMake(0, frame.size.height-20, kWidth, 20)];
@@ -74,11 +75,11 @@
             subView.alpha = 0.7;
             [imageView addSubview:subView];
             [imageView addSubview:label];
-            [contentView addSubview:imageView];
+            [contentSubView addSubview:imageView];
         }
     }
     // add title lable
-    UILabel *lbOverView = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 30)];
+    UILabel *lbOverView = [[UILabel alloc] initWithFrame:CGRectMake(10, -5, 100, 30)];
     lbOverView.textColor = [UIColor blackColor];
     lbOverView.backgroundColor=[UIColor clearColor];
     lbOverView.textColor=[UIColor grayColor];
@@ -87,22 +88,22 @@
     lbOverView.numberOfLines = 1;
     lbOverView.text= @"Overview";
     [self addSubview:lbOverView];
-    [self addSubview:contentView];
+
     [self addSubview: btnreadMore];
-    float size = [self textViewHeightForAttributedText:textView.attributedText andWidth:textView.frame.size.width];
+    realHeightOfTextView = [self textViewHeightForAttributedText:textView.attributedText andWidth:textView.frame.size.width];
     if (isBtnReadmore) {
         [btnreadMore setFrame:CGRectMake(btnreadMore.frame.origin.x,
-                                      size,
+                                      realHeightOfTextView+5,
                                       btnreadMore.frame.size.width,
                                       btnreadMore.frame.size.height)];
         [textView setFrame:CGRectMake(textView.frame.origin.x,
                                       textView.frame.origin.y,
                                       textView.frame.size.width,
-                                      size)];
-        [contentView setFrame:CGRectMake(contentView.frame.origin.x,
-                                         size + btnreadMore.frame.size.height,
-                                         contentView.frame.size.width,
-                                         contentView.frame.size.height)];
+                                      realHeightOfTextView)];
+        [contentSubView setFrame:CGRectMake(contentSubView.frame.origin.x,
+                                         realHeightOfTextView + btnreadMore.frame.size.height +5,
+                                         contentSubView.frame.size.width,
+                                         contentSubView.frame.size.height)];
     }
     
 }

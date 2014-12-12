@@ -14,6 +14,7 @@
                                                         UITableViewDataSource,
                                                         TownDetailCellDelegate> {
    BOOL isBtnReadmoreDelegate;
+  float expandHeightCell;                                                   
 }
 
 @property (strong, nonatomic) IBOutlet UIView *slideShowSubView;
