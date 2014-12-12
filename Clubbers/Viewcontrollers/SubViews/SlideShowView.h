@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FXPageControl.h"
 @protocol SlideShowViewDelegate;
 
 
@@ -22,6 +22,8 @@
 
 @property (nonatomic, assign) id <SlideShowViewDelegate> delegate;
 @property(assign, nonatomic) NSInteger typeOfViewController;
+@property (nonatomic, strong) IBOutlet FXPageControl *pageControl;
+
 - (id)initWithXibFile:(id <SlideShowViewDelegate>)del ;
 - (void) stateOfButonMenuAndButtonBack:(BOOL) isEnable ;
 - (void) autoSlideShowAnimation:(NSArray*) arrayImage;

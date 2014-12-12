@@ -48,7 +48,7 @@ static SlideShowView* _instance = nil;
                                          repeats:YES] fire];
     }
     else
-        [_pgcontrol removeFromSuperview];
+        [self.pageControl removeFromSuperview];
 }
 - (void) createSubviews:(NSArray*) images{
     //check views length
@@ -102,14 +102,22 @@ static SlideShowView* _instance = nil;
     _scrollview.userInteractionEnabled = NO;
     [self addSubview:_scrollview];
     
-    _pgcontrol = [[UIPageControl alloc] initWithFrame:CGRectZero];
-    _pgcontrol.pageIndicatorTintColor = [UIColor colorWithWhite:0.8 alpha:1];
-    _pgcontrol.currentPageIndicatorTintColor = [UIColor colorWithRed:0.89f green:0.11f blue:0.17f alpha:1];
-    _pgcontrol.numberOfPages = _images.count;
-    _pgcontrol.currentPage = 0;
-    [_pgcontrol sizeToFit];
-    _pgcontrol.center = pgconcenter_;
-    [self addSubview:_pgcontrol];
+//    _pgcontrol = [[UIPageControl alloc] initWithFrame:CGRectZero];
+//    _pgcontrol.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dot_white.png"]];
+//    _pgcontrol.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dot_yellow.png"]];
+//    _pgcontrol.numberOfPages = _images.count;
+//    _pgcontrol.currentPage = 0;
+//    [_pgcontrol sizeToFit];
+//    _pgcontrol.center = pgconcenter_;
+//    [self addSubview:_pgcontrol];
+    self.pageControl = [[FXPageControl alloc] initWithFrame:CGRectMake(0, 0, _images.count*20, 15)];
+    self.pageControl.defersCurrentPageDisplay = YES;
+    [self.pageControl setSelectedDotImage:[UIImage imageNamed:@"dot_yellow.png"]];
+    [self.pageControl setDotImage:[UIImage imageNamed:@"dot_white.png"]];
+    [self.pageControl setNumberOfPages:_images.count];
+    [self.pageControl setBackgroundColor:[UIColor clearColor]];
+    self.pageControl.center = pgconcenter_;
+    [self addSubview:self.pageControl];
     
     int index_ = 0;
     for (UIImage*image_ in images) {
@@ -135,7 +143,13 @@ static SlideShowView* _instance = nil;
     
     btnBack = [UIButton buttonWithType: UIButtonTypeCustom];
     [btnBack setFrame: CGRectMake(10.0f, 20.0f, 30.0f, 30.0f)];
-    [btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back.png"] forState:UIControlStateNormal];
+    if (kMasterViewController == typeOfViewController) {
+        [btnBack setBackgroundImage:[UIImage imageNamed:@"icon_left_arrow-with_ring.png"] forState:UIControlStateNormal];
+    }
+    else if (kDetailViewController == typeOfViewController) {
+        [btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back.png"] forState:UIControlStateNormal];
+    }
+    
     [btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back_disable.png"] forState:UIControlStateDisabled];
     [btnBack addTarget:self action:@selector(btnBackMenu:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview: btnBack];
@@ -210,11 +224,11 @@ static SlideShowView* _instance = nil;
         CGRect rect = _scrollview.frame;
         rect.origin.x = rect.size.width * (page_+1);
         [_scrollview scrollRectToVisible:rect animated:true];
-        _pgcontrol.currentPage = page_ +1;
+        self.pageControl.currentPage = page_;
     }
     else {
         [_scrollview setContentOffset:CGPointMake(0,0) animated:YES];
-        _pgcontrol.currentPage = 0;
+        self.pageControl.currentPage = 0;
     }
 }
 @end
