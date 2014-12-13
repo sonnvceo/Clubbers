@@ -22,7 +22,7 @@
 
 - (void)setContentController:(UIViewController*)contentController
                     animated:(BOOL)animated;
-
+- (void)setImgVForSelectedTabMenu:(NSInteger) kSelectedTabMenu;
 // show / hide manually
 - (void)showMenuAnimated:(BOOL)animated;
 - (void)hideMenuAnimated:(BOOL)animated;

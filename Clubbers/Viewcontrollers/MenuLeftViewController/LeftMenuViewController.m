@@ -57,6 +57,8 @@
             viewController = [[ContentViewController alloc] init];
             viewController.delegate = (id)delegate;
             viewController.kindOfTableView = kCityViewController;
+            if (delegate)
+                [delegate setIndicatorForSelectedTabMenu:kCityViewController];
             [self.sideMenuController setContentController:viewController animated:YES];
             [self stateOfButonCities:NO
                       andButtonClubs:YES
@@ -68,6 +70,8 @@
             viewController = [[ContentViewController alloc] init];
             viewController.delegate = (id)delegate;
             viewController.kindOfTableView = kClubViewController;
+            if (delegate)
+                [delegate setIndicatorForSelectedTabMenu:kClubViewController];
             [self.sideMenuController setContentController:viewController animated:YES];
             [self stateOfButonCities:YES
                       andButtonClubs:NO
@@ -86,6 +90,13 @@
                andButonNewsAndEvents:YES];
             break;
         case 3:
+            viewController = [[ContentViewController alloc] init];
+            viewController.delegate = (id)delegate;
+            viewController.kindOfTableView = kMyFavViewController;
+            if (delegate)
+                [delegate setIndicatorForSelectedTabMenu:kMyFavViewController];
+            [self.sideMenuController setContentController:viewController animated:YES];
+
             [self stateOfButonCities:YES
                       andButtonClubs:YES
                     andButonIbizaMap:YES

@@ -27,4 +27,5 @@
 @protocol LeftMenuViewControllerDelegate
 @optional
 - (void) presentToViewController:(UIViewController*) viewController;
+- (void) setIndicatorForSelectedTabMenu:(NSInteger) kKindOfViewController;
 @end

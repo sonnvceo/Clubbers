@@ -48,6 +48,8 @@
         [self loadAllTowns];
     else if (kindOfTableView == kClubViewController)
         [self loadAllClubs];
+    else if (kindOfTableView == kMyFavViewController)
+        [self loadAllMyFav];
     [self.tableView setHidden:YES];
 }
 -(void)loadAllTowns {
@@ -85,6 +87,11 @@
     }];
     
     [client enqueueHTTPRequestOperation:operation];
+}
+-(void)loadAllMyFav {
+    [self.tableView setHidden:YES];
+    if (delegate)
+        [delegate dismissMBProgressHUD];
 }
 - (void)viewDidUnload {
     [self.tableView removeFromSuperview];

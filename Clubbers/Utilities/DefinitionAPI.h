@@ -47,7 +47,10 @@
 
 enum {
     kCityViewController,
-    kClubViewController
+    kClubViewController,
+    kLbizaMApViewController,
+    kMyFavViewController,
+    kNewsAndEventsViewController
 } KKindOfViewController;
 
 enum {

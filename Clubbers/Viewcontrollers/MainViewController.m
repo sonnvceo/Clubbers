@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 #import "SideMenu.h"
 #import "DefinitionAPI.h"
+#import "NewAndEventViewController.h"
+#import "LbizaMapViewController.h"
 @interface MainViewController () {
     SlideShowView *slideShowView;
     SideMenu *sideMenu;
@@ -56,8 +58,6 @@
     contentController.delegate = self;
     sideMenu = [[SideMenu alloc] initWithContentController:contentController
                                               menuController:menuController];
-//    [menuController.view setFrame:sideMenuSubView.frame];
-//    [contentController.view setFrame:sideMenuSubView.frame];
     [sideMenuSubView addSubview:sideMenu.view];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -85,13 +85,21 @@
 }
 #pragma mark - JDMenuViewControllerDelegate
 - (void) presentToViewController:(UIViewController*) viewController {
-    if (viewController)
-    [self.navigationController pushViewController:viewController animated:YES];
+    if (viewController) {
+        if ([viewController isKindOfClass:[LbizaMapViewController class]])
+            [sideMenu setImgVForSelectedTabMenu:kLbizaMApViewController];
+        else if ([viewController isKindOfClass:[NewAndEventViewController class]])
+            [sideMenu setImgVForSelectedTabMenu:kNewsAndEventsViewController];
+       [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
+- (void) setIndicatorForSelectedTabMenu:(NSInteger) kKindOfViewController {
+  [sideMenu setImgVForSelectedTabMenu:kKindOfViewController];
+}
+#pragma mark - ContentViewControllerDelegate
 - (void) disableBackMenuButton {
     [slideShowView stateOfButonMenuAndButtonBack:YES];
 }
-#pragma mark - ContentViewControllerDelegate
 - (void)dismissMBProgressHUD {
     [HUD hide:TRUE];
 }

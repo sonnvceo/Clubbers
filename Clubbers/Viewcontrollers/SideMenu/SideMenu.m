@@ -7,7 +7,7 @@
 //
 
 #import "SideMenu.h"
-
+#import "DefinitionAPI.h"
 // constants
 const CGFloat JDSideMenuMinimumRelativePanDistanceToOpen = 0.33;
 const CGFloat JDSideMenuDefaultMenuWidth = 60.0;
@@ -17,7 +17,13 @@ const CGFloat JDSideMenuDefaultDamping = 0.5;
 const CGFloat JDSideMenuDefaultOpenAnimationTime = 1.0;
 const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
 
-@interface SideMenu ()
+@interface SideMenu () {
+    UIImageView *imgVCitiesIndicator;
+    UIImageView *imgVClubIndicator;
+    UIImageView *imgVLbizaMapIndicator;
+    UIImageView *imgVMyFavIndicator;
+    UIImageView *imgVNewsAndEventsIndicator;
+}
 @property (nonatomic, strong) UIImageView *backgroundView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
@@ -62,26 +68,27 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
     UIView *imgBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 1)];
     imgBackground.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:imgBackground];
-    UIImageView *imgVCitiesIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 1, 12, 60)];
-    [imgVCitiesIndicator setImage:[UIImage imageNamed:@"menu_shape_1.png"]];
+    imgVCitiesIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 1, 9, 60)];
     [self.view addSubview:imgVCitiesIndicator];
+    [imgVCitiesIndicator setImage:[UIImage imageNamed:@"menu_shape_1.png"]];
+    [self.view insertSubview:imgVCitiesIndicator aboveSubview:self.contentController.view];
     //
-    UIImageView *imgVClubIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 61, 12, 60)];
-    [imgVClubIndicator setImage:[UIImage imageNamed:@"menu_shape_2.png"]];
+     imgVClubIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 61, 9, 60)];
+    [imgVClubIndicator setImage:[UIImage imageNamed:@"menu_shape_2_normal.png"]];
     [self.view addSubview:imgVClubIndicator];
     //
-    UIImageView *imgVLbizaMapIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 121, 12, 60)];
-    [imgVLbizaMapIndicator setImage:[UIImage imageNamed:@"menu_shape_3.png"]];
+     imgVLbizaMapIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 121, 9, 60)];
+    [imgVLbizaMapIndicator setImage:[UIImage imageNamed:@"menu_shape_3_normal.png"]];
     [self.view addSubview:imgVLbizaMapIndicator];
     //
-    UIImageView *imgVMyFavIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 181, 12, 58)];
-    [imgVMyFavIndicator setImage:[UIImage imageNamed:@"menu_shape_4.png"]];
+     imgVMyFavIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 181, 9, 58)];
+    [imgVMyFavIndicator setImage:[UIImage imageNamed:@"menu_shape_4_normal.png"]];
     [self.view addSubview:imgVMyFavIndicator];
     //
-    UIImageView *imgVNewsAndEventsIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 241, 12, 60)];
-    [imgVNewsAndEventsIndicator setImage:[UIImage imageNamed:@"menu_shape_5.png"]];
+     imgVNewsAndEventsIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 241, 9, 60)];
+    [imgVNewsAndEventsIndicator setImage:[UIImage imageNamed:@"menu_shape_5_normal.png"]];
     [self.view addSubview:imgVNewsAndEventsIndicator];
-    
+
     _containerView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
     [self.containerView addSubview:self.contentController.view];
     self.contentController.view.frame = self.containerView.bounds;
@@ -92,7 +99,48 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
     self.contentController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_containerView];
 }
-
+- (void)setImgVForSelectedTabMenu:(NSInteger) kSelectedTabMenu {
+    if (kSelectedTabMenu == kCityViewController) {
+        [imgVCitiesIndicator setImage:[UIImage imageNamed:@"menu_shape_1.png"]];
+        [imgVClubIndicator setImage:[UIImage imageNamed:@"menu_shape_2_normal.png"]];
+        [imgVLbizaMapIndicator setImage:[UIImage imageNamed:@"menu_shape_3_normal.png"]];
+        [imgVMyFavIndicator setImage:[UIImage imageNamed:@"menu_shape_4_normal.png"]];
+        [imgVNewsAndEventsIndicator setImage:[UIImage imageNamed:@"menu_shape_5_normal.png"]];
+        [self.view insertSubview:imgVCitiesIndicator aboveSubview:self.contentController.view];
+    }
+    else if (kSelectedTabMenu == kClubViewController) {
+        [imgVCitiesIndicator setImage:[UIImage imageNamed:@"menu_shape_1_normal.png"]];
+        [imgVClubIndicator setImage:[UIImage imageNamed:@"menu_shape_2.png"]];
+        [imgVLbizaMapIndicator setImage:[UIImage imageNamed:@"menu_shape_3_normal.png"]];
+        [imgVMyFavIndicator setImage:[UIImage imageNamed:@"menu_shape_4_normal.png"]];
+        [imgVNewsAndEventsIndicator setImage:[UIImage imageNamed:@"menu_shape_5_normal.png"]];
+        [self.view insertSubview:imgVClubIndicator aboveSubview:self.contentController.view];
+    }
+    else if (kSelectedTabMenu == kLbizaMApViewController) {
+        [imgVCitiesIndicator setImage:[UIImage imageNamed:@"menu_shape_1_normal.png"]];
+        [imgVClubIndicator setImage:[UIImage imageNamed:@"menu_shape_2_normal.png"]];
+        [imgVLbizaMapIndicator setImage:[UIImage imageNamed:@"menu_shape_3.png"]];
+        [imgVMyFavIndicator setImage:[UIImage imageNamed:@"menu_shape_4_normal.png"]];
+        [imgVNewsAndEventsIndicator setImage:[UIImage imageNamed:@"menu_shape_5_normal.png"]];
+        [self.view insertSubview:imgVLbizaMapIndicator aboveSubview:self.contentController.view];
+    }
+    else if (kSelectedTabMenu == kMyFavViewController) {
+        [imgVCitiesIndicator setImage:[UIImage imageNamed:@"menu_shape_1_normal.png"]];
+        [imgVClubIndicator setImage:[UIImage imageNamed:@"menu_shape_2_normal.png"]];
+        [imgVLbizaMapIndicator setImage:[UIImage imageNamed:@"menu_shape_3_normal.png"]];
+        [imgVMyFavIndicator setImage:[UIImage imageNamed:@"menu_shape_4.png"]];
+        [imgVNewsAndEventsIndicator setImage:[UIImage imageNamed:@"menu_shape_5_normal.png"]];
+        [self.view insertSubview:imgVMyFavIndicator aboveSubview:self.contentController.view];
+    }
+    else if (kSelectedTabMenu == kNewsAndEventsViewController) {
+        [imgVCitiesIndicator setImage:[UIImage imageNamed:@"menu_shape_1_normal.png"]];
+        [imgVClubIndicator setImage:[UIImage imageNamed:@"menu_shape_2_normal.png"]];
+        [imgVLbizaMapIndicator setImage:[UIImage imageNamed:@"menu_shape_3_normal.png"]];
+        [imgVMyFavIndicator setImage:[UIImage imageNamed:@"menu_shape_4_normal.png"]];
+        [imgVNewsAndEventsIndicator setImage:[UIImage imageNamed:@"menu_shape_5.png"]];
+        [self.view insertSubview:imgVNewsAndEventsIndicator aboveSubview:self.contentController.view];
+    }
+}
 - (void)setBackgroundImage:(UIImage*)image;
 {
     if (!self.backgroundView && image) {
@@ -197,6 +245,8 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
                                                        self.view.bounds.size.height);
     } completion:^(BOOL finished) {
         [blockSelf.menuController.view removeFromSuperview];
+        [imgVCitiesIndicator bringSubviewToFront: self.contentController.view];
+        [self.view insertSubview:imgVCitiesIndicator aboveSubview:self.contentController.view];
     }];
 }
 
