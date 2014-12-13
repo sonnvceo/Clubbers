@@ -101,15 +101,7 @@ static SlideShowView* _instance = nil;
     _scrollview.layer.cornerRadius = 2;
     _scrollview.userInteractionEnabled = NO;
     [self addSubview:_scrollview];
-    
-//    _pgcontrol = [[UIPageControl alloc] initWithFrame:CGRectZero];
-//    _pgcontrol.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dot_white.png"]];
-//    _pgcontrol.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dot_yellow.png"]];
-//    _pgcontrol.numberOfPages = _images.count;
-//    _pgcontrol.currentPage = 0;
-//    [_pgcontrol sizeToFit];
-//    _pgcontrol.center = pgconcenter_;
-//    [self addSubview:_pgcontrol];
+
     self.pageControl = [[FXPageControl alloc] initWithFrame:CGRectMake(0, 0, _images.count*20, 15)];
     self.pageControl.defersCurrentPageDisplay = YES;
     [self.pageControl setSelectedDotImage:[UIImage imageNamed:@"dot_yellow.png"]];
@@ -117,6 +109,7 @@ static SlideShowView* _instance = nil;
     [self.pageControl setNumberOfPages:_images.count];
     [self.pageControl setBackgroundColor:[UIColor clearColor]];
     self.pageControl.center = pgconcenter_;
+    self.pageControl.currentPage = 0;
     [self addSubview:self.pageControl];
     
     int index_ = 0;
@@ -224,7 +217,7 @@ static SlideShowView* _instance = nil;
         CGRect rect = _scrollview.frame;
         rect.origin.x = rect.size.width * (page_+1);
         [_scrollview scrollRectToVisible:rect animated:true];
-        self.pageControl.currentPage = page_;
+        self.pageControl.currentPage = page_ +1;
     }
     else {
         [_scrollview setContentOffset:CGPointMake(0,0) animated:YES];
