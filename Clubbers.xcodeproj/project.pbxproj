@@ -55,7 +55,6 @@
 		305E860E1A3050B800808E13 /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E860C1A3050B800808E13 /* LeftMenuViewController.xib */; };
 		30A900771A35890B00B657C3 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A900751A35890B00B657C3 /* MapView.m */; };
 		30A900781A35890B00B657C3 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A900761A35890B00B657C3 /* MapView.xib */; };
-		30B7258E1A3BF4B200832A5F /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 		841A61021A34071000773107 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A61011A34071000773107 /* MBProgressHUD.m */; };
 		841A610E1A34220600773107 /* listing_pic_bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61041A34220600773107 /* listing_pic_bg1.jpg */; };
 		841A610F1A34220600773107 /* listing_pic_bg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61051A34220600773107 /* listing_pic_bg2.jpg */; };
@@ -194,6 +193,7 @@
 		846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69401A34D5AD00F8D31A /* OpenGLES.framework */; };
 		846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69421A34D5B500F8D31A /* QuartzCore.framework */; };
 		846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69441A34D5C200F8D31A /* SystemConfiguration.framework */; };
+		84786A701A3D9FC80071D318 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -442,7 +442,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30B7258E1A3BF4B200832A5F /* GoogleMaps.framework in Frameworks */,
+				84786A701A3D9FC80071D318 /* GoogleMaps.framework in Frameworks */,
 				846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */,
 				846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */,
 				846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */,
@@ -1345,6 +1345,18 @@
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 				);
 				INFOPLIST_FILE = Clubbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1360,6 +1372,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",

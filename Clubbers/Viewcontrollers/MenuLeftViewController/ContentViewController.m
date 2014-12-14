@@ -35,7 +35,12 @@
     }
     return self;
 }
-
+- (void) setSizeFrameTableView:(CGRect) frameSize {
+    [self.tableView setFrame:CGRectMake(self.tableView.frame.origin.x,
+                                        self.tableView.frame.origin.y,
+                                        self.tableView.frame.size.width,
+                                        frameSize.size.height)];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,6 +56,7 @@
     else if (kindOfTableView == kMyFavViewController)
         [self loadAllMyFav];
     [self.tableView setHidden:YES];
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 180, 0);
 }
 -(void)loadAllTowns {
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:URL_BASE]];

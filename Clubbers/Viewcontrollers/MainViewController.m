@@ -39,7 +39,17 @@
     UIImage*i4 = [UIImage imageNamed:@"4.jpg"];
     UIImage*i5 = [UIImage imageNamed:@"5.jpg"];
     NSArray *images = @[i1,i2,i3,i4,i5];
-                        
+    
+    slideShowSubView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|
+                                        UIViewAutoresizingFlexibleWidth |
+                                        UIViewAutoresizingFlexibleRightMargin |
+                                        UIViewAutoresizingFlexibleTopMargin;
+    
+    sideMenuSubView.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin|
+                                        UIViewAutoresizingFlexibleWidth |
+                                        UIViewAutoresizingFlexibleRightMargin |
+                                        UIViewAutoresizingFlexibleBottomMargin;
+    
     self.navigationController.navigationBarHidden = YES;
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:HUD];
@@ -55,6 +65,7 @@
     LeftMenuViewController *menuController = [[LeftMenuViewController alloc] init];
     menuController.delegate = self;
     ContentViewController *contentController = [[ContentViewController alloc] init];
+    [contentController setSizeFrameTableView:sideMenuSubView.frame];
     contentController.delegate = self;
     sideMenu = [[SideMenu alloc] initWithContentController:contentController
                                               menuController:menuController];

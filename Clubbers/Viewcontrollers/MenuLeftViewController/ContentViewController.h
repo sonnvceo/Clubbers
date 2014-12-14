@@ -16,6 +16,7 @@
 }
 @property (nonatomic, assign) id <ContentViewControllerDelegate> delegate;
 @property(assign, nonatomic) NSInteger kindOfTableView;
+- (void) setSizeFrameTableView:(CGRect) frameSize;
 @end
 @protocol ContentViewControllerDelegate
 @optional

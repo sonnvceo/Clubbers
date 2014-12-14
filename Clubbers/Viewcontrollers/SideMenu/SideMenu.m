@@ -219,7 +219,7 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
 {
     // add menu view
     [self addMenuControllerView];
-    
+    [self hideAllImageView:YES];
     // animate
     __weak typeof(self) blockSelf = self;
     [UIView animateWithDuration:animated ? duration : 0.0 delay:0
@@ -247,9 +247,16 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
         [blockSelf.menuController.view removeFromSuperview];
         [imgVCitiesIndicator bringSubviewToFront: self.contentController.view];
         [self.view insertSubview:imgVCitiesIndicator aboveSubview:self.contentController.view];
+        [self hideAllImageView:NO];
     }];
 }
-
+- (void) hideAllImageView:(BOOL) isHidden {
+    imgVCitiesIndicator.hidden = isHidden;
+    imgVClubIndicator.hidden = isHidden;
+    imgVLbizaMapIndicator.hidden = isHidden;
+    imgVMyFavIndicator.hidden = isHidden;
+    imgVNewsAndEventsIndicator.hidden = isHidden;
+}
 #pragma mark State
 
 - (BOOL)isMenuVisible;

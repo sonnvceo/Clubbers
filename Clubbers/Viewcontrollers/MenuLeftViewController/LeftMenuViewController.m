@@ -23,10 +23,17 @@
 @synthesize btnIbizaMap;
 @synthesize btnMyFav;
 @synthesize btnNewsAndEvents;
+
+@synthesize imgVCities;
+@synthesize imgVClubs;
+@synthesize imgVIbizaMap;
+@synthesize imgVMyFav;
+@synthesize imgVNewsAndEvents;
 - (void)viewDidLayoutSubviews;
 {
     [super viewDidLayoutSubviews];
 //    self.scrollView.contentSize = CGRectInset(self.scrollView.bounds, 0, -1).size;
+    /*
     btnCities = [UIButton buttonWithType: UIButtonTypeCustom];
     btnCities.tag = 0;
     [btnCities setFrame: CGRectMake(0.0f, 0.0f, 60.0f, 60.0f)];
@@ -45,6 +52,18 @@
     
     [btnNewsAndEvents setBackgroundImage:[UIImage imageNamed:@"menu_item_5_normal.png"] forState:UIControlStateDisabled];
     [btnNewsAndEvents setBackgroundImage:[UIImage imageNamed:@"menu_item_5_selected"] forState:UIControlStateNormal];
+     */
+    imgVCities = [[UIImageView alloc] init];
+    [imgVCities setFrame: CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 60.0f)];
+    imgVCities.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|
+                                  UIViewAutoresizingFlexibleWidth |
+                                  UIViewAutoresizingFlexibleRightMargin;
+    [self.view addSubview:imgVCities];
+    [self stateOfButonCities:YES
+              andButtonClubs:NO
+            andButonIbizaMap:NO
+               andButonMyFav:NO
+       andButonNewsAndEvents:NO];
 }
 
 - (IBAction)switchController:(id)sender;
@@ -60,11 +79,11 @@
             if (delegate)
                 [delegate setIndicatorForSelectedTabMenu:kCityViewController];
             [self.sideMenuController setContentController:viewController animated:YES];
-            [self stateOfButonCities:NO
-                      andButtonClubs:YES
-                    andButonIbizaMap:YES
-                       andButonMyFav:YES
-               andButonNewsAndEvents:YES];
+            [self stateOfButonCities:YES
+                      andButtonClubs:NO
+                    andButonIbizaMap:NO
+                       andButonMyFav:NO
+               andButonNewsAndEvents:NO];
             break;
         case 1:
             viewController = [[ContentViewController alloc] init];
@@ -73,21 +92,21 @@
             if (delegate)
                 [delegate setIndicatorForSelectedTabMenu:kClubViewController];
             [self.sideMenuController setContentController:viewController animated:YES];
-            [self stateOfButonCities:YES
-                      andButtonClubs:NO
-                    andButonIbizaMap:YES
-                       andButonMyFav:YES
-               andButonNewsAndEvents:YES];
+            [self stateOfButonCities:NO
+                      andButtonClubs:YES
+                    andButonIbizaMap:NO
+                       andButonMyFav:NO
+               andButonNewsAndEvents:NO];
             break;
         case 2:
             if (delegate) {
                 [delegate presentToViewController:lbizaMapViewController];
             }
-            [self stateOfButonCities:YES
-                      andButtonClubs:YES
-                    andButonIbizaMap:NO
-                       andButonMyFav:YES
-               andButonNewsAndEvents:YES];
+            [self stateOfButonCities:NO
+                      andButtonClubs:NO
+                    andButonIbizaMap:YES
+                       andButonMyFav:NO
+               andButonNewsAndEvents:NO];
             break;
         case 3:
             viewController = [[ContentViewController alloc] init];
@@ -97,21 +116,21 @@
                 [delegate setIndicatorForSelectedTabMenu:kMyFavViewController];
             [self.sideMenuController setContentController:viewController animated:YES];
 
-            [self stateOfButonCities:YES
-                      andButtonClubs:YES
-                    andButonIbizaMap:YES
-                       andButonMyFav:NO
-               andButonNewsAndEvents:YES];
+            [self stateOfButonCities:NO
+                      andButtonClubs:NO
+                    andButonIbizaMap:NO
+                       andButonMyFav:YES
+               andButonNewsAndEvents:NO];
             break;
         case 4:
             if (delegate) {
                 [delegate presentToViewController:newAndEventViewController];
             }
-            [self stateOfButonCities:YES
-                      andButtonClubs:YES
-                    andButonIbizaMap:YES
-                       andButonMyFav:YES
-               andButonNewsAndEvents:NO];
+            [self stateOfButonCities:NO
+                      andButtonClubs:NO
+                    andButonIbizaMap:NO
+                       andButonMyFav:NO
+               andButonNewsAndEvents:YES];
             break;
             
         default:
@@ -125,24 +144,24 @@
     andButonMyFav:(BOOL) isEnablebtnMyFav
      andButonNewsAndEvents:(BOOL) isEnablebtnNewsAndEvents{
     if (isEnablebtnCities)
-        btnCities.enabled = YES;
+        [imgVCities setImage:[UIImage imageNamed:@"menu_item_1_normal.png"]];
     else
-        btnCities.enabled = NO;
+        [imgVCities setImage:[UIImage imageNamed:@"menu_item_1_selected.png"]];
     if (isEnablebtnClubs)
-        btnClubs.enabled = YES;
+        [imgVClubs setImage:[UIImage imageNamed:@"menu_item_2_normal.png"]];
     else
-        btnClubs.enabled = NO;
+        [imgVClubs setImage:[UIImage imageNamed:@"menu_item_2_selected.png"]];
     if (isEnablebtnIbizaMap)
-        btnIbizaMap.enabled = YES;
+        [imgVIbizaMap setImage:[UIImage imageNamed:@"menu_item_3_normal.png"]];
     else
-        btnIbizaMap.enabled = NO;
+        [imgVIbizaMap setImage:[UIImage imageNamed:@"menu_item_3_selected.png"]];
     if (isEnablebtnMyFav)
-        btnMyFav.enabled = YES;
+        [imgVMyFav setImage:[UIImage imageNamed:@"menu_item_4_normal.png"]];
     else
-        btnMyFav.enabled = NO;
+        [imgVMyFav setImage:[UIImage imageNamed:@"menu_item_4_selected.png"]];
     if (isEnablebtnNewsAndEvents)
-        btnNewsAndEvents.enabled = YES;
+        [imgVNewsAndEvents setImage:[UIImage imageNamed:@"menu_item_5_normal.png"]];
     else
-        btnNewsAndEvents.enabled = NO;
+        [imgVNewsAndEvents setImage:[UIImage imageNamed:@"menu_item_5_selected.png"]];
 }
 @end

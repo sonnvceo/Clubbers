@@ -17,6 +17,12 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnIbizaMap;
 @property (strong, nonatomic) IBOutlet UIButton *btnMyFav;
 @property (strong, nonatomic) IBOutlet UIButton *btnNewsAndEvents;
+@property (strong, nonatomic) IBOutlet UIImageView *imgVCities;
+@property (strong, nonatomic) IBOutlet UIImageView *imgVClubs;
+@property (strong, nonatomic) IBOutlet UIImageView *imgVIbizaMap;
+@property (strong, nonatomic) IBOutlet UIImageView *imgVMyFav;
+@property (strong, nonatomic) IBOutlet UIImageView *imgVNewsAndEvents;
+
 - (void) stateOfButonCities:(BOOL) isEnablebtnCities
              andButtonClubs:(BOOL) isEnablebtnClubs
            andButonIbizaMap:(BOOL) isEnablebtnIbizaMap
