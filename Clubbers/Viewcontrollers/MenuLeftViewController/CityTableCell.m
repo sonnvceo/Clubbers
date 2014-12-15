@@ -9,7 +9,7 @@
 #import "CityTableCell.h"
 
 @implementation CityTableCell
-@synthesize imgIcon,lblTitle,lbDetail;
+@synthesize imgIcon,lblTitle,lbDetail, imgShadowIcon;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -20,8 +20,12 @@
     return self;
 }
 - (void) configureCell {
+    imgShadowIcon.layer.cornerRadius = imgShadowIcon.frame.size.width / 2;
+    imgShadowIcon.clipsToBounds = YES;
     imgIcon.layer.cornerRadius = imgIcon.frame.size.width / 2;
     imgIcon.clipsToBounds = YES;
+    imgShadowIcon.center = imgIcon.center;
+    imgShadowIcon.hidden = YES;
     self.lblTitle.adjustsFontSizeToFitWidth = NO;
 //    self.lblTitle.lineBreakMode = UILineBreakModeTailTruncation;
 

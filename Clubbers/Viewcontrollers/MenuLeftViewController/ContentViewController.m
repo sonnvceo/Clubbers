@@ -59,8 +59,8 @@
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 180, 0);
 }
 -(void)loadAllTowns {
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:URL_BASE]];
-    NSURLRequest *request = [client requestWithMethod:@"GET" path:@"sa_towns_list" parameters:nil];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:OFFICIAL_SERVER]];
+    NSURLRequest *request = [client requestWithMethod:@"GET" path:SA_TOWNS_LIST parameters:nil];
     NSLog(@" %@", [request description]);
     AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
         NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
@@ -77,7 +77,7 @@
     [client enqueueHTTPRequestOperation:operation];
 }
 -(void)loadAllClubs{
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:URL_BASE]];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:OFFICIAL_SERVER]];
     NSURLRequest *request = [client requestWithMethod:@"GET" path:@"sa_clubs_list/?town_id=1" parameters:nil];
     NSLog(@" %@", [request description]);
     AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
@@ -158,7 +158,8 @@
     }
     [self downloadImageWithURL:urlImageCell completionBlock:^(BOOL succeeded, UIImage *image) {
         if (succeeded) {
-             [cell.imgIcon setImage:image];
+            [cell.imgShadowIcon setHidden:NO];
+            [cell.imgIcon setImage:image];
         }
     }];
     cell.lblTitle.text = lblTitleCell;
@@ -199,12 +200,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (kindOfTableView == kCityViewController) {
         if (delegate) {
-            [delegate presentToViewController];
+            [delegate presentToDetailViewController:(NSInteger)indexPath.row];
         }
-//        TownDetailViewController *townDetailViewController = [[TownDetailViewController alloc]
-//                                                              initWithNibName:@"TownDetailViewController"
-//                                                              bundle:nil];
-//        [self presentViewController:townDetailViewController animated:NO completion:nil];
     }
     else if (kindOfTableView == kClubViewController) {
         

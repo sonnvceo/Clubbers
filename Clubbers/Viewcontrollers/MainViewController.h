@@ -16,10 +16,11 @@
 @interface MainViewController : UIViewController<SlideShowViewDelegate,
                                                  ContentViewControllerDelegate,
                                                  LeftMenuViewControllerDelegate,
-                                                 MBProgressHUDDelegate> {
+                                                 MBProgressHUDDelegate,
+                                                 TownDetailViewControllerDelegate> {
     MBProgressHUD *HUD;
   }
-@property (strong, nonatomic) IBOutlet UIView *slideShowSubView;
+
 @property (strong, nonatomic) IBOutlet UIView *sideMenuSubView;
 
 @end

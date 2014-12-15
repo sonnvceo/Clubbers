@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TownDetailModel.h"
 @protocol TownDetailCellDelegate;
 
 @interface TownDetailCell : UITableViewCell {
@@ -28,7 +28,7 @@
 @property (nonatomic, assign) float realHeightOfTextView;
 - (void) creatSubviews;
 - (IBAction)readMore:(id)sender;
-- (void) configueCellAtIndexPath:(NSIndexPath*) indexPath;
+- (void) configueCellAtIndexPath:(NSIndexPath*) indexPath withTownDetai:(TownDetailModel *) townDetail;
 @end
 
 @protocol TownDetailCellDelegate <NSObject>

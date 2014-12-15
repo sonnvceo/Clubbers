@@ -15,9 +15,7 @@
 		301BFA341A2EB95E00548B52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 301BFA331A2EB95E00548B52 /* AppDelegate.m */; };
 		301BFA361A2EB97C00548B52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301BFA351A2EB97C00548B52 /* Images.xcassets */; };
 		302957FC1A2F11FF00594F69 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302957FA1A2F11FF00594F69 /* MainViewController.m */; };
-		302957FD1A2F11FF00594F69 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302957FB1A2F11FF00594F69 /* MainViewController.xib */; };
 		302958061A2F394800594F69 /* SlideShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302958051A2F394800594F69 /* SlideShowView.m */; };
-		302958081A2F396200594F69 /* SlideShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302958071A2F396200594F69 /* SlideShowView.xib */; };
 		30299D961A31428500C4687C /* DefinitionAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 30299D951A31428500C4687C /* DefinitionAPI.m */; };
 		30299D991A3143F300C4687C /* TownModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30299D981A3143F300C4687C /* TownModel.m */; };
 		30299DB61A31477B00C4687C /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 30299DA41A31477B00C4687C /* AFHTTPClient.m */; };
@@ -193,7 +191,7 @@
 		846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69401A34D5AD00F8D31A /* OpenGLES.framework */; };
 		846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69421A34D5B500F8D31A /* QuartzCore.framework */; };
 		846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69441A34D5C200F8D31A /* SystemConfiguration.framework */; };
-		84786A701A3D9FC80071D318 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
+		84786A9D1A3DE89D0071D318 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,10 +220,8 @@
 		301BFA351A2EB97C00548B52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		302957F91A2F11FF00594F69 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		302957FA1A2F11FF00594F69 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		302957FB1A2F11FF00594F69 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		302958041A2F394800594F69 /* SlideShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideShowView.h; sourceTree = "<group>"; };
 		302958051A2F394800594F69 /* SlideShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideShowView.m; sourceTree = "<group>"; };
-		302958071A2F396200594F69 /* SlideShowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideShowView.xib; sourceTree = "<group>"; };
 		30299D941A31428500C4687C /* DefinitionAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefinitionAPI.h; sourceTree = "<group>"; };
 		30299D951A31428500C4687C /* DefinitionAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefinitionAPI.m; sourceTree = "<group>"; };
 		30299D971A3143F300C4687C /* TownModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownModel.h; sourceTree = "<group>"; };
@@ -442,7 +438,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84786A701A3D9FC80071D318 /* GoogleMaps.framework in Frameworks */,
+				84786A9D1A3DE89D0071D318 /* GoogleMaps.framework in Frameworks */,
 				846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */,
 				846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */,
 				846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */,
@@ -559,7 +555,6 @@
 				301BFA331A2EB95E00548B52 /* AppDelegate.m */,
 				302957F91A2F11FF00594F69 /* MainViewController.h */,
 				302957FA1A2F11FF00594F69 /* MainViewController.m */,
-				302957FB1A2F11FF00594F69 /* MainViewController.xib */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -626,7 +621,6 @@
 			children = (
 				302958041A2F394800594F69 /* SlideShowView.h */,
 				302958051A2F394800594F69 /* SlideShowView.m */,
-				302958071A2F396200594F69 /* SlideShowView.xib */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -1067,7 +1061,6 @@
 				841A61941A3422F200773107 /* menu_shape_2.png in Resources */,
 				841A62001A34239A00773107 /* ic_ne_offers_normal.png in Resources */,
 				841A61FD1A34239A00773107 /* ic_ne_home.png in Resources */,
-				302958081A2F396200594F69 /* SlideShowView.xib in Resources */,
 				841A61131A34220600773107 /* main_pic_bg1.jpg in Resources */,
 				841A616E1A34224A00773107 /* town8_2.jpg in Resources */,
 				841A61F71A34239A00773107 /* ic_map_shopping_normal.png in Resources */,
@@ -1086,7 +1079,6 @@
 				841A61691A34224A00773107 /* town4.jpg in Resources */,
 				841A61921A3422F200773107 /* menu_shape_1.png in Resources */,
 				841A61FB1A34239A00773107 /* ic_ne_events_normal.png in Resources */,
-				302957FD1A2F11FF00594F69 /* MainViewController.xib in Resources */,
 				841A610E1A34220600773107 /* listing_pic_bg1.jpg in Resources */,
 				841A61EB1A34239A00773107 /* ic_heart.png in Resources */,
 				842C81721A34A96500836910 /* CustomTableCell.xib in Resources */,
@@ -1357,12 +1349,17 @@
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 				);
 				INFOPLIST_FILE = Clubbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1432,12 +1429,17 @@
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 				);
 				INFOPLIST_FILE = Clubbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

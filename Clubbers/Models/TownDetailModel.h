@@ -21,5 +21,5 @@
 @property (strong,nonatomic) NSString *townDeaderDetail;
 @property (strong,nonatomic) NSArray  *imageGallerys;
 +(TownDetailModel*) shareInstance;
--(NSMutableArray*)parseJson:(NSArray*)listJson;
+- (TownDetailModel*)parseJson:(NSDictionary*)jsonDict;
 @end

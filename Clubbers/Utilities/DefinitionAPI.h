@@ -22,6 +22,7 @@
 #define IS_IPHONE6 ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] && fabs( ( double )[ [ UIScreen mainScreen ] nativeBounds ].size.height - ( double )1334 ) < DBL_EPSILON )
 #define IS_IPHONE6_PLUS ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] && fabs( ( double )[ [ UIScreen mainScreen ] nativeBounds ].size.height - ( double )2208 ) < DBL_EPSILON )
 
+/*
 #pragma API
 #define URL_BASE @"http://www.clubbersapptoibiza.com/api/"
 
@@ -44,6 +45,51 @@
 #define URL_ALL_CLUBS  @"http://www.clubbersapptoibiza.com/api/sa_all_clubs"
 
 #define URL_PHOTO_GALLERY @"http://www.clubbersapptoibiza.com/api/sa_photos_gallery"
+ */
+
+#define OFFICIAL_SERVER @"http://www.clubbersapptoibiza.com/api/"
+#define RSS_SERVER @"http://www.clubbersapptoibiza.com/app/"
+#define WEATHER_API_SERVER @"http://api.openweathermap.org/data/2.5/weather?lat=38.9088888889&lon=1.4327777778"
+
+extern NSString* const SA_TOWNS_LIST;
+extern NSString* const SA_TOWN_DETAILS ;
+extern NSString* const SA_CLUBS_LIST ;
+extern NSString* const SA_CLUB_DETAILS ;
+extern NSString* const SA_PLACES_LIST ;
+extern NSString* const SA_PLACE_DETAILS ;
+extern NSString* const SA_THINGS_LIST ;
+extern NSString* const SA_THING_DETAILS ;
+extern NSString* const SA_RESTAURANTS_LIST ;
+extern NSString* const SA_RESTAURANT_DETAILS ;
+extern NSString* const SA_JUSTINCASES_LIST ;
+extern NSString* const SA_JUSTINCASE_DETAILS ;
+extern NSString* const SA_SHOPPINGS_LIST ;
+extern NSString* const SA_SHOPPING_DETAILS ;
+extern NSString* const SA_ALL_CLUBS ;
+extern NSString* const SA_ALL_SHOPPINGS ;
+extern NSString* const SA_ALL_RESTAURANTS ;
+extern NSString* const SA_ALL_PLACES ;
+extern NSString* const SA_ALL_THINGS ;
+extern NSString* const SA_ALL_JUSTINCASES;
+extern NSString* const SA_GET_RSS ;
+extern NSString* const SA_GET_WEATHER ;
+extern NSString* const PN_REGISTER_DEVICE ;
+extern NSString* const SA_APP_URL ;
+extern NSString* const SA_TOWN_GUIDE ;
+
+extern NSString* const PARAM_TOWN_ID;
+extern NSString* const PARAM_CLUB_ID;
+extern NSString* const PARAM_PLACE_ID ;
+extern NSString* const PARAM_THING_ID ;
+extern NSString* const PARAM_RESTAURANT_ID ;
+extern NSString* const PARAM_JUSTINCASE_ID;
+extern NSString* const PARAM_SHOPPING_ID ;
+extern NSString* const PARAM_DEVICE_TOKEN ;
+extern NSString* const PARAM_DEVICE_TYPE ;
+
+extern NSString* const PARAM_FEED;
+extern NSString* const PARAM_CAT ;
+extern NSString* const PARAM_PLATFORM;
 
 enum {
     kCityViewController,

@@ -9,16 +9,26 @@
 #import <UIKit/UIKit.h>
 #import "SlideShowView.h"
 #import "TownDetailCell.h"
+#import "MBProgressHUD.h"
+
+@protocol TownDetailViewControllerDelegate;
+
 @interface TownDetailViewController : UIViewController< SlideShowViewDelegate,
                                                         UITableViewDelegate,
                                                         UITableViewDataSource,
-                                                        TownDetailCellDelegate> {
+                                                        TownDetailCellDelegate,
+                                                        MBProgressHUDDelegate> {
    BOOL isBtnReadmoreDelegate;
-  float expandHeightCell;                                                   
+   float expandHeightCell;
+   MBProgressHUD *HUD;
 }
-
-@property (strong, nonatomic) IBOutlet UIView *slideShowSubView;
-@property (strong, nonatomic) IBOutlet UIView *sideMenuSubView;
+@property (nonatomic, assign) id <TownDetailViewControllerDelegate> delegate;
+@property (assign, nonatomic) NSInteger townID;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)btnDismiss:(id)sender;
+@end
+
+@protocol TownDetailViewControllerDelegate
+@optional
+
 @end

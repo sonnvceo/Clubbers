@@ -21,19 +21,19 @@
 @synthesize isBtnReadmore;
 @synthesize realHeightOfTextView;
 
-- (void) configueCellAtIndexPath:(NSIndexPath*) indexPath {
+- (void) configueCellAtIndexPath:(NSIndexPath*) indexPath withTownDetai:(TownDetailModel *) townDetail {
     switch (indexPath.row) {
         case 0:
             
             break;
         case 1:
-            [self creatSubviews];
+            [self creatSubviews:(TownDetailModel *) townDetail];
             break;
         default:
             break;
     }
 }
-- (void) creatSubviews {
+- (void) creatSubviews:(TownDetailModel *) townDetail {
     
     [self hideContentOfCell];
     CGRect textViewFrame = CGRectMake(10.0f, 15.0f, 280.0f, 50.0f);
@@ -42,7 +42,8 @@
     textView.userInteractionEnabled = NO;
     textView.showsHorizontalScrollIndicator = NO;
     textView.scrollEnabled = NO;
-    textView.text = @"Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation: Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation: Resigning the keyboard when the background is tapped can be accomplished in different ways. The code below is an example of one such technique. Click on the file and add the following method implementation:";
+    if (townDetail.townDescription)
+       textView.text = townDetail.shortOverview;
     [self addSubview:textView];
     // add buttons
      btnreadMore = [UIButton buttonWithType: UIButtonTypeCustom];

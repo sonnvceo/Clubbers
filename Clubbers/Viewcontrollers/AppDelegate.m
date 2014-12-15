@@ -23,22 +23,11 @@
     [GMSServices provideAPIKey:@"AIzaSyAdaqVF8Ghn99SdREhUOm4I4CmGeBM4op8"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    
-//    stackViewController = [[MTStackViewController alloc] initWithNibName:nil bundle:nil];
-//    [stackViewController setAnimationDurationProportionalToPosition:YES];
-//    
-//    TPMenuViewController *menuViewController = [[TPMenuViewController alloc] initWithNibName:nil bundle:nil];
-//    MainViewController *mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-//    
-//    [stackViewController setLeftViewController:menuViewController];
-//    
-//    UINavigationController *contentNavigationController = [[UINavigationController alloc]
-//                                                           initWithRootViewController:mainViewController];
-//    [stackViewController setContentViewController:contentNavigationController];
 
-    MainViewController *mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    MainViewController *mainViewController = [[MainViewController alloc] init];
     UINavigationController *contentNavigationController = [[UINavigationController alloc]
                                                            initWithRootViewController:mainViewController];
+    contentNavigationController.navigationBar.hidden = YES;
     self.window.rootViewController = contentNavigationController;
     [self.window makeKeyAndVisible];
     return YES;

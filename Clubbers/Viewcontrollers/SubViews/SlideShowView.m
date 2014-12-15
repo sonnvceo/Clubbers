@@ -30,14 +30,14 @@ static SlideShowView* _instance = nil;
     self = [super initWithFrame:frame];
     return self;
 }
-- (id)initWithXibFile:(id <SlideShowViewDelegate>)del {
-    self = [super init];
-    if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"SlideShowView" owner:self options:nil] objectAtIndex:0];
-        [self setDelegate:del];
-    }
-    return self;
-}
+//- (id)initWithXibFile:(id <SlideShowViewDelegate>)del {
+//    self = [super init];
+//    if (self) {
+//        self = [[[NSBundle mainBundle] loadNibNamed:@"SlideShowView" owner:self options:nil] objectAtIndex:0];
+//        [self setDelegate:del];
+//    }
+//    return self;
+//}
 - (void) autoSlideShowAnimation:(NSArray*) arrayImages {
     [self createSubviews: arrayImages];
     if (typeOfViewController != kDetailViewController) {

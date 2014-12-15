@@ -11,6 +11,7 @@
 @interface CityTableCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgIcon;
+@property (strong, nonatomic) IBOutlet UIImageView *imgShadowIcon;
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
 @property (strong, nonatomic) IBOutlet UILabel *lbDetail;
 

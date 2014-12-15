@@ -11,17 +11,19 @@
 #import "LeftMenuViewController.h"
 #import "ContentViewController.h"
 #import "DefinitionAPI.h"
+#import "AFNetworking.h"
+#import "TownDetailModel.h"
+
 @interface TownDetailViewController () {
     SlideShowView *slideShowView;
     SideMenu *sideMenu;
-    
+    TownDetailModel *townDetailModel;
 }
 @property (nonatomic) NSMutableArray * readMoreCells;
 @end
 
 @implementation TownDetailViewController
-@synthesize slideShowSubView;
-@synthesize sideMenuSubView;
+@synthesize townID, delegate;
 
 - (NSMutableArray *) readMoreCells {
     if (!_readMoreCells) {
@@ -43,15 +45,35 @@
     
     self.view.layer.cornerRadius = 5;
     self.view.layer.masksToBounds = YES;
-    
-    self.navigationController.navigationBarHidden = YES;
-    slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
+    CGRect frameSlideShowView = CGRectMake(0, 0,self.view.bounds.size.width, 180);
+    slideShowView = [[SlideShowView alloc] initWithFrame:frameSlideShowView];
+    slideShowView.delegate = (id)self;
     slideShowView.typeOfViewController = kDetailViewController;
     [slideShowView autoSlideShowAnimation:images];
     [slideShowView stateOfButonMenuAndButtonBack:NO];
-    [slideShowSubView addSubview:slideShowView];
+    [self.view addSubview:slideShowView];
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.delegate = (id)self;
+    HUD.labelText = @"Loading...";
+    [self showMBProgressHUDAtDetailView:YES];
+    [self loadDetailTown];
+}
+-(void)loadDetailTown {
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:OFFICIAL_SERVER]];
+    NSURLRequest *request = [client requestWithMethod:@"GET" path:[NSString stringWithFormat:@"%@%ld", SA_TOWN_DETAILS, townID+1
+                                                                   ] parameters:nil];
+    NSLog(@" %@", [request description]);
+    AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
+         NSDictionary* dictResponse = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
+        townDetailModel = [[TownDetailModel shareInstance] parseJson:dictResponse];
+        [self showMBProgressHUDAtDetailView:NO];
 
-//    [sideMenuSubView addSubview:sideMenu.view];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error:%@", error);
+    }];
+    
+    [client enqueueHTTPRequestOperation:operation];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -150,8 +172,8 @@
 //        }
     }
     if (isBtnReadmoreDelegate)
-        cell.isBtnReadmore = YES;
-    [cell configueCellAtIndexPath:indexPath];
+    cell.isBtnReadmore = YES;
+    [cell configueCellAtIndexPath:indexPath withTownDetai:townDetailModel];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -189,6 +211,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
+}
+- (void) showMBProgressHUDAtDetailView:(BOOL) isShowHUB {
+    if (isShowHUB)
+        [HUD show:TRUE];
+    else
+        [HUD hide:TRUE];
 }
 #pragma mark - TownDetailCell Delegate
 

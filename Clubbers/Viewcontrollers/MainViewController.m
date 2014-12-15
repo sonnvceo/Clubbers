@@ -19,8 +19,8 @@
 @end
 
 @implementation MainViewController
-@synthesize slideShowSubView;
 @synthesize sideMenuSubView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -39,28 +39,34 @@
     UIImage*i4 = [UIImage imageNamed:@"4.jpg"];
     UIImage*i5 = [UIImage imageNamed:@"5.jpg"];
     NSArray *images = @[i1,i2,i3,i4,i5];
+    self.view.backgroundColor = [UIColor whiteColor];
+
+//    slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
+//    slideShowView.typeOfViewController = kMasterViewController;
+//    [slideShowView autoSlideShowAnimation:images];
+//    [slideShowSubView addSubview:slideShowView];
+    CGRect frameSlideShowView = CGRectMake(0, 0,self.view.bounds.size.width, 180);
+    slideShowView = [[SlideShowView alloc] initWithFrame:frameSlideShowView];
+    slideShowView.delegate = (id)self;
+    [slideShowView autoSlideShowAnimation:images];
     
-    slideShowSubView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|
+    slideShowView.autoresizingMask =    UIViewAutoresizingFlexibleLeftMargin|
                                         UIViewAutoresizingFlexibleWidth |
                                         UIViewAutoresizingFlexibleRightMargin |
                                         UIViewAutoresizingFlexibleTopMargin;
+
+    [self.view addSubview:slideShowView];
     
+    CGRect frameSideMenu = CGRectMake(0,
+                               slideShowView.frame.size.height,
+                               self.view.bounds.size.width,
+                               self.view.bounds.size.height - slideShowView.frame.size.height);
+    sideMenuSubView = [[UIView alloc] initWithFrame:frameSideMenu];
     sideMenuSubView.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin|
                                         UIViewAutoresizingFlexibleWidth |
                                         UIViewAutoresizingFlexibleRightMargin |
                                         UIViewAutoresizingFlexibleBottomMargin;
-    
-    self.navigationController.navigationBarHidden = YES;
-    HUD = [[MBProgressHUD alloc] initWithView:self.view];
-    [self.view addSubview:HUD];
-    HUD.delegate = (id)self;
-    HUD.labelText = @"Loading...";
-    [self showMBProgressHUD];
-    
-    slideShowView = [[SlideShowView alloc] initWithXibFile:(id)self];
-    slideShowView.typeOfViewController = kMasterViewController;
-    [slideShowView autoSlideShowAnimation:images];
-    [slideShowSubView addSubview:slideShowView];
+    [self.view addSubview:sideMenuSubView];
     
     LeftMenuViewController *menuController = [[LeftMenuViewController alloc] init];
     menuController.delegate = self;
@@ -70,6 +76,12 @@
     sideMenu = [[SideMenu alloc] initWithContentController:contentController
                                               menuController:menuController];
     [sideMenuSubView addSubview:sideMenu.view];
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.delegate = (id)self;
+    HUD.labelText = @"Loading...";
+    [self showMBProgressHUD];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -88,10 +100,11 @@
 - (void)showMenuRight {
     [sideMenu hideMenuAnimated:YES];
 }
-- (void) presentToViewController {
+- (void) presentToDetailViewController:(NSInteger) selectedRow {
     TownDetailViewController *townDetailViewController = [[TownDetailViewController alloc]
                                                           initWithNibName:@"TownDetailViewController"
                                                           bundle:nil];
+    townDetailViewController.townID = selectedRow;
     [self.navigationController pushViewController:townDetailViewController animated:YES];
 }
 #pragma mark - JDMenuViewControllerDelegate
@@ -117,4 +130,5 @@
 - (void)showMBProgressHUD {
     [HUD show:TRUE];
 }
+
 @end

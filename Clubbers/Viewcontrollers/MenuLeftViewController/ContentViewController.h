@@ -20,7 +20,7 @@
 @end
 @protocol ContentViewControllerDelegate
 @optional
-- (void) presentToViewController;
+- (void) presentToDetailViewController:(NSInteger) selectedRow;
 - (void) disableBackMenuButton;
 - (void) showMBProgressHUD;
 - (void) dismissMBProgressHUD;
