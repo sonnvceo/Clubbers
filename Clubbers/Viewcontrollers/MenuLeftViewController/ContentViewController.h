@@ -21,6 +21,7 @@
 @protocol ContentViewControllerDelegate
 @optional
 - (void) presentToDetailViewController:(NSInteger) selectedRow;
+- (void) presentToClubDetailViewController:(NSInteger) selectedRow;
 - (void) disableBackMenuButton;
 - (void) showMBProgressHUD;
 - (void) dismissMBProgressHUD;

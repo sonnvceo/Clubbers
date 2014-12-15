@@ -33,7 +33,7 @@
     // add buttons
     btnBack = [UIButton buttonWithType: UIButtonTypeCustom];
     [btnBack setFrame: CGRectMake(10.0f, 20.0f, 30.0f, 30.0f)];
-    [btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back_disable.png"] forState:UIControlStateNormal];
+    [btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back.png"] forState:UIControlStateNormal];
     //[btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back_disable.png"] forState:UIControlStateDisabled];
     [btnBack addTarget:self action:@selector(btnBackMenu:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview: btnBack];

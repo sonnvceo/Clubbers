@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Clubbers. All rights reserved.
 //
 
-#import "TownDetailViewController.h"
+#import "ClubDetailViewController.h"
 #import "SideMenu.h"
 #import "LeftMenuViewController.h"
 #import "ContentViewController.h"
@@ -14,7 +14,7 @@
 #import "AFNetworking.h"
 #import "TownDetailModel.h"
 
-@interface TownDetailViewController () {
+@interface ClubDetailViewController () {
     SlideShowView *slideShowView;
     SideMenu *sideMenu;
     TownDetailModel *townDetailModel;
@@ -22,7 +22,7 @@
 @property (nonatomic) NSMutableArray * readMoreCells;
 @end
 
-@implementation TownDetailViewController
+@implementation ClubDetailViewController
 @synthesize townID, delegate, tableView;
 
 - (NSMutableArray *) readMoreCells {
@@ -154,13 +154,13 @@
     cell.lblTitle.text = lblTitleCell;
     cell.lbDetail.text = lblDetailCell;
  */
-    static NSString *CellIdentifier = @"TownDetailCell";
-    TownDetailCell *cell = (TownDetailCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"ClubDetailCell";
+    ClubDetailCell *cell = (ClubDetailCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"TownDetailCell" owner:self options:nil];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ClubDetailCell" owner:self options:nil];
         for (id currentObject in topLevelObjects) {
-            if ([currentObject isKindOfClass:[TownDetailCell class]]) {
-                cell = (TownDetailCell *) currentObject;
+            if ([currentObject isKindOfClass:[ClubDetailCell class]]) {
+                cell = (ClubDetailCell *) currentObject;
                 break;
             }
         }
@@ -221,7 +221,7 @@
 }
 #pragma mark - TownDetailCell Delegate
 
-- (void) didActivateReadMoreForCell:(TownDetailCell*)cell {
+- (void) didActivateReadMoreForCell:(ClubDetailCell*)cell {
     isBtnReadmoreDelegate = YES;
     [_readMoreCells addObject:cell.indexPath];
     expandHeightCell = cell.realHeightOfTextView;

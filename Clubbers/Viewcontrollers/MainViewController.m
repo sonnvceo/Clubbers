@@ -11,6 +11,7 @@
 #import "DefinitionAPI.h"
 #import "NewAndEventViewController.h"
 #import "LbizaMapViewController.h"
+#import "ClubDetailViewController.h"
 @interface MainViewController () {
     SlideShowView *slideShowView;
     SideMenu *sideMenu;
@@ -107,6 +108,14 @@
     townDetailViewController.townID = selectedRow;
     [self.navigationController pushViewController:townDetailViewController animated:YES];
 }
+- (void) presentToClubDetailViewController:(NSInteger) selectedRow {
+    ClubDetailViewController *clubDetailViewController = [[ClubDetailViewController alloc]
+                                                          initWithNibName:@"ClubDetailViewController"
+                                                          bundle:nil];
+    clubDetailViewController.townID = selectedRow;
+    [self.navigationController pushViewController:clubDetailViewController animated:YES];
+}
+
 #pragma mark - JDMenuViewControllerDelegate
 - (void) presentToViewController:(UIViewController*) viewController {
     if (viewController) {

@@ -1,5 +1,5 @@
 //
-//  TownDetailCell.h
+//  ClubDetailCell.h
 //  ReadMoreCell
 //
 //  Created by Camilo Castro on 04-06-14.
@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TownDetailModel.h"
-@protocol TownDetailCellDelegate;
+@protocol ClubDetailCellDelegate;
 
-@interface TownDetailCell : UITableViewCell {
+@interface ClubDetailCell : UITableViewCell {
     UIButton* btnreadMore;
     NSArray *arrayImages;
 }
 
-@property (nonatomic) id<TownDetailCellDelegate> delegate;
+@property (nonatomic) id<ClubDetailCellDelegate> delegate;
 @property(nonatomic, strong) IBOutlet UITextView *textView;
 @property(nonatomic, strong) IBOutlet UILabel *lblTitle;
 @property(nonatomic, strong) IBOutlet UILabel *lblDescription;
@@ -33,8 +33,8 @@
 - (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width;
 @end
 
-@protocol TownDetailCellDelegate <NSObject>
+@protocol ClubDetailCellDelegate <NSObject>
 
-- (void) didActivateReadMoreForCell : (TownDetailCell *) cell;
+- (void) didActivateReadMoreForCell : (ClubDetailCell *) cell;
 
 @end

@@ -52,8 +52,8 @@ static TownDetailModel* _instance = nil;
             townDetailModel.townHeaderTitle = [jsonDict objectForKey:@"town_header_title"];
         if (![[jsonDict objectForKey:@"town_header_detail"] isKindOfClass:[NSNull class]])
             townDetailModel.townDeaderDetail = [jsonDict objectForKey:@"town_header_detail"];
-        if (![[jsonDict objectForKey:@"image_gallery"] isKindOfClass:[NSArray class]])
-            townDetailModel.imageGallerys = (NSArray*)[jsonDict objectForKey:@"town_header_detail"];
+        if ([[jsonDict objectForKey:@"image_gallery"] isKindOfClass:[NSArray class]])
+            townDetailModel.imageGallerys = (NSArray*)[jsonDict objectForKey:@"image_gallery"];
         return townDetailModel;
     }
     return nil;

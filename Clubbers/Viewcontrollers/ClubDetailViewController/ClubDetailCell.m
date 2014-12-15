@@ -1,12 +1,12 @@
 //
-//  TownDetailCell.m
+//  ClubDetailCell.m
 //  ReadMoreCell
 //
 //  Created by Camilo Castro on 04-06-14.
 //  Copyright (c) 2014 Cervezapps. All rights reserved.
 //
 
-#import "TownDetailCell.h"
+#import "ClubDetailCell.h"
 
 #define kWidth      106
 #define kHeight     106
@@ -15,7 +15,7 @@
 #define kNumColumn  3
 
 
-@implementation TownDetailCell
+@implementation ClubDetailCell
 @synthesize textView;
 @synthesize contentSubView;
 @synthesize isBtnReadmore;

@@ -12,6 +12,7 @@
 #import "ClubModel.h"
 #import "DefinitionAPI.h"
 #import "TownDetailViewController.h"
+
 @interface ContentViewController ()
 @end
 
@@ -204,7 +205,9 @@
         }
     }
     else if (kindOfTableView == kClubViewController) {
-        
+        if (delegate) {
+            [delegate presentToClubDetailViewController:(NSInteger)indexPath.row];
+        }
     }
    
 }

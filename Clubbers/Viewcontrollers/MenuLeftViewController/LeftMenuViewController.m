@@ -33,26 +33,7 @@
 {
     [super viewDidLayoutSubviews];
 //    self.scrollView.contentSize = CGRectInset(self.scrollView.bounds, 0, -1).size;
-    /*
-    btnCities = [UIButton buttonWithType: UIButtonTypeCustom];
-    btnCities.tag = 0;
-    [btnCities setFrame: CGRectMake(0.0f, 0.0f, 60.0f, 60.0f)];
-    [btnCities setBackgroundImage:[UIImage imageNamed:@"menu_item_1_normal.png"] forState:UIControlStateDisabled];
-    [btnCities setBackgroundImage:[UIImage imageNamed:@"menu_item_1_selected.png"] forState:UIControlStateNormal];
-    [btnCities addTarget:self action:@selector(switchController:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview: btnCities];
-    [btnClubs setBackgroundImage:[UIImage imageNamed:@"menu_item_2_normal.png"] forState:UIControlStateDisabled];
-    [btnClubs setBackgroundImage:[UIImage imageNamed:@"menu_item_2_selected.png"] forState:UIControlStateNormal];
-    
-    [btnIbizaMap setBackgroundImage:[UIImage imageNamed:@"menu_item_3_normal.png"] forState:UIControlStateDisabled];
-    [btnIbizaMap setBackgroundImage:[UIImage imageNamed:@"menu_item_3_selected.png"] forState:UIControlStateNormal];
-    
-    [btnMyFav setBackgroundImage:[UIImage imageNamed:@"menu_item_4_normal.png"] forState:UIControlStateDisabled];
-    [btnMyFav setBackgroundImage:[UIImage imageNamed:@"menu_item_4_selected.png"] forState:UIControlStateNormal];
-    
-    [btnNewsAndEvents setBackgroundImage:[UIImage imageNamed:@"menu_item_5_normal.png"] forState:UIControlStateDisabled];
-    [btnNewsAndEvents setBackgroundImage:[UIImage imageNamed:@"menu_item_5_selected"] forState:UIControlStateNormal];
-     */
+
     imgVCities = [[UIImageView alloc] init];
     [imgVCities setFrame: CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 60.0f)];
     imgVCities.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|
@@ -144,24 +125,24 @@
     andButonMyFav:(BOOL) isEnablebtnMyFav
      andButonNewsAndEvents:(BOOL) isEnablebtnNewsAndEvents{
     if (isEnablebtnCities)
-        [imgVCities setImage:[UIImage imageNamed:@"menu_item_1_normal.png"]];
-    else
         [imgVCities setImage:[UIImage imageNamed:@"menu_item_1_selected.png"]];
+    else
+        [imgVCities setImage:[UIImage imageNamed:@"menu_item_1_normal.png"]];
     if (isEnablebtnClubs)
-        [imgVClubs setImage:[UIImage imageNamed:@"menu_item_2_normal.png"]];
-    else
         [imgVClubs setImage:[UIImage imageNamed:@"menu_item_2_selected.png"]];
+    else
+        [imgVClubs setImage:[UIImage imageNamed:@"menu_item_2_normal.png"]];
     if (isEnablebtnIbizaMap)
-        [imgVIbizaMap setImage:[UIImage imageNamed:@"menu_item_3_normal.png"]];
-    else
         [imgVIbizaMap setImage:[UIImage imageNamed:@"menu_item_3_selected.png"]];
+    else
+        [imgVIbizaMap setImage:[UIImage imageNamed:@"menu_item_3_normal.png"]];
     if (isEnablebtnMyFav)
-        [imgVMyFav setImage:[UIImage imageNamed:@"menu_item_4_normal.png"]];
-    else
         [imgVMyFav setImage:[UIImage imageNamed:@"menu_item_4_selected.png"]];
-    if (isEnablebtnNewsAndEvents)
-        [imgVNewsAndEvents setImage:[UIImage imageNamed:@"menu_item_5_normal.png"]];
     else
+        [imgVMyFav setImage:[UIImage imageNamed:@"menu_item_4_normal.png"]];
+    if (isEnablebtnNewsAndEvents)
         [imgVNewsAndEvents setImage:[UIImage imageNamed:@"menu_item_5_selected.png"]];
+    else
+        [imgVNewsAndEvents setImage:[UIImage imageNamed:@"menu_item_5_normal.png"]];
 }
 @end
