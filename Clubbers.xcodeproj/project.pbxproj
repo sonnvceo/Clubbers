@@ -49,15 +49,6 @@
 		305E860E1A3050B800808E13 /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E860C1A3050B800808E13 /* LeftMenuViewController.xib */; };
 		30A900771A35890B00B657C3 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A900751A35890B00B657C3 /* MapView.m */; };
 		30A900781A35890B00B657C3 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A900761A35890B00B657C3 /* MapView.xib */; };
-		30D49DB01A3EB2110049F6A7 /* TownDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D49DAB1A3EB2110049F6A7 /* TownDetailCell.m */; };
-		30D49DB11A3EB2110049F6A7 /* TownDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D49DAC1A3EB2110049F6A7 /* TownDetailCell.xib */; };
-		30D49DB21A3EB2110049F6A7 /* TownDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D49DAE1A3EB2110049F6A7 /* TownDetailViewController.m */; };
-		30D49DB31A3EB2110049F6A7 /* TownDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D49DAF1A3EB2110049F6A7 /* TownDetailViewController.xib */; };
-		30D758BB1A3EB3340085782A /* ClubDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D758B61A3EB3340085782A /* ClubDetailCell.m */; };
-		30D758BC1A3EB3340085782A /* ClubDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D758B71A3EB3340085782A /* ClubDetailCell.xib */; };
-		30D758BD1A3EB3340085782A /* ClubDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D758B91A3EB3340085782A /* ClubDetailViewController.m */; };
-		30D758BE1A3EB3340085782A /* ClubDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D758BA1A3EB3340085782A /* ClubDetailViewController.xib */; };
-		30D758D51A3F063E0085782A /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 		841A61021A34071000773107 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A61011A34071000773107 /* MBProgressHUD.m */; };
 		841A610E1A34220600773107 /* listing_pic_bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61041A34220600773107 /* listing_pic_bg1.jpg */; };
 		841A610F1A34220600773107 /* listing_pic_bg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61051A34220600773107 /* listing_pic_bg2.jpg */; };
@@ -175,6 +166,22 @@
 		841A62191A3423F300773107 /* main_page5.png in Resources */ = {isa = PBXBuildFile; fileRef = 841A62131A3423F300773107 /* main_page5.png */; };
 		841A621A1A3423F300773107 /* main_page6.png in Resources */ = {isa = PBXBuildFile; fileRef = 841A62141A3423F300773107 /* main_page6.png */; };
 		841A621C1A34242100773107 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 841A621B1A34242100773107 /* ic_launcher.png */; };
+		841E95E51A3F346D00E2A573 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
+		841E95ED1A3F48B300E2A573 /* TownDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E95E81A3F48B300E2A573 /* TownDetailCell.m */; };
+		841E95EE1A3F48B300E2A573 /* TownDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841E95E91A3F48B300E2A573 /* TownDetailCell.xib */; };
+		841E95EF1A3F48B300E2A573 /* TownDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E95EB1A3F48B300E2A573 /* TownDetailViewController.m */; };
+		841E95F01A3F48B300E2A573 /* TownDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841E95EC1A3F48B300E2A573 /* TownDetailViewController.xib */; };
+		841E95F81A3F491800E2A573 /* ClubDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E95F31A3F491800E2A573 /* ClubDetailCell.m */; };
+		841E95F91A3F491800E2A573 /* ClubDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841E95F41A3F491800E2A573 /* ClubDetailCell.xib */; };
+		841E95FA1A3F491800E2A573 /* ClubDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E95F61A3F491800E2A573 /* ClubDetailViewController.m */; };
+		841E95FB1A3F491800E2A573 /* ClubDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841E95F71A3F491800E2A573 /* ClubDetailViewController.xib */; };
+		841E96041A3F49FF00E2A573 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E95FE1A3F49FF00E2A573 /* MWFeedInfo.m */; };
+		841E96051A3F49FF00E2A573 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E96001A3F49FF00E2A573 /* MWFeedItem.m */; };
+		841E96061A3F49FF00E2A573 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E96031A3F49FF00E2A573 /* MWFeedParser.m */; };
+		841E960B1A3F4A1100E2A573 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E96081A3F4A1100E2A573 /* NSDate+InternetDateTime.m */; };
+		841E960C1A3F4A1100E2A573 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E960A1A3F4A1100E2A573 /* NSString+HTML.m */; };
+		841E960F1A3F4A2700E2A573 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E960E1A3F4A2700E2A573 /* GTMNSString+HTML.m */; };
+		841E96121A3F4A3900E2A573 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 841E96111A3F4A3900E2A573 /* NSString+XMLEntities.m */; };
 		842C816C1A34993900836910 /* NewAndEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C816A1A34993900836910 /* NewAndEventViewController.m */; };
 		842C816D1A34993900836910 /* NewAndEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C816B1A34993900836910 /* NewAndEventViewController.xib */; };
 		842C81711A34A96500836910 /* CustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C816F1A34A96500836910 /* CustomTableCell.m */; };
@@ -286,18 +293,6 @@
 		30A900741A35890B00B657C3 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
 		30A900751A35890B00B657C3 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		30A900761A35890B00B657C3 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
-		30D49DAA1A3EB2110049F6A7 /* TownDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TownDetailCell.h; path = TownDetailViewController/TownDetailCell.h; sourceTree = "<group>"; };
-		30D49DAB1A3EB2110049F6A7 /* TownDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TownDetailCell.m; path = TownDetailViewController/TownDetailCell.m; sourceTree = "<group>"; };
-		30D49DAC1A3EB2110049F6A7 /* TownDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TownDetailCell.xib; path = TownDetailViewController/TownDetailCell.xib; sourceTree = "<group>"; };
-		30D49DAD1A3EB2110049F6A7 /* TownDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TownDetailViewController.h; path = TownDetailViewController/TownDetailViewController.h; sourceTree = "<group>"; };
-		30D49DAE1A3EB2110049F6A7 /* TownDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TownDetailViewController.m; path = TownDetailViewController/TownDetailViewController.m; sourceTree = "<group>"; };
-		30D49DAF1A3EB2110049F6A7 /* TownDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TownDetailViewController.xib; path = TownDetailViewController/TownDetailViewController.xib; sourceTree = "<group>"; };
-		30D758B51A3EB3340085782A /* ClubDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClubDetailCell.h; path = ClubDetailViewController/ClubDetailCell.h; sourceTree = "<group>"; };
-		30D758B61A3EB3340085782A /* ClubDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClubDetailCell.m; path = ClubDetailViewController/ClubDetailCell.m; sourceTree = "<group>"; };
-		30D758B71A3EB3340085782A /* ClubDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClubDetailCell.xib; path = ClubDetailViewController/ClubDetailCell.xib; sourceTree = "<group>"; };
-		30D758B81A3EB3340085782A /* ClubDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClubDetailViewController.h; path = ClubDetailViewController/ClubDetailViewController.h; sourceTree = "<group>"; };
-		30D758B91A3EB3340085782A /* ClubDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClubDetailViewController.m; path = ClubDetailViewController/ClubDetailViewController.m; sourceTree = "<group>"; };
-		30D758BA1A3EB3340085782A /* ClubDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClubDetailViewController.xib; path = ClubDetailViewController/ClubDetailViewController.xib; sourceTree = "<group>"; };
 		841A61001A34071000773107 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		841A61011A34071000773107 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		841A61041A34220600773107 /* listing_pic_bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = listing_pic_bg1.jpg; sourceTree = "<group>"; };
@@ -416,6 +411,33 @@
 		841A62131A3423F300773107 /* main_page5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page5.png; sourceTree = "<group>"; };
 		841A62141A3423F300773107 /* main_page6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page6.png; sourceTree = "<group>"; };
 		841A621B1A34242100773107 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
+		841E95E71A3F48B300E2A573 /* TownDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownDetailCell.h; sourceTree = "<group>"; };
+		841E95E81A3F48B300E2A573 /* TownDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TownDetailCell.m; sourceTree = "<group>"; };
+		841E95E91A3F48B300E2A573 /* TownDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TownDetailCell.xib; sourceTree = "<group>"; };
+		841E95EA1A3F48B300E2A573 /* TownDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownDetailViewController.h; sourceTree = "<group>"; };
+		841E95EB1A3F48B300E2A573 /* TownDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TownDetailViewController.m; sourceTree = "<group>"; };
+		841E95EC1A3F48B300E2A573 /* TownDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TownDetailViewController.xib; sourceTree = "<group>"; };
+		841E95F21A3F491800E2A573 /* ClubDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubDetailCell.h; sourceTree = "<group>"; };
+		841E95F31A3F491800E2A573 /* ClubDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubDetailCell.m; sourceTree = "<group>"; };
+		841E95F41A3F491800E2A573 /* ClubDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClubDetailCell.xib; sourceTree = "<group>"; };
+		841E95F51A3F491800E2A573 /* ClubDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubDetailViewController.h; sourceTree = "<group>"; };
+		841E95F61A3F491800E2A573 /* ClubDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubDetailViewController.m; sourceTree = "<group>"; };
+		841E95F71A3F491800E2A573 /* ClubDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClubDetailViewController.xib; sourceTree = "<group>"; };
+		841E95FD1A3F49FF00E2A573 /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
+		841E95FE1A3F49FF00E2A573 /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
+		841E95FF1A3F49FF00E2A573 /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
+		841E96001A3F49FF00E2A573 /* MWFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedItem.m; sourceTree = "<group>"; };
+		841E96011A3F49FF00E2A573 /* MWFeedParser_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Private.h; sourceTree = "<group>"; };
+		841E96021A3F49FF00E2A573 /* MWFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser.h; sourceTree = "<group>"; };
+		841E96031A3F49FF00E2A573 /* MWFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedParser.m; sourceTree = "<group>"; };
+		841E96071A3F4A1100E2A573 /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		841E96081A3F4A1100E2A573 /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
+		841E96091A3F4A1100E2A573 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		841E960A1A3F4A1100E2A573 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		841E960D1A3F4A2700E2A573 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		841E960E1A3F4A2700E2A573 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		841E96101A3F4A3900E2A573 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
+		841E96111A3F4A3900E2A573 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
 		842C81691A34993900836910 /* NewAndEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAndEventViewController.h; sourceTree = "<group>"; };
 		842C816A1A34993900836910 /* NewAndEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAndEventViewController.m; sourceTree = "<group>"; };
 		842C816B1A34993900836910 /* NewAndEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAndEventViewController.xib; sourceTree = "<group>"; };
@@ -448,7 +470,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30D758D51A3F063E0085782A /* GoogleMaps.framework in Frameworks */,
+				841E95E51A3F346D00E2A573 /* GoogleMaps.framework in Frameworks */,
 				846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */,
 				846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */,
 				846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */,
@@ -555,18 +577,8 @@
 		301BFA2C1A2EB8B700548B52 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				30D758B51A3EB3340085782A /* ClubDetailCell.h */,
-				30D758B61A3EB3340085782A /* ClubDetailCell.m */,
-				30D758B71A3EB3340085782A /* ClubDetailCell.xib */,
-				30D758B81A3EB3340085782A /* ClubDetailViewController.h */,
-				30D758B91A3EB3340085782A /* ClubDetailViewController.m */,
-				30D758BA1A3EB3340085782A /* ClubDetailViewController.xib */,
-				30D49DAA1A3EB2110049F6A7 /* TownDetailCell.h */,
-				30D49DAB1A3EB2110049F6A7 /* TownDetailCell.m */,
-				30D49DAC1A3EB2110049F6A7 /* TownDetailCell.xib */,
-				30D49DAD1A3EB2110049F6A7 /* TownDetailViewController.h */,
-				30D49DAE1A3EB2110049F6A7 /* TownDetailViewController.m */,
-				30D49DAF1A3EB2110049F6A7 /* TownDetailViewController.xib */,
+				841E95F11A3F491800E2A573 /* ClubDetailViewController */,
+				841E95E61A3F48B300E2A573 /* TownDetailViewController */,
 				842C817F1A34BE5300836910 /* LbizaMapViewController */,
 				842C81681A34990700836910 /* NewAndEventController */,
 				305E86031A304F8900808E13 /* SideMenu */,
@@ -602,6 +614,7 @@
 		301BFA371A2EB9DA00548B52 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				841E95FC1A3F49B500E2A573 /* MWFeedParser */,
 				843F85201A3B0FB000DB5B7D /* FXPageControl */,
 				846C69291A34D47100F8D31A /* GoogleMaps framework */,
 				841A60FF1A3406FF00773107 /* MBProgressHUD */,
@@ -868,6 +881,54 @@
 			path = "Main Page";
 			sourceTree = "<group>";
 		};
+		841E95E61A3F48B300E2A573 /* TownDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				841E95E71A3F48B300E2A573 /* TownDetailCell.h */,
+				841E95E81A3F48B300E2A573 /* TownDetailCell.m */,
+				841E95E91A3F48B300E2A573 /* TownDetailCell.xib */,
+				841E95EA1A3F48B300E2A573 /* TownDetailViewController.h */,
+				841E95EB1A3F48B300E2A573 /* TownDetailViewController.m */,
+				841E95EC1A3F48B300E2A573 /* TownDetailViewController.xib */,
+			);
+			path = TownDetailViewController;
+			sourceTree = "<group>";
+		};
+		841E95F11A3F491800E2A573 /* ClubDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				841E95F21A3F491800E2A573 /* ClubDetailCell.h */,
+				841E95F31A3F491800E2A573 /* ClubDetailCell.m */,
+				841E95F41A3F491800E2A573 /* ClubDetailCell.xib */,
+				841E95F51A3F491800E2A573 /* ClubDetailViewController.h */,
+				841E95F61A3F491800E2A573 /* ClubDetailViewController.m */,
+				841E95F71A3F491800E2A573 /* ClubDetailViewController.xib */,
+			);
+			path = ClubDetailViewController;
+			sourceTree = "<group>";
+		};
+		841E95FC1A3F49B500E2A573 /* MWFeedParser */ = {
+			isa = PBXGroup;
+			children = (
+				841E95FD1A3F49FF00E2A573 /* MWFeedInfo.h */,
+				841E95FE1A3F49FF00E2A573 /* MWFeedInfo.m */,
+				841E95FF1A3F49FF00E2A573 /* MWFeedItem.h */,
+				841E96001A3F49FF00E2A573 /* MWFeedItem.m */,
+				841E96011A3F49FF00E2A573 /* MWFeedParser_Private.h */,
+				841E96021A3F49FF00E2A573 /* MWFeedParser.h */,
+				841E96031A3F49FF00E2A573 /* MWFeedParser.m */,
+				841E96071A3F4A1100E2A573 /* NSDate+InternetDateTime.h */,
+				841E96081A3F4A1100E2A573 /* NSDate+InternetDateTime.m */,
+				841E96091A3F4A1100E2A573 /* NSString+HTML.h */,
+				841E960A1A3F4A1100E2A573 /* NSString+HTML.m */,
+				841E960D1A3F4A2700E2A573 /* GTMNSString+HTML.h */,
+				841E960E1A3F4A2700E2A573 /* GTMNSString+HTML.m */,
+				841E96101A3F4A3900E2A573 /* NSString+XMLEntities.h */,
+				841E96111A3F4A3900E2A573 /* NSString+XMLEntities.m */,
+			);
+			path = MWFeedParser;
+			sourceTree = "<group>";
+		};
 		842C81681A34990700836910 /* NewAndEventController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1026,7 +1087,7 @@
 				300896D61A3544B7002F007F /* LbizaMapViewController.xib in Resources */,
 				841A61DE1A34239A00773107 /* ic_bar_auto_navi.png in Resources */,
 				843F85131A3B055C00DB5B7D /* icon_left_arrow-with_ring.png in Resources */,
-				30D758BE1A3EB3340085782A /* ClubDetailViewController.xib in Resources */,
+				841E95FB1A3F491800E2A573 /* ClubDetailViewController.xib in Resources */,
 				841A61871A3422F200773107 /* menu_item_1_normal.png in Resources */,
 				841A61EE1A34239A00773107 /* ic_location.png in Resources */,
 				841A61891A3422F200773107 /* menu_item_2_normal.png in Resources */,
@@ -1057,7 +1118,6 @@
 				841A61E21A34239A00773107 /* ic_click_here.png in Resources */,
 				841A61661A34224A00773107 /* town19.jpg in Resources */,
 				841A61E61A34239A00773107 /* ic_conner_left.png in Resources */,
-				30D49DB11A3EB2110049F6A7 /* TownDetailCell.xib in Resources */,
 				841A61DF1A34239A00773107 /* ic_bar_fav.png in Resources */,
 				841A615D1A34224A00773107 /* town10.jpg in Resources */,
 				841A619C1A34230B00773107 /* start_screen_background.png in Resources */,
@@ -1083,18 +1143,18 @@
 				301BFA0E1A2EAF6500548B52 /* LaunchScreen.xib in Resources */,
 				841A610F1A34220600773107 /* listing_pic_bg2.jpg in Resources */,
 				841A621C1A34242100773107 /* ic_launcher.png in Resources */,
+				841E95F01A3F48B300E2A573 /* TownDetailViewController.xib in Resources */,
 				841A61111A34220600773107 /* listing_pic_bg4.jpg in Resources */,
 				841A61691A34224A00773107 /* town4.jpg in Resources */,
 				841A61921A3422F200773107 /* menu_shape_1.png in Resources */,
-				30D49DB31A3EB2110049F6A7 /* TownDetailViewController.xib in Resources */,
 				841A61FB1A34239A00773107 /* ic_ne_events_normal.png in Resources */,
 				841A610E1A34220600773107 /* listing_pic_bg1.jpg in Resources */,
 				841A61EB1A34239A00773107 /* ic_heart.png in Resources */,
 				842C81721A34A96500836910 /* CustomTableCell.xib in Resources */,
 				841A61E11A34239A00773107 /* ic_bar_share.png in Resources */,
 				841A61FE1A34239A00773107 /* ic_ne_news_normal.png in Resources */,
-				30D758BC1A3EB3340085782A /* ClubDetailCell.xib in Resources */,
 				841A61881A3422F200773107 /* menu_item_1_selected.png in Resources */,
+				841E95F91A3F491800E2A573 /* ClubDetailCell.xib in Resources */,
 				841A616F1A34224A00773107 /* town8_3.jpg in Resources */,
 				841A61961A3422F200773107 /* menu_shape_3.png in Resources */,
 				841A619A1A3422F200773107 /* menu_shape_5.png in Resources */,
@@ -1104,6 +1164,7 @@
 				841A618D1A3422F200773107 /* menu_item_4_normal.png in Resources */,
 				841A615F1A34224A00773107 /* town12.jpg in Resources */,
 				841A61DC1A34239A00773107 /* ic_back.png in Resources */,
+				841E95EE1A3F48B300E2A573 /* TownDetailCell.xib in Resources */,
 				841A61901A3422F200773107 /* menu_item_5_selected.png in Resources */,
 				841A61631A34224A00773107 /* town16.jpg in Resources */,
 				841A61E71A34239A00773107 /* ic_conner_right.png in Resources */,
@@ -1151,11 +1212,14 @@
 				843F85231A3B0FB000DB5B7D /* FXPageControl.m in Sources */,
 				305E86091A304FA300808E13 /* UIViewController+SideMenu.m in Sources */,
 				30299D961A31428500C4687C /* DefinitionAPI.m in Sources */,
+				841E95EF1A3F48B300E2A573 /* TownDetailViewController.m in Sources */,
 				30299DBB1A31477B00C4687C /* AFPropertyListRequestOperation.m in Sources */,
 				302958061A2F394800594F69 /* SlideShowView.m in Sources */,
 				300896D51A3544B7002F007F /* LbizaMapViewController.m in Sources */,
 				30299DBC1A31477B00C4687C /* AFURLConnectionOperation.m in Sources */,
+				841E960B1A3F4A1100E2A573 /* NSDate+InternetDateTime.m in Sources */,
 				301BFA001A2EAF6500548B52 /* main.m in Sources */,
+				841E96121A3F4A3900E2A573 /* NSString+XMLEntities.m in Sources */,
 				30299F371A31B42900C4687C /* PlaceModel.m in Sources */,
 				30299F3D1A31B61100C4687C /* JustincaseModel.m in Sources */,
 				30299DB61A31477B00C4687C /* AFHTTPClient.m in Sources */,
@@ -1167,18 +1231,22 @@
 				842C816C1A34993900836910 /* NewAndEventViewController.m in Sources */,
 				30299F3A1A31B53300C4687C /* ThingModel.m in Sources */,
 				30299D991A3143F300C4687C /* TownModel.m in Sources */,
+				841E96051A3F49FF00E2A573 /* MWFeedItem.m in Sources */,
 				30299F401A31BBD500C4687C /* PhotoGalleryModel.m in Sources */,
+				841E95FA1A3F491800E2A573 /* ClubDetailViewController.m in Sources */,
 				301BFA341A2EB95E00548B52 /* AppDelegate.m in Sources */,
-				30D758BD1A3EB3340085782A /* ClubDetailViewController.m in Sources */,
-				30D49DB21A3EB2110049F6A7 /* TownDetailViewController.m in Sources */,
 				30299F311A31AEB700C4687C /* ShoppingModel.m in Sources */,
 				30A900771A35890B00B657C3 /* MapView.m in Sources */,
 				302957FC1A2F11FF00594F69 /* MainViewController.m in Sources */,
-				30D758BB1A3EB3340085782A /* ClubDetailCell.m in Sources */,
+				841E960C1A3F4A1100E2A573 /* NSString+HTML.m in Sources */,
+				841E95F81A3F491800E2A573 /* ClubDetailCell.m in Sources */,
 				841A61021A34071000773107 /* MBProgressHUD.m in Sources */,
+				841E96061A3F49FF00E2A573 /* MWFeedParser.m in Sources */,
 				30299DBD1A31477B00C4687C /* AFXMLRequestOperation.m in Sources */,
 				30299DB91A31477B00C4687C /* AFJSONRequestOperation.m in Sources */,
-				30D49DB01A3EB2110049F6A7 /* TownDetailCell.m in Sources */,
+				841E96041A3F49FF00E2A573 /* MWFeedInfo.m in Sources */,
+				841E960F1A3F4A2700E2A573 /* GTMNSString+HTML.m in Sources */,
+				841E95ED1A3F48B300E2A573 /* TownDetailCell.m in Sources */,
 				30299DBE1A31477B00C4687C /* UIImageView+AFNetworking.m in Sources */,
 				305E85E91A300DAB00808E13 /* ContentViewController.m in Sources */,
 				30299F2E1A31A4AB00C4687C /* ClubModel.m in Sources */,
@@ -1375,6 +1443,8 @@
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 				);
 				INFOPLIST_FILE = Clubbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1391,6 +1461,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",

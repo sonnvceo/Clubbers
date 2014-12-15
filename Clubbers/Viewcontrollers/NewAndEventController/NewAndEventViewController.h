@@ -7,12 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SlideShowView.h"
+#import "MWFeedParser.h"
+#import "MBProgressHUD.h"
 
-@interface NewAndEventViewController : UIViewController<SlideShowViewDelegate,
+@interface NewAndEventViewController : UIViewController<MWFeedParserDelegate,
                                                         UITableViewDelegate,
-                                                        UITableViewDataSource>
-
+                                                        UITableViewDataSource,
+                                                        MBProgressHUDDelegate> {
+    // Parsing
+    MWFeedParser *feedParser;
+    NSMutableArray *parsedItems;
+    // Displaying
+    NSArray *itemsToDisplay;
+    NSDateFormatter *formatter;
+    MBProgressHUD *HUD;
+}
+@property (nonatomic, strong) NSArray *itemsToDisplay;
 @property (strong, nonatomic) IBOutlet UIButton *buttonNews;
 @property (strong, nonatomic) IBOutlet UIButton *buttonEvents;
 @property (strong, nonatomic) IBOutlet UIButton *buttonOffers;

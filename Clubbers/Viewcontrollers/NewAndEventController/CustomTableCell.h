@@ -10,9 +10,10 @@
 
 @interface CustomTableCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *imgEvent;
+@property (strong, nonatomic) IBOutlet UIImageView *imgIcon;
+@property (strong, nonatomic) IBOutlet UIImageView *imgContent;
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
-@property (strong, nonatomic) IBOutlet UILabel *lbDetail;
-@property (strong, nonatomic) IBOutlet UILabel *lblView;
+@property (strong, nonatomic) IBOutlet UILabel *lblDate;
+@property (strong, nonatomic) IBOutlet UITextView *texViewSumary;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end
