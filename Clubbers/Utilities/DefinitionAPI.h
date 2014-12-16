@@ -101,7 +101,8 @@ enum {
 
 enum {
     kMasterViewController,
-    kDetailViewController
+    kDetailViewController,
+    KClubDetailViewController
 } KTypeOfViewController;
 
 @interface DefinitionAPI : NSObject

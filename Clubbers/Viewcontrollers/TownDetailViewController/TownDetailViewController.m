@@ -92,7 +92,7 @@
     float heightOfCell;
     switch (indexPath.row) {
         case 0:
-            heightOfCell = [self textViewHeightForAttributedText:txtView.attributedText andWidth:txtView.frame.size.width];
+            heightOfCell = 100;//[self textViewHeightForAttributedText:txtView.attributedText andWidth:txtView.frame.size.width];
             break;
         case 1:
             heightOfCell = 300;
@@ -116,44 +116,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-/*
-    static NSString *CellIdentifier = @"CityTableCell";
-    CityTableCell *cell = (CityTableCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"CityTableCell" owner:self options:nil];
-        for (id currentObject in topLevelObjects) {
-            if ([currentObject isKindOfClass:[CityTableCell class]]) {
-                cell = (CityTableCell *) currentObject;
-                break;
-            }
-        }
-        [cell configureCell];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    // Configure the cell...
-    NSString *lblTitleCell;
-    NSString *lblDetailCell;
-    NSURL *urlImageCell;
-    if (kindOfTableView == kCityViewController) {
-        TownModel *townModel = [tableDatasource objectAtIndex:indexPath.row];
-        lblTitleCell = townModel.townName;
-        lblDetailCell = townModel.townDescription;
-        urlImageCell = [NSURL URLWithString:townModel.townImage];
-    }
-    else if (kindOfTableView == kClubViewController) {
-        ClubModel *clubModel = [tableDatasource objectAtIndex:indexPath.row];
-        lblTitleCell = clubModel.clubName;
-        lblDetailCell = clubModel.clubDescription;
-        urlImageCell = [NSURL URLWithString:clubModel.clubImage];
-    }
-    [self downloadImageWithURL:urlImageCell completionBlock:^(BOOL succeeded, UIImage *image) {
-        if (succeeded) {
-            [cell.imgIcon setImage:image];
-        }
-    }];
-    cell.lblTitle.text = lblTitleCell;
-    cell.lbDetail.text = lblDetailCell;
- */
     static NSString *CellIdentifier = @"TownDetailCell";
     TownDetailCell *cell = (TownDetailCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {

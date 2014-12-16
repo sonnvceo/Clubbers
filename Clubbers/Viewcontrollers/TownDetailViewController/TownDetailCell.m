@@ -42,6 +42,8 @@
     textView.userInteractionEnabled = NO;
     textView.showsHorizontalScrollIndicator = NO;
     textView.scrollEnabled = NO;
+    textView.text = @"N/A";
+    textView.backgroundColor = [UIColor clearColor];
     // uiview fullOverview
     UITextView *textViewFullOverview = [[UITextView alloc] initWithFrame:textViewFrame];
     textViewFullOverview.text = townDetail.fullOverview;
@@ -64,7 +66,7 @@
     [btnreadMore setTitle:@"Read more..." forState:UIControlStateNormal];
     btnreadMore.backgroundColor = [UIColor clearColor];
     [btnreadMore setTitleColor:[UIColor blackColor] forState:UIControlStateNormal ];
-    btnreadMore.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+    btnreadMore.titleLabel.font = [UIFont systemFontOfSize:12];
     btnreadMore.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [btnreadMore addTarget:self action:@selector(readMore:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview: btnreadMore];
@@ -122,7 +124,13 @@
                                          contentSubView.frame.size.width,
                                          contentSubView.frame.size.height)];
     }
-    
+    // ic_arrow.png
+    UIImageView *imgArrow = [[UIImageView alloc] initWithFrame:CGRectMake(290,
+                                                                          textView.center.y,
+                                                                          20,
+                                                                          20)];
+    imgArrow.image = [UIImage imageNamed:@"ic_arrow.png"];
+    [self addSubview:imgArrow];
 }
 - (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
     UITextView *calculationView = [[UITextView alloc] init];
@@ -189,12 +197,12 @@
         if (townDetail.townName)
             self.lblTitle.text = townDetail.townName;
         if (townDetail.townDeaderDetail) {
-            self.txtDescription.text = townDetail.townDeaderDetail;
-            float heightTxtDescription = [self textViewHeightForAttributedText:self.txtDescription.attributedText andWidth:textView.frame.size.width];
-            [self.txtDescription setFrame: CGRectMake(self.txtDescription.frame.origin.x,
-                                                      self.txtDescription.frame.origin.y,
+            self.lblDescription.text = townDetail.townDeaderDetail;
+            float heightTxtDescription = [self textViewHeightForAttributedText:self.lblDescription.attributedText andWidth:textView.frame.size.width];
+            [self.lblDescription setFrame: CGRectMake(self.lblDescription.frame.origin.x,
+                                                      self.lblDescription.frame.origin.y,
                                                       heightTxtDescription,
-                                                      self.txtDescription.frame.origin.x)];
+                                                      self.lblDescription.frame.origin.x)];
         }
         self.lblTitle.hidden = NO;
         self.lblTemperature.hidden = NO;

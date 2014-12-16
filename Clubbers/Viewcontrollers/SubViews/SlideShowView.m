@@ -139,7 +139,7 @@ static SlideShowView* _instance = nil;
     if (kMasterViewController == typeOfViewController) {
         [btnBack setBackgroundImage:[UIImage imageNamed:@"icon_left_arrow-with_ring.png"] forState:UIControlStateNormal];
     }
-    else if (kDetailViewController == typeOfViewController) {
+    else if (kDetailViewController == typeOfViewController || KClubDetailViewController==typeOfViewController) {
         [btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back.png"] forState:UIControlStateNormal];
     }
     
@@ -195,7 +195,7 @@ static SlideShowView* _instance = nil;
         }
         [self stateOfButonMenuAndButtonBack:YES];
     }
-    else if (kDetailViewController == typeOfViewController) {
+    else if (kDetailViewController == typeOfViewController || KClubDetailViewController==typeOfViewController) {
         if (delegate) {
             [delegate popToRootViewController];
         }

@@ -50,7 +50,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [[self locationManager] startUpdatingLocation];
-    CLLocation *defaultLocation = [[CLLocation alloc] initWithLatitude:21.02043 longitude:105.825623];
+    CLLocation *defaultLocation = [[CLLocation alloc] initWithLatitude:23 longitude:109];
     [self LoadMapToView:defaultLocation];
 }
 
@@ -109,12 +109,10 @@
     _mapView.delegate = self;
     _mapView.myLocationEnabled = YES;
     [self addSubview:_mapView];
-        // Creates a marker in the center of the map.
-        GMSMarker *marker = [[GMSMarker alloc] init];
-        marker.position = CLLocationCoordinate2DMake(21.0229, 105.836);
-        marker.title = @"Hanoi";
-        marker.snippet = @"Vietnam";
-        marker.map = _mapView;
+    // add Marker of current position
+    _option = [GMSMarker markerWithPosition:coordinate];
+    _option.icon = [UIImage imageNamed:@"ic_item1_pin.png"];
+    _option.map = _mapView; // replace/remove old marker
 }
 
 - (void)updateMapToView:(CLLocation*) mlocation {
