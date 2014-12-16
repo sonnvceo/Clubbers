@@ -19,7 +19,6 @@
     NSMutableArray *parsedItems;
     // Displaying
     NSArray *itemsToDisplay;
-    NSDateFormatter *formatter;
     MBProgressHUD *HUD;
 }
 @property (nonatomic, strong) NSArray *itemsToDisplay;

@@ -9,7 +9,6 @@
 #import "NewAndEventViewController.h"
 #import "CustomTableCell.h"
 #import "AFNetworking.h"
-#import "NSString+HTML.h"
 #import "MWFeedParser.h"
 
 @interface NewAndEventViewController () {
@@ -47,6 +46,7 @@
     [buttonOffers setBackgroundImage:[UIImage imageNamed:@"ic_ne_offers_selected"] forState:UIControlStateNormal];
     
     tableview.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    tableview.hidden = YES;
     //
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:HUD];
@@ -54,10 +54,7 @@
     HUD.labelText = @"Loading...";
     [self showMBProgressHUDNewsAndFeeds:YES];
     // Setup
-    self.title = @"Loading...";
-    formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterShortStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
+
     parsedItems = [[NSMutableArray alloc] init];
     self.itemsToDisplay = [NSArray array];
     //
@@ -72,6 +69,7 @@
     [self showMBProgressHUDNewsAndFeeds:NO];
     self.itemsToDisplay = parsedItems;
     [tableview reloadData];
+    tableview.hidden = NO;
 }
 #pragma mark -
 #pragma mark MWFeedParserDelegate
@@ -188,33 +186,12 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // Configure the cell...
-
     MWFeedItem *item = [self.itemsToDisplay objectAtIndex:indexPath.row];
-    if (item) {
-//        NSString *itemTitle = item.content ? [item.title stringByConvertingHTMLToPlainText] : @"[No Title]";
-     NSString* str_imageUrl = [self getFirstImage:item.content];
-    }
+    if (item)
+        [cell configueCellWithTownDetai:item];
     return cell;
 }
-- (NSString *)getFirstImage:(NSString *)htmlString{
-    
-    NSScanner *theScanner;
-    NSString *text = nil;
-    
-    theScanner = [NSScanner scannerWithString: htmlString];
-    
-    // find start of tag
-    [theScanner scanUpToString: @"<a href=\"" intoString: NULL];
-    if ([theScanner isAtEnd] == NO) {
-        NSInteger newLoc = [theScanner scanLocation] + 10;
-        [theScanner setScanLocation: newLoc];
-        
-        // find end of tag
-        [theScanner scanUpToString: @"\"" intoString: &text];
-    }
-    
-    return [@"h" stringByAppendingString:text];
-}
+
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {

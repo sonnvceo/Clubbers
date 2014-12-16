@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MWFeedItem.h"
 @interface CustomTableCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgIcon;
@@ -16,4 +16,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblDate;
 @property (strong, nonatomic) IBOutlet UITextView *texViewSumary;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+- (void) configueCellWithTownDetai:(MWFeedItem *) feedItem;
 @end
