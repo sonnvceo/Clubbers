@@ -121,24 +121,7 @@
 - (IBAction)btnOffers:(id)sender {
     [self stateOfButonNews:NO andButtonEvents:YES andButonOffers:NO];
 }
-//-(void)loadFeed {
-//    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:OFFICIAL_SERVER]];
-//    NSURLRequest *request = [client requestWithMethod:@"GET" path:SA_TOWNS_LIST parameters:nil];
-//    NSLog(@" %@", [request description]);
-//    AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
-//        NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
-//        tableDatasource = [[TownModel shareInstance] parseJson:jsonDataArray];
-//        [self.tableView setHidden:NO];
-//        if (delegate) {
-//            [delegate dismissMBProgressHUD];
-//        }
-//        [self.tableView reloadData];
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"Error:%@", error);
-//    }];
-//    
-//    [client enqueueHTTPRequestOperation:operation];
-//}
+
 - (void) stateOfButonNews:(BOOL) isEnablebtnNews andButtonEvents:(BOOL) isEnablebtnEvents andButonOffers:(BOOL) isEnablebtnOffers {
     if (isEnablebtnNews) {
         buttonNews.enabled = YES;

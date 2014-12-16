@@ -13,6 +13,7 @@
 @interface TownDetailCell : UITableViewCell {
     UIButton* btnreadMore;
     NSArray *arrayImages;
+    float heightCellExpanding;
 }
 
 @property (nonatomic) id<TownDetailCellDelegate> delegate;
@@ -35,6 +36,6 @@
 
 @protocol TownDetailCellDelegate <NSObject>
 
-- (void) didActivateReadMoreForCell : (TownDetailCell *) cell;
+- (void) didActivateReadMoreForCell : (TownDetailCell *) cell withHeightOfRow:(float) height;
 
 @end

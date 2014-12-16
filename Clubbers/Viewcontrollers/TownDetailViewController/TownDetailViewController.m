@@ -18,12 +18,13 @@
     SlideShowView *slideShowView;
     SideMenu *sideMenu;
     TownDetailModel *townDetailModel;
+    float expandHeightOfCell;
 }
 @property (nonatomic) NSMutableArray * readMoreCells;
 @end
 
 @implementation TownDetailViewController
-@synthesize townID, delegate, tableView;
+@synthesize townID, delegate, tableview;
 
 - (NSMutableArray *) readMoreCells {
     if (!_readMoreCells) {
@@ -67,7 +68,7 @@
     AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
          NSDictionary* dictResponse = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
         townDetailModel = [[TownDetailModel shareInstance] parseJson:dictResponse];
-        [tableView reloadData];
+        [tableview reloadData];
         [self showMBProgressHUDAtDetailView:NO];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -101,7 +102,7 @@
             break;
     }
     if ([self.readMoreCells containsObject:indexPath]) {
-        heightOfCell += expandHeightCell - 65.0f;
+        heightOfCell += expandHeightCell - 65.0f + expandHeightOfCell ;
     }
     return heightOfCell;
 }
@@ -180,12 +181,12 @@
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    if ([tableview respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableview setSeparatorInset:UIEdgeInsetsZero];
     }
     
-    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [tableView setLayoutMargins:UIEdgeInsetsZero];
+    if ([tableview respondsToSelector:@selector(setLayoutMargins:)]) {
+        [tableview setLayoutMargins:UIEdgeInsetsZero];
     }
     
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
@@ -221,11 +222,12 @@
 }
 #pragma mark - TownDetailCell Delegate
 
-- (void) didActivateReadMoreForCell:(TownDetailCell*)cell {
+- (void) didActivateReadMoreForCell:(TownDetailCell*)cell withHeightOfRow:(float) height{
+    expandHeightOfCell = height;
     isBtnReadmoreDelegate = YES;
     [_readMoreCells addObject:cell.indexPath];
     expandHeightCell = cell.realHeightOfTextView;
-    [self.tableView reloadRowsAtIndexPaths:_readMoreCells withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableview reloadRowsAtIndexPaths:_readMoreCells withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 #pragma mark - SlideShowViewDelegate
 - (void) showMenuLeft{

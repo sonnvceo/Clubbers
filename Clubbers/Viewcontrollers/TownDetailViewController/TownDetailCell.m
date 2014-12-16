@@ -42,9 +42,14 @@
     textView.userInteractionEnabled = NO;
     textView.showsHorizontalScrollIndicator = NO;
     textView.scrollEnabled = NO;
+    // uiview fullOverview
+    UITextView *textViewFullOverview = [[UITextView alloc] initWithFrame:textViewFrame];
+    textViewFullOverview.text = townDetail.fullOverview;
+    float heightTextViewFullOverview = [self textViewHeightForAttributedText:textViewFullOverview.attributedText andWidth:textView.frame.size.width];
     if (townDetail.townDescription)
        textView.text = townDetail.shortOverview;
     realHeightOfTextView = [self textViewHeightForAttributedText:textView.attributedText andWidth:textView.frame.size.width];
+    heightCellExpanding = heightTextViewFullOverview - realHeightOfTextView;
     [textView setFrame:CGRectMake(textView.frame.origin.x,
                                   textView.frame.origin.y,
                                   textView.frame.size.width,
@@ -174,7 +179,7 @@
                            }];
 }
 - (IBAction)readMore:(id)sender {
-  [self.delegate didActivateReadMoreForCell:self];
+  [self.delegate didActivateReadMoreForCell:self withHeightOfRow:heightCellExpanding];
 }
 - (void) showContentOfCell:(BOOL) isShow withTownDetai:(TownDetailModel *) townDetail{
     if (isShow) {

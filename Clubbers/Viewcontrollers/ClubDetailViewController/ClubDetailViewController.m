@@ -48,7 +48,7 @@
     CGRect frameSlideShowView = CGRectMake(0, 0,self.view.bounds.size.width, 180);
     slideShowView = [[SlideShowView alloc] initWithFrame:frameSlideShowView];
     slideShowView.delegate = (id)self;
-    slideShowView.typeOfViewController = kDetailViewController;
+    slideShowView.typeOfViewController = kMasterViewController;
     [slideShowView autoSlideShowAnimation:images];
     [slideShowView stateOfButonMenuAndButtonBack:NO];
     [self.view addSubview:slideShowView];

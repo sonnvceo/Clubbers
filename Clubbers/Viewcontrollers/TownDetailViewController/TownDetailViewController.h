@@ -24,7 +24,7 @@
 }
 @property (nonatomic, assign) id <TownDetailViewControllerDelegate> delegate;
 @property (assign, nonatomic) NSInteger townID;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
 - (IBAction)btnDismiss:(id)sender;
 @end
 
