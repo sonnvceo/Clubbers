@@ -19,7 +19,7 @@
 @property (nonatomic) id<TownDetailCellDelegate> delegate;
 @property(nonatomic, strong) IBOutlet UITextView *textView;
 @property(nonatomic, strong) IBOutlet UILabel *lblTitle;
-@property(nonatomic, strong) IBOutlet UILabel *lblDescription;
+@property(nonatomic, strong) IBOutlet UITextView *txtDescription;
 @property(nonatomic, strong) IBOutlet UILabel *lblTemperature;
 @property(nonatomic, strong) IBOutlet UIImageView *imgTemperature;
 @property(nonatomic, strong) IBOutlet UIImageView *imgWeatherCloundly;

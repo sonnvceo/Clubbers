@@ -30,13 +30,12 @@
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lbiza Town (Eivissa)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rf-uc-sL7">
-                        <rect key="frame" x="11" y="20" width="220" height="23"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" text="She literature discovered increasing how diminution understood. Though and highly the enough county for man " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ls-tJ-BMy">
+                        <rect key="frame" x="11" y="21" width="220" height="34"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
@@ -44,11 +43,11 @@
             <connections>
                 <outlet property="imgTemperature" destination="qfm-Mw-AZ5" id="hFz-jv-4I1"/>
                 <outlet property="imgWeatherCloundly" destination="w0u-oz-MrD" id="6I5-xk-afj"/>
-                <outlet property="lblDescription" destination="1rf-uc-sL7" id="jIB-bR-Gqy"/>
                 <outlet property="lblTemperature" destination="Y3D-QD-DRV" id="4B1-Zf-134"/>
                 <outlet property="lblTitle" destination="ygV-yw-D9n" id="WeR-T2-CRI"/>
+                <outlet property="txtDescription" destination="7ls-tJ-BMy" id="BNB-yz-yjH"/>
             </connections>
-            <point key="canvasLocation" x="297" y="242"/>
+            <point key="canvasLocation" x="297" y="241"/>
         </tableViewCell>
     </objects>
     <resources>

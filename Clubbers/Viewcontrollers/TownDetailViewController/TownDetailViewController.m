@@ -85,15 +85,14 @@
    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 #pragma mark - Table view data source
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    if ([self.readMoreCells containsObject:@(indexPath.row)]) {
-//        return 300;
-//    }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGRect textViewFrame = CGRectMake(11.0f, 220.0f, 21.0f, 34.0f);
+    UITextView *txtView = [[UITextView alloc] initWithFrame:textViewFrame];
+    txtView.text = townDetailModel.townDeaderDetail;
     float heightOfCell;
     switch (indexPath.row) {
         case 0:
-            heightOfCell = 60;
+            heightOfCell = [self textViewHeightForAttributedText:txtView.attributedText andWidth:txtView.frame.size.width];
             break;
         case 1:
             heightOfCell = 300;
@@ -238,5 +237,11 @@
 }
 - (void)popToRootViewController {
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+- (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
+    UITextView *calculationView = [[UITextView alloc] init];
+    [calculationView setAttributedText:text];
+    CGSize size = [calculationView sizeThatFits:CGSizeMake(width, FLT_MAX)];
+    return size.height;
 }
 @end

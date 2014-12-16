@@ -137,20 +137,24 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.clipsToBounds = YES;
-
+    NSString *stringUrlImageGallery = nil;
     imageView.backgroundColor = [UIColor redColor];
-    NSString *stringUrlImageGallery = [NSString stringWithFormat:@"%@", [arrayImages objectAtIndex: row+column]] ;
-    NSURL *urlImageGallery = [NSURL URLWithString:stringUrlImageGallery];
-    [self downloadImageWithURL:urlImageGallery completionBlock:^(BOOL succeeded, UIImage *image) {
-        if (succeeded) {
-            UIImage *tempImage = [self scaleImage:image toSize:CGSizeMake(frame.size.width, frame.size.height)];
-            if (tempImage)
-                imageView.image = tempImage;
-            else
-                imageView.image = [UIImage imageNamed:@"main_page1.png"];
-        }
-    }];
-
+    if (arrayImages.count > 0)
+        stringUrlImageGallery = [NSString stringWithFormat:@"%@", [arrayImages objectAtIndex: row+column]];
+    if (stringUrlImageGallery) {
+        NSURL *urlImageGallery = [NSURL URLWithString:stringUrlImageGallery];
+        [self downloadImageWithURL:urlImageGallery completionBlock:^(BOOL succeeded, UIImage *image) {
+            if (succeeded) {
+                UIImage *tempImage = [self scaleImage:image toSize:CGSizeMake(frame.size.width, frame.size.height)];
+                if (tempImage)
+                    imageView.image = tempImage;
+                else
+                    imageView.image = [UIImage imageNamed:@"main_page1.png"];
+            }
+        }];
+    }
+    else
+        imageView.image = [UIImage imageNamed:@"main_page1.png"];
     return imageView;
 }
 
@@ -163,8 +167,7 @@
     label.text = @"Town Guide";
     return label;
 }
-- (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
-{
+- (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
@@ -183,10 +186,16 @@
 }
 - (void) showContentOfCell:(BOOL) isShow withTownDetai:(TownDetailModel *) townDetail{
     if (isShow) {
-        if (townDetail.townHeaderTitle)
-            self.lblTitle.text = townDetail.townHeaderTitle;
-        if (townDetail.townDeaderDetail)
-            self.lblTitle.text = townDetail.townDeaderDetail;
+        if (townDetail.townName)
+            self.lblTitle.text = townDetail.townName;
+        if (townDetail.townDeaderDetail) {
+            self.txtDescription.text = townDetail.townDeaderDetail;
+            float heightTxtDescription = [self textViewHeightForAttributedText:self.txtDescription.attributedText andWidth:textView.frame.size.width];
+            [self.txtDescription setFrame: CGRectMake(self.txtDescription.frame.origin.x,
+                                                      self.txtDescription.frame.origin.y,
+                                                      heightTxtDescription,
+                                                      self.txtDescription.frame.origin.x)];
+        }
         self.lblTitle.hidden = NO;
         self.lblTemperature.hidden = NO;
         self.lblTitle.hidden = NO;
