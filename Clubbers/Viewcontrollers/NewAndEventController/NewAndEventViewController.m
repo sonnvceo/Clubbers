@@ -56,7 +56,7 @@
     // Setup
 
     parsedItems = [[NSMutableArray alloc] init];
-    self.itemsToDisplay = [NSArray array];
+    itemsToDisplay = [NSArray array];
     //
     NSURL *feedURL = [NSURL URLWithString:@"http://www.clubbersapptoibiza.com/app/?feed=rss2&cat=1"];
     feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
@@ -67,7 +67,7 @@
 }
 - (void)updateTableWithParsedItems {
     [self showMBProgressHUDNewsAndFeeds:NO];
-    self.itemsToDisplay = parsedItems;
+    itemsToDisplay = parsedItems;
     [tableview reloadData];
     tableview.hidden = NO;
 }
@@ -168,7 +168,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.itemsToDisplay.count;;
+    return itemsToDisplay.count;;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -186,7 +186,7 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // Configure the cell...
-    MWFeedItem *item = [self.itemsToDisplay objectAtIndex:indexPath.row];
+    MWFeedItem *item = [itemsToDisplay objectAtIndex:indexPath.row];
     if (item)
         [cell configueCellWithTownDetai:item];
     return cell;

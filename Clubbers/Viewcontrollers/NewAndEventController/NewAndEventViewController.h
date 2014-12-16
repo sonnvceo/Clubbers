@@ -21,7 +21,6 @@
     NSArray *itemsToDisplay;
     MBProgressHUD *HUD;
 }
-@property (nonatomic, strong) NSArray *itemsToDisplay;
 @property (strong, nonatomic) IBOutlet UIButton *buttonNews;
 @property (strong, nonatomic) IBOutlet UIButton *buttonEvents;
 @property (strong, nonatomic) IBOutlet UIButton *buttonOffers;

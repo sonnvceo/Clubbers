@@ -23,7 +23,7 @@
 @end
 
 @implementation ClubDetailViewController
-@synthesize townID, delegate, tableView;
+@synthesize townID, delegate, tableview;
 
 - (NSMutableArray *) readMoreCells {
     if (!_readMoreCells) {
@@ -67,7 +67,7 @@
     AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
          NSDictionary* dictResponse = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
         townDetailModel = [[TownDetailModel shareInstance] parseJson:dictResponse];
-        [tableView reloadData];
+        [tableview reloadData];
         [self showMBProgressHUDAtDetailView:NO];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -225,7 +225,7 @@
     isBtnReadmoreDelegate = YES;
     [_readMoreCells addObject:cell.indexPath];
     expandHeightCell = cell.realHeightOfTextView;
-    [self.tableView reloadRowsAtIndexPaths:_readMoreCells withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableview reloadRowsAtIndexPaths:_readMoreCells withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 #pragma mark - SlideShowViewDelegate
 - (void) showMenuLeft{

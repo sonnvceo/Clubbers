@@ -19,16 +19,19 @@
 @property(nonatomic, strong) IBOutlet UITextView *textView;
 @property(nonatomic, strong) IBOutlet UILabel *lblTitle;
 @property(nonatomic, strong) IBOutlet UILabel *lblDescription;
-@property(nonatomic, strong) IBOutlet UILabel *lblTemperature;
-@property(nonatomic, strong) IBOutlet UIImageView *imgTemperature;
-@property(nonatomic, strong) IBOutlet UIImageView *imgWeatherCloundly;
+@property(nonatomic, strong) IBOutlet UIButton *btnVote;
+@property(nonatomic, strong) IBOutlet UIButton *btnCall;
+@property(nonatomic, strong) IBOutlet UIButton *btnMap;
 
 @property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, strong) UIView *contentSubView;
 @property (nonatomic, assign) BOOL isBtnReadmore;
 @property (nonatomic, assign) float realHeightOfTextView;
 - (void) creatSubviews;
-- (IBAction)readMore:(id)sender;
+- (IBAction)btnVote:(id)sender;
+- (IBAction)btnCall:(id)sender;
+- (IBAction)btnMap:(id)sender;
+
 - (void) configueCellAtIndexPath:(NSIndexPath*) indexPath withTownDetai:(TownDetailModel *) townDetail;
 - (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width;
 @end
