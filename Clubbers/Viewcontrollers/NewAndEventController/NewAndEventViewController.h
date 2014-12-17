@@ -25,5 +25,5 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonEvents;
 @property (strong, nonatomic) IBOutlet UIButton *buttonOffers;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
-
+- (IBAction)switchSelectedButton:(id)sender;
 @end

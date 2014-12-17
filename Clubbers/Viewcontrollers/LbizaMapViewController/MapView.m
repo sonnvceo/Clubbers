@@ -111,7 +111,10 @@
     [self addSubview:_mapView];
     // add Marker of current position
     _option = [GMSMarker markerWithPosition:coordinate];
-    _option.icon = [UIImage imageNamed:@"ic_item1_pin.png"];
+    UIImage *imageIcon = [UIImage imageNamed:@"ic_item1_pin.png"];
+    imageIcon = [self imageWithImage:imageIcon
+                        scaledToSize:CGSizeMake(47/2,68/2)];
+    _option.icon = imageIcon;
     _option.map = _mapView; // replace/remove old marker
 }
 
@@ -151,6 +154,15 @@
 - (void) zoomInMapFollowRadius:(CGFloat) zLevel
 {
     [_mapView animateToZoom:zLevel];
+}
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 @end
 

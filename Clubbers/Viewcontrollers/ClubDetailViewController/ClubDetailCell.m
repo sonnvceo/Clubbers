@@ -38,6 +38,135 @@
 - (void) creatSubviews:(TownDetailModel *) townDetail {
     
     [self showContentOfCell: NO withTownDetai:townDetail];
+    // add title lable
+    UILabel *lblOverView = [[UILabel alloc] initWithFrame:CGRectMake(10, -5, 100, 30)];
+    lblOverView.textColor = [UIColor blackColor];
+    lblOverView.backgroundColor=[UIColor clearColor];
+    lblOverView.textColor=[UIColor grayColor];
+    lblOverView.userInteractionEnabled=NO;
+    lblOverView.font = [UIFont boldSystemFontOfSize:13];
+    lblOverView.numberOfLines = 1;
+    lblOverView.text= @"Overview";
+    [self addSubview:lblOverView];
+    // add textView
+    CGRect textViewFrame = CGRectMake(10.0f,
+                                      lblOverView.frame.origin.y + lblOverView.frame.size.height +20,
+                                      280.0f,
+                                      50.0f);
+    UITextView *txtOverView = [[UITextView alloc] initWithFrame:textViewFrame];
+    txtOverView.returnKeyType = UIReturnKeyDone;
+    txtOverView.userInteractionEnabled = NO;
+    txtOverView.showsHorizontalScrollIndicator = NO;
+    txtOverView.scrollEnabled = NO;
+    txtOverView.text = @"N/A";
+    txtOverView.backgroundColor = [UIColor clearColor];
+    [self addSubview:txtOverView];
+    // add lable
+    UILabel *lblKeyFeatures = [[UILabel alloc] initWithFrame:CGRectMake(10.0f,
+                                                                        textView.frame.origin.y + textView.frame.size.height +20,
+                                                                        100.0f,
+                                                                        30.0f)];
+    lblKeyFeatures.textColor = [UIColor blackColor];
+    lblKeyFeatures.backgroundColor=[UIColor clearColor];
+    lblKeyFeatures.textColor=[UIColor grayColor];
+    lblKeyFeatures.userInteractionEnabled=NO;
+    lblKeyFeatures.font = [UIFont boldSystemFontOfSize:13];
+    lblKeyFeatures.numberOfLines = 1;
+    lblKeyFeatures.text= @"Key features";
+    [self addSubview:lblKeyFeatures];
+    //
+    UITextView *txtKeyFeadtures = [[UITextView alloc] initWithFrame:CGRectMake(10.0f,
+                                                                               lblKeyFeatures.frame.origin.y + lblKeyFeatures.frame.size.height +20,
+                                                                               280.0f,
+                                                                               50.0f)];
+    txtKeyFeadtures.returnKeyType = UIReturnKeyDone;
+    txtKeyFeadtures.userInteractionEnabled = NO;
+    txtKeyFeadtures.showsHorizontalScrollIndicator = NO;
+    txtKeyFeadtures.scrollEnabled = NO;
+    txtKeyFeadtures.text = @"N/A";
+    txtKeyFeadtures.backgroundColor = [UIColor clearColor];
+    [self addSubview:txtKeyFeadtures];
+
+    // add view Details
+    UIView *viewDetails = [[UIView alloc] initWithFrame:CGRectMake(10.0f,
+                                                                   txtKeyFeadtures.frame.origin.y + txtKeyFeadtures.frame.size.height +20,
+                                                                   self.frame.size.width-10.f,
+                                                                   100.0f)];
+    viewDetails.backgroundColor = [UIColor clearColor];
+ ;
+    // lblDetais
+    UILabel *lblDetais= [[UILabel alloc] initWithFrame:CGRectMake(0.0f,
+                                                                  0.0f,
+                                                                  100.0f,
+                                                                  30.0f)];
+    lblDetais.textColor = [UIColor blackColor];
+    lblDetais.backgroundColor=[UIColor clearColor];
+    lblDetais.textColor=[UIColor grayColor];
+    lblDetais.userInteractionEnabled=NO;
+    lblDetais.font = [UIFont boldSystemFontOfSize:13];
+    lblDetais.numberOfLines = 1;
+    lblDetais.text= @"Details:";
+    [viewDetails addSubview:lblDetais];
+    // add address
+    UIImageView *imgVAddress = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                            lblDetais.frame.origin.y + lblDetais.frame.size.height ,
+                                                                            25,
+                                                                            25)];
+    imgVAddress.image = [UIImage imageNamed:@"ic_compass_pink.png"];
+    [viewDetails addSubview:imgVAddress];
+    //
+    UILabel *lblTitleAddress = [[UILabel alloc] initWithFrame:CGRectMake(imgVAddress.frame.origin.x + imgVAddress.frame.size.width + 5,
+                                                                  imgVAddress.frame.origin.y - 7,
+                                                                  100.0f,
+                                                                  30.0f)];
+    lblTitleAddress.textColor = [UIColor blackColor];
+    lblTitleAddress.backgroundColor=[UIColor clearColor];
+    lblTitleAddress.userInteractionEnabled=NO;
+    lblTitleAddress.font = [UIFont boldSystemFontOfSize:11];
+    lblTitleAddress.numberOfLines = 1;
+    lblTitleAddress.text= @"Address:";
+    [viewDetails addSubview:lblTitleAddress];
+    
+    UILabel *lblTitleDescription= [[UILabel alloc] initWithFrame:CGRectMake(lblTitleAddress.frame.origin.x,
+                                                                       lblTitleAddress.frame.origin.y + lblTitleAddress.frame.size.height +5,
+                                                                       100.0f,
+                                                                       30.0f)];
+    lblTitleDescription.textColor = [UIColor blackColor];
+    lblTitleDescription.backgroundColor=[UIColor clearColor];
+    lblTitleDescription.userInteractionEnabled=NO;
+    lblTitleDescription.font = [UIFont systemFontOfSize:10];
+    lblTitleDescription.numberOfLines = 1;
+    lblTitleDescription.text= @"AddressAddressAddressAddressAddressAddressAddressAddress:";
+    [viewDetails addSubview:lblTitleDescription];
+    //
+    
+    // add Telephone
+    UIImageView *imgVPhone = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                           imgVAddress.frame.origin.y + imgVAddress.frame.size.height +5,
+                                                                            25,
+                                                                            25)];
+    imgVPhone.image = [UIImage imageNamed:@"ic_phone_green.png"];
+    [viewDetails addSubview:imgVPhone];
+    
+    // add email
+    UIImageView *imgEmail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                           imgVPhone.frame.origin.y + imgVPhone.frame.size.height +5,
+                                                                           25,
+                                                                           25)];
+    imgEmail.image = [UIImage imageNamed:@"ic_email.png"];
+    [viewDetails addSubview:imgEmail];
+    
+    // add website
+    UIImageView *imgVWebsite = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                           imgEmail.frame.origin.y + imgEmail.frame.size.height +5,
+                                                                           25,
+                                                                           25)];
+    imgVWebsite.image = [UIImage imageNamed:@"ic_website.png"];
+    [viewDetails addSubview:imgVWebsite];
+    
+    
+    [self addSubview:viewDetails];
+    
 }
 - (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width {
     UITextView *calculationView = [[UITextView alloc] init];

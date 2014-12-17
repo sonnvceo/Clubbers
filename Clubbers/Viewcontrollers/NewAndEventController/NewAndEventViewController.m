@@ -10,7 +10,7 @@
 #import "CustomTableCell.h"
 #import "AFNetworking.h"
 #import "MWFeedParser.h"
-
+#import "DefinitionAPI.h"
 @interface NewAndEventViewController () {
     UIButton *btnBack;
 }
@@ -30,21 +30,21 @@
     // add buttons
     btnBack = [UIButton buttonWithType: UIButtonTypeCustom];
     [btnBack setFrame: CGRectMake(10.0f, 20.0f, 30.0f, 30.0f)];
-    [btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back.png"] forState:UIControlStateNormal];
+    [btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back_disable.png"] forState:UIControlStateNormal];
     //[btnBack setBackgroundImage:[UIImage imageNamed:@"ic_back_disable.png"] forState:UIControlStateDisabled];
     [btnBack addTarget:self action:@selector(btnBackMenu:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview: btnBack];
 
+    [buttonNews setBackgroundImage:[UIImage imageNamed:@"ic_ne_news_normal.png"] forState:UIControlStateNormal];
+    [buttonNews setBackgroundImage:[UIImage imageNamed:@"ic_ne_news_selected.png"] forState:UIControlStateDisabled];
     
-    [buttonNews setBackgroundImage:[UIImage imageNamed:@"ic_ne_news_normal.png"] forState:UIControlStateDisabled];
-    [buttonNews setBackgroundImage:[UIImage imageNamed:@"ic_ne_news_selected.png"] forState:UIControlStateNormal];
+    [buttonEvents setBackgroundImage:[UIImage imageNamed:@"ic_ne_events_normal.png"] forState:UIControlStateNormal];
+    [buttonEvents setBackgroundImage:[UIImage imageNamed:@"ic_ne_events_selected.png"] forState:UIControlStateDisabled];
     
-    [buttonEvents setBackgroundImage:[UIImage imageNamed:@"ic_ne_events_normal.png"] forState:UIControlStateDisabled];
-    [buttonEvents setBackgroundImage:[UIImage imageNamed:@"ic_ne_events_selected.png"] forState:UIControlStateNormal];
+    [buttonOffers setBackgroundImage:[UIImage imageNamed:@"ic_ne_offers_normal.png"] forState:UIControlStateNormal];
+    [buttonOffers setBackgroundImage:[UIImage imageNamed:@"ic_ne_offers_selected"] forState:UIControlStateDisabled];
     
-    [buttonOffers setBackgroundImage:[UIImage imageNamed:@"ic_ne_offers_normal.png"] forState:UIControlStateDisabled];
-    [buttonOffers setBackgroundImage:[UIImage imageNamed:@"ic_ne_offers_selected"] forState:UIControlStateNormal];
-    
+    [self stateOfButonNews:NO andButtonEvents:YES andButonOffers:YES];
     tableview.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     tableview.hidden = YES;
     //
@@ -52,13 +52,15 @@
     [self.view addSubview:HUD];
     HUD.delegate = (id)self;
     HUD.labelText = @"Loading...";
-    [self showMBProgressHUDNewsAndFeeds:YES];
     // Setup
-
     parsedItems = [[NSMutableArray alloc] init];
     itemsToDisplay = [NSArray array];
     //
-    NSURL *feedURL = [NSURL URLWithString:@"http://www.clubbersapptoibiza.com/app/?feed=rss2&cat=1"];
+    [self loadNewsAndEventsFeed: (int)buttonNews.tag];
+}
+- (void) loadNewsAndEventsFeed:(int) buttonTag {
+    [self showMBProgressHUDNewsAndFeeds:YES];
+    NSURL *feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d",PARAM_FEED, buttonTag+1]];
     feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
     feedParser.delegate = self;
     feedParser.feedParseType = ParseTypeFull; // Parse feed info and all items
@@ -70,6 +72,21 @@
     itemsToDisplay = parsedItems;
     [tableview reloadData];
     tableview.hidden = NO;
+}
+- (IBAction)switchSelectedButton:(id)sender {
+    switch ([sender tag]) {
+        case 0:
+            [self loadNewsAndEventsFeed: (int)buttonNews.tag];
+            break;
+        case 1:
+            [self loadNewsAndEventsFeed: (int)buttonEvents.tag];
+            break;
+        case 2:
+            [self loadNewsAndEventsFeed: (int)buttonOffers.tag];
+            break;
+        default:
+            break;
+    }
 }
 #pragma mark -
 #pragma mark MWFeedParserDelegate
@@ -111,15 +128,6 @@
 
 - (IBAction)btnBackMenu:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
-}
-- (IBAction)btnNews:(id)sender {
-    [self stateOfButonNews:NO andButtonEvents:YES andButonOffers:YES];
-}
-- (IBAction)btnEvents:(id)sender {
-    [self stateOfButonNews:YES andButtonEvents:NO andButonOffers:YES];
-}
-- (IBAction)btnOffers:(id)sender {
-    [self stateOfButonNews:NO andButtonEvents:YES andButonOffers:NO];
 }
 
 - (void) stateOfButonNews:(BOOL) isEnablebtnNews andButtonEvents:(BOOL) isEnablebtnEvents andButonOffers:(BOOL) isEnablebtnOffers {
