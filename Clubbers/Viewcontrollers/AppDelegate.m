@@ -10,7 +10,7 @@
 #import "MainViewController.h"
 #import "ContentViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
-
+#import "ClubDetailModel.h"
 @interface AppDelegate ()
 
 @end
@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [GMSServices provideAPIKey:@"AIzaSyAdaqVF8Ghn99SdREhUOm4I4CmGeBM4op8"];
-    
+    [[ClubDetailModel shareInstance] createEditableCopyOfDatabaseIfNeeded];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     MainViewController *mainViewController = [[MainViewController alloc] init];
     UINavigationController *contentNavigationController = [[UINavigationController alloc]

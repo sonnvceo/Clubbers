@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <sqlite3.h>
+#import "ClubDetailModel.h"
 @interface ClubDetailModel : NSObject
 
+@property(nonatomic, strong) NSMutableArray* arrayClubFav;
 @property (assign,nonatomic) NSInteger clubId;
 @property (assign,nonatomic) NSInteger townId;
 @property (strong,nonatomic) NSString *clubName;
@@ -29,4 +31,8 @@
 @property (strong,nonatomic) NSString *clubHeaderDetail;
 +(ClubDetailModel*) shareInstance;
 - (ClubDetailModel*)parseJson:(NSDictionary*)jsonDict;
+- (void) createEditableCopyOfDatabaseIfNeeded;
+- (sqlite3 *) getNewDBConnection;
+- (NSArray*)getDataFromSQLite;
+- (void)insertDataToSQLite:(ClubDetailModel*) clubDetailModel;
 @end

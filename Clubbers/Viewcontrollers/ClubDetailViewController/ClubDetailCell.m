@@ -24,6 +24,7 @@
 @synthesize btnMap;
 
 - (void) configueCellAtIndexPath:(NSIndexPath*) indexPath withClubDetai:(ClubDetailModel *) clubDetail {
+    clubDetailModel =clubDetail;
     switch (indexPath.row) {
         case 0:
             [self showContentOfCell: YES withClubDetai:clubDetail];
@@ -336,6 +337,13 @@
 - (IBAction)btnVote:(id)sender {
     btnVote.enabled = NO;
     [sender setBackgroundImage:[UIImage imageNamed:@"ic_heart.png"] forState:UIControlStateDisabled];
+//    if (clubDetailModel) {
+//        [[ClubDetailModel shareInstance] insertDataToSQLite:clubDetailModel];
+//    }
+    NSArray *arrClubs = [[ClubDetailModel shareInstance] getDataFromSQLite];
+    NSDictionary *dataDict = [arrClubs objectAtIndex:0];
+    ClubDetailModel *_clubDetailModel = [[ClubDetailModel shareInstance] parseJson:dataDict];
+    NSLog(@"++%@", _clubDetailModel.clubName);
 }
 - (IBAction)btnCall:(id)sender {
 

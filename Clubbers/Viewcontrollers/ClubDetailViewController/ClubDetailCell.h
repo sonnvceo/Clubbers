@@ -13,6 +13,7 @@
 @interface ClubDetailCell : UITableViewCell {
     UIButton* btnreadMore;
     NSArray *arrayImages;
+    ClubDetailModel *clubDetailModel;
 }
 
 @property (nonatomic) id<ClubDetailCellDelegate> delegate;

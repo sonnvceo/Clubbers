@@ -202,7 +202,9 @@
 		846C693F1A34D5A800F8D31A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C693E1A34D5A800F8D31A /* libz.dylib */; };
 		846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69401A34D5AD00F8D31A /* OpenGLES.framework */; };
 		846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69421A34D5B500F8D31A /* QuartzCore.framework */; };
-		8472B5F31A4316C200332B7E /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
+		8472B5F61A4346DC00332B7E /* testdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8472B5F51A4346DC00332B7E /* testdb.sqlite */; };
+		8472B5F81A4347A500332B7E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8472B5F71A4347A500332B7E /* libsqlite3.dylib */; };
+		84A914ED1A436127005912A8 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
 		84EE8F4B1A42DFA600FC836F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69441A34D5C200F8D31A /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
@@ -466,6 +468,8 @@
 		846C69401A34D5AD00F8D31A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		846C69421A34D5B500F8D31A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		846C69441A34D5C200F8D31A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8472B5F51A4346DC00332B7E /* testdb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = testdb.sqlite; sourceTree = "<group>"; };
+		8472B5F71A4347A500332B7E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,7 +477,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8472B5F31A4316C200332B7E /* GoogleMaps.framework in Frameworks */,
+				84A914ED1A436127005912A8 /* GoogleMaps.framework in Frameworks */,
+				8472B5F81A4347A500332B7E /* libsqlite3.dylib in Frameworks */,
 				84EE8F4B1A42DFA600FC836F /* SystemConfiguration.framework in Frameworks */,
 				846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */,
 				846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */,
@@ -502,6 +507,7 @@
 		300896CF1A353EE3002F007F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8472B5F71A4347A500332B7E /* libsqlite3.dylib */,
 				30A900691A35706700B657C3 /* GoogleMaps.framework */,
 				846C69441A34D5C200F8D31A /* SystemConfiguration.framework */,
 				846C69421A34D5B500F8D31A /* QuartzCore.framework */,
@@ -598,6 +604,7 @@
 		301BFA311A2EB91300548B52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8472B5F41A4346C000332B7E /* Sqlite */,
 				843F851C1A3B0CEF00DB5B7D /* dot_white.png */,
 				843F851D1A3B0CEF00DB5B7D /* dot_yellow.png */,
 				841A621B1A34242100773107 /* ic_launcher.png */,
@@ -978,6 +985,14 @@
 			path = "GoogleMaps framework";
 			sourceTree = "<group>";
 		};
+		8472B5F41A4346C000332B7E /* Sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				8472B5F51A4346DC00332B7E /* testdb.sqlite */,
+			);
+			path = Sqlite;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1189,6 +1204,7 @@
 				841A61971A3422F200773107 /* menu_shape_4_normal.png in Resources */,
 				305E85F61A301E7300808E13 /* 3.jpg in Resources */,
 				841A61EA1A34239A00773107 /* ic_heart_disable.png in Resources */,
+				8472B5F61A4346DC00332B7E /* testdb.sqlite in Resources */,
 				305E85F41A301E7300808E13 /* 1.jpg in Resources */,
 				841A61161A34220600773107 /* main_pic_bg4.jpg in Resources */,
 				841A618E1A3422F200773107 /* menu_item_4_selected.png in Resources */,
@@ -1481,6 +1497,8 @@
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 				);
 				INFOPLIST_FILE = Clubbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1497,6 +1515,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",

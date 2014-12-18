@@ -81,4 +81,210 @@ static ClubDetailModel* _instance = nil;
     }
     return nil;
 }
+#pragma mark - SQLite Manager Methods
+- (void)createEditableCopyOfDatabaseIfNeeded
+{
+    NSLog(@"Creating editable copy of database :?");
+    BOOL success;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"testdb.sqlite"];
+    NSLog(@"Path: %@", writableDBPath);
+    success = [fileManager fileExistsAtPath:writableDBPath];
+    if (success) {
+        NSLog(@"DB File already present in the documents :)");
+        return ;
+    }
+    //The writable database does not exist, so copy the default to the appropriate location.
+    NSString *defaultDBPath = [[NSBundle mainBundle] pathForResource:@"testdb" ofType:@"sqlite"];;
+    success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+    if (!success)
+    {
+        NSLog(@"Failed to create writable database file :(");
+    }
+    else
+    {
+        NSLog(@"DB File copied to documents Successfully :)");
+    }
+}
+- (sqlite3 *) getNewDBConnection
+{
+    sqlite3 *newDBconnection;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"testdb.sqlite"];
+    
+    //Open the database. The database was prepared outside the application.
+    if (sqlite3_open([path UTF8String], &newDBconnection) == SQLITE_OK)
+    {
+        NSLog(@"Database Successfully Opened :)");
+    }
+    else
+    {
+        NSLog(@"Error in opening database :(");
+    }
+    return newDBconnection;
+}
+
+-(NSArray*)getDataFromSQLite
+{
+    sqlite3 * db=[self getNewDBConnection];
+    sqlite3_stmt * stmt=nil;
+    const char * sql="select * from tblClub";
+    
+    if(sqlite3_prepare_v2(db,sql,-1,&stmt,NULL)!=SQLITE_OK)
+    {
+        NSLog(@"ERROR PREPARING STATEMENT");
+    }
+    else
+    {
+        self.arrayClubFav = nil;
+        self.arrayClubFav = [[NSMutableArray alloc] init];
+        
+        while(sqlite3_step(stmt)==SQLITE_ROW)
+        {
+            NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc] init];
+            
+            [dataDictionary setObject:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,0)] forKey:@"club_id"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,1)] forKey:@"town_id"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,2)] forKey:@"club_name"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,3)] forKey:@"club_phone"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,4)] forKey:@"club_image"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,5)] forKey:@"thumb_image"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,6)] forKey:@"club_description"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,7)] forKey:@"club_lat"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,8)] forKey:@"club_lon"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,9)] forKey:@"short_overview"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,10)] forKey:@"club_features"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,11)] forKey:@"club_address"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,12)] forKey:@"club_email"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,13)] forKey:@"club_siteurl"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,14)] forKey:@"club_header_title"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,15)] forKey:@"club_header_title"];
+            [dataDictionary setValue:[NSString stringWithFormat:@"%s",(char *)sqlite3_column_text(stmt,16)] forKey:@"club_header_detail"];
+            
+            [self.arrayClubFav addObject:dataDictionary];
+        }
+    }
+    sqlite3_close(db);
+    return self.arrayClubFav;
+}
+
+#pragma mark - Button Actions
+- (void)insertDataToSQLite:(ClubDetailModel*) clubDetailModel
+{
+    NSLog(@"+++ %ld", clubDetailModel.clubId);
+    NSLog(@"+++ %ld", clubDetailModel.townId);
+    NSLog(@"+++ %@", clubDetailModel.clubName);
+    NSLog(@"+++ %@", clubDetailModel.clubPhone);
+    NSLog(@"+++ %@", clubDetailModel.clubImage);
+    NSLog(@"+++ %@", clubDetailModel.thumbImage);
+    NSLog(@"+++ %@", clubDetailModel.clubDescription);
+    NSLog(@"+++ %@", clubDetailModel.clubLat);
+    NSLog(@"+++ %@", clubDetailModel.clubLon);
+    NSLog(@"+++ %@", clubDetailModel.shortOverview);
+    NSLog(@"+++ %@", clubDetailModel.fullOverview);
+    NSLog(@"+++ %@", clubDetailModel.clubFeatures);
+    NSLog(@"+++ %@", clubDetailModel.clubAddress);
+    NSLog(@"+++ %@", clubDetailModel.clubEmail);
+    NSLog(@"+++ %@", clubDetailModel.clubSiteurl);
+    NSLog(@"+++ %@", clubDetailModel.clubHeaderTitle);
+    NSLog(@"+++ %@", clubDetailModel.clubHeaderDetail);
+//    if([areaId isEqualToString:@""] || [nameEng isEqualToString:@""] || [nameGer isEqualToString:@""])
+//    {
+//
+//    }
+//    else
+//    {
+        sqlite3 *db=[self getNewDBConnection];
+        sqlite3_stmt *stmt=nil;
+        const char *sql=[[NSString stringWithFormat:@"insert into tblClub values ('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",
+                          [NSString stringWithFormat:@"%ld", clubDetailModel.clubId],
+                          [NSString stringWithFormat:@"%ld", clubDetailModel.townId],
+                          clubDetailModel.clubName,
+                          clubDetailModel.clubPhone,
+                          clubDetailModel.clubImage,
+                          clubDetailModel.thumbImage,
+                          clubDetailModel.clubDescription,
+                          clubDetailModel.clubLat,
+                          clubDetailModel.clubLon,
+                          clubDetailModel.shortOverview,
+                          clubDetailModel.fullOverview,
+                          clubDetailModel.clubFeatures,
+                          clubDetailModel.clubAddress,
+                          clubDetailModel.clubEmail,
+                          clubDetailModel.clubSiteurl,
+                          clubDetailModel.clubHeaderTitle,
+                          clubDetailModel.clubHeaderDetail] UTF8String];
+        
+        int status = sqlite3_exec(db, sql, nil, nil, nil);
+        NSLog(@"SQLITE Querry Status: %d", status);
+        
+        if(status != SQLITE_OK)
+        {
+        }
+        else
+        {
+            sqlite3_finalize(stmt);
+        }
+        sqlite3_close(db);
+//    }
+}
+
+#pragma mark - Button Actions
+- (void)updateDataToSQLite:(NSString*) name andNote:(NSString*) note
+{
+    if(![note isEqualToString:@""])
+    {
+        sqlite3 *db=[self getNewDBConnection];
+        sqlite3_stmt *stmt=nil;
+        const char *sql=[[NSString stringWithFormat:@"UPDATE Notes SET Note='%@' WHERE SubmittedBy='%@'", note, name] UTF8String];
+        
+        int status = sqlite3_exec(db, sql, nil, nil, nil);
+        NSLog(@"SQLITE Querry Status: %d", status);
+        
+        if(status != SQLITE_OK)
+        {
+        }
+        else
+        {
+            sqlite3_finalize(stmt);
+            
+        }
+        sqlite3_close(db);
+    }
+    else
+    {
+
+    }
+}
+/*
+- (void)deleteDataFormSQLite:(NSIndexPath*) indexPath
+{
+    sqlite3 *db=[self getNewDBConnection];
+    sqlite3_stmt *stmt=nil;
+    const char *sql=[[NSString stringWithFormat:@"DELETE FROM Notes WHERE SubmittedBy='%@'", [[self.arrayClubFav objectAtIndex:indexPath.row] objectForKey:@"SubmittedBy"]] UTF8String];
+    
+    int status = sqlite3_exec(db, sql, nil, nil, nil);
+    NSLog(@"SQLITE Querry Status: %d", status);
+    
+    if(status != SQLITE_OK)
+    {
+        UIAlertView *errAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error Preparing statement, try again later." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        if(status == SQLITE_CONSTRAINT)
+        {
+            errAlert.message = @"Cannot add multiple notes for same user, try editing old one of yours.";
+        }
+        [errAlert show];
+    }
+    else
+    {
+        sqlite3_finalize(stmt);
+    }
+    sqlite3_close(db);
+    
+}
+*/
 @end
