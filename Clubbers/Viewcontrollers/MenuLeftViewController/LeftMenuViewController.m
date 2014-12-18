@@ -47,7 +47,7 @@
        andButonNewsAndEvents:NO];
 }
 
-- (IBAction)switchController:(id)sender;
+- (IBAction)switchController:(id)sender
 {
     ContentViewController *viewController;
     NewAndEventViewController *newAndEventViewController = [[NewAndEventViewController alloc] initWithNibName:@"NewAndEventViewController" bundle:nil];

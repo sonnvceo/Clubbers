@@ -7,6 +7,7 @@
 //
 
 #import "TownDetailCell.h"
+#import "DefinitionAPI.h"
 
 #define kWidth      106
 #define kHeight     106
@@ -36,6 +37,17 @@
 - (void) creatSubviews:(TownDetailModel *) townDetail {
     
     [self showContentOfCell: NO withTownDetai:townDetail];
+    // add title lable
+    UILabel *lbOverView = [[UILabel alloc] initWithFrame:CGRectMake(10, -5, 100, 30)];
+    lbOverView.textColor = [UIColor blackColor];
+    lbOverView.backgroundColor=[UIColor clearColor];
+    lbOverView.textColor=[UIColor grayColor];
+    lbOverView.userInteractionEnabled=NO;
+    lbOverView.font = [UIFont boldSystemFontOfSize:13];
+    lbOverView.numberOfLines = 1;
+    lbOverView.text= @"Overview";
+    [self addSubview:lbOverView];
+    
     CGRect textViewFrame = CGRectMake(10.0f, 15.0f, 280.0f, 50.0f);
     textView = [[UITextView alloc] initWithFrame:textViewFrame];
     textView.returnKeyType = UIReturnKeyDone;
@@ -48,7 +60,7 @@
     UITextView *textViewFullOverview = [[UITextView alloc] initWithFrame:textViewFrame];
     textViewFullOverview.text = townDetail.fullOverview;
     float heightTextViewFullOverview = [self textViewHeightForAttributedText:textViewFullOverview.attributedText andWidth:textView.frame.size.width];
-    if (townDetail.townDescription)
+    if (townDetail.shortOverview)
        textView.text = townDetail.shortOverview;
     realHeightOfTextView = [self textViewHeightForAttributedText:textView.attributedText andWidth:textView.frame.size.width];
     heightCellExpanding = heightTextViewFullOverview - realHeightOfTextView;
@@ -87,26 +99,21 @@
             UIImageView *imageView = [self generateUIImageViewWithFrame:frame atRow:j column:i];
             UILabel *label = [self generateUILabelWithFrame:CGRectMake(0, frame.size.height-20, kWidth, 20)];
             label.adjustsFontSizeToFitWidth = YES;
+            // add button
+            
             UIView *subView = [[UIView alloc] initWithFrame:label.frame];
             subView.backgroundColor = [UIColor blackColor];
             subView.alpha = 0.7;
             [imageView addSubview:subView];
             [imageView addSubview:label];
+            //
+            UIButton *button = [self generateUIButtonWithFrame:frame atRow:j column:i];
+            
             [contentSubView addSubview:imageView];
+            [contentSubView addSubview:button];
         }
     }
-    // add title lable
-    UILabel *lbOverView = [[UILabel alloc] initWithFrame:CGRectMake(10, -5, 100, 30)];
-    lbOverView.textColor = [UIColor blackColor];
-    lbOverView.backgroundColor=[UIColor clearColor];
-    lbOverView.textColor=[UIColor grayColor];
-    lbOverView.userInteractionEnabled=NO;
-    lbOverView.font = [UIFont boldSystemFontOfSize:13];
-    lbOverView.numberOfLines = 1;
-    lbOverView.text= @"Overview";
-    [self addSubview:lbOverView];
 
-    [self addSubview: btnreadMore];
     if (isBtnReadmore) {
         if (townDetail.fullOverview)
             textView.text = townDetail.fullOverview;
@@ -141,31 +148,49 @@
 #pragma mark -------------------------------------------------------------------
 #pragma mark Private
 
-- (UIImageView *)generateUIImageViewWithFrame:(CGRect)frame atRow:(int)row column:(int)column{
+- (UIImageView *)generateUIImageViewWithFrame:(CGRect)frame atRow:(int)row column:(int)column {
+    NSArray *arrayMainPages = [NSArray arrayWithObjects:    @"main_page1.png",
+                                                            @"main_page2.png",
+                                                            @"main_page3.png",
+                                                            @"main_page4.png",
+                                                            @"main_page5.png",
+                                                            @"main_page6.png", nil];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.clipsToBounds = YES;
     NSString *stringUrlImageGallery = nil;
-    imageView.backgroundColor = [UIColor redColor];
+    imageView.backgroundColor = [UIColor clearColor];
     if (arrayImages.count > 0)
         stringUrlImageGallery = [NSString stringWithFormat:@"%@", [arrayImages objectAtIndex: row+column]];
     if (stringUrlImageGallery) {
         NSURL *urlImageGallery = [NSURL URLWithString:stringUrlImageGallery];
         [self downloadImageWithURL:urlImageGallery completionBlock:^(BOOL succeeded, UIImage *image) {
             if (succeeded) {
-                UIImage *tempImage = [self scaleImage:image toSize:CGSizeMake(frame.size.width, frame.size.height)];
+                UIImage *tempImage = [self imageWithImage:image scaledToSize:CGSizeMake(frame.size.width, frame.size.height)];
                 if (tempImage)
                     imageView.image = tempImage;
                 else
-                    imageView.image = [UIImage imageNamed:@"main_page1.png"];
+                    imageView.image = [UIImage imageNamed:(NSString*)[arrayMainPages objectAtIndex:row*3 +column]];
             }
         }];
     }
-    else
-        imageView.image = [UIImage imageNamed:@"main_page1.png"];
+    else {
+        NSString *defaultImage = [arrayMainPages objectAtIndex:row*3 +column];
+        imageView.image = [UIImage imageNamed:defaultImage];
+    }
     return imageView;
 }
-
+- (UIButton *)generateUIButtonWithFrame:(CGRect)frame atRow:(int)row column:(int)column{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = frame;
+    button.tag = row*3 + column;
+    button.backgroundColor = [UIColor clearColor];
+    [button addTarget:self action:@selector(switchClickedButtonr:) forControlEvents:UIControlEventTouchUpInside];
+    return button;
+}
+- (IBAction)switchClickedButtonr:(id)sender {
+    NSLog(@"---------%ld", [sender tag]);
+}
 - (UILabel *)generateUILabelWithFrame:(CGRect)frame {
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.textAlignment = UITextAlignmentCenter;
@@ -196,8 +221,8 @@
     if (isShow) {
         if (townDetail.townName)
             self.lblTitle.text = townDetail.townName;
-        if (townDetail.townDeaderDetail) {
-            self.lblDescription.text = townDetail.townDeaderDetail;
+        if (townDetail.description) {
+            self.lblDescription.text = townDetail.townDescription;
             float heightTxtDescription = [self textViewHeightForAttributedText:self.lblDescription.attributedText andWidth:textView.frame.size.width];
             [self.lblDescription setFrame: CGRectMake(self.lblDescription.frame.origin.x,
                                                       self.lblDescription.frame.origin.y,
@@ -206,38 +231,24 @@
         }
         self.lblTitle.hidden = NO;
         self.lblTemperature.hidden = NO;
-        self.lblTitle.hidden = NO;
+        self.lblDescription.hidden = NO;
         self.imgTemperature.hidden = NO;
         self.imgWeatherCloundly. hidden = NO;
     }
     else {
         self.lblTitle.hidden = YES;
         self.lblTemperature.hidden = YES;
-        self.lblTitle.hidden = YES;
+        self.lblDescription.hidden = YES;
         self.imgTemperature.hidden = YES;
         self.imgWeatherCloundly. hidden = YES;
     }
 }
-- (UIImage*) scaleImage:(UIImage*)image toSize:(CGSize)newSize {
-    CGSize scaledSize = newSize;
-    float scaleFactor = 1.0;
-    if( image.size.width > image.size.height ) {
-        scaleFactor = image.size.width / image.size.height;
-        scaledSize.width = newSize.width;
-        scaledSize.height = newSize.height / scaleFactor;
-    }
-    else {
-        scaleFactor = image.size.height / image.size.width;
-        scaledSize.height = newSize.height;
-        scaledSize.width = newSize.width / scaleFactor;
-    }
-    
-    UIGraphicsBeginImageContextWithOptions( scaledSize, NO, 0.0 );
-    CGRect scaledImageRect = CGRectMake( 0.0, 0.0, scaledSize.width, scaledSize.height );
-    [image drawInRect:scaledImageRect];
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
-    return scaledImage;
+    return newImage;
 }
 @end

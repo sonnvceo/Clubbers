@@ -69,6 +69,9 @@
 }
 - (void)updateTableWithParsedItems {
     [self showMBProgressHUDNewsAndFeeds:NO];
+    if (itemsToDisplay.count >0)
+        itemsToDisplay = nil;
+    
     itemsToDisplay = parsedItems;
     [tableview reloadData];
     tableview.hidden = NO;

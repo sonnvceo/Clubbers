@@ -23,12 +23,12 @@
     [GMSServices provideAPIKey:@"AIzaSyAdaqVF8Ghn99SdREhUOm4I4CmGeBM4op8"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
     MainViewController *mainViewController = [[MainViewController alloc] init];
     UINavigationController *contentNavigationController = [[UINavigationController alloc]
                                                            initWithRootViewController:mainViewController];
     contentNavigationController.navigationBar.hidden = YES;
     self.window.rootViewController = contentNavigationController;
+
     [self.window makeKeyAndVisible];
     return YES;
 }

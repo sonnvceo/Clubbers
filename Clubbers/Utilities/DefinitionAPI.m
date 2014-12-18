@@ -14,7 +14,7 @@
  NSString* const SA_TOWNS_LIST = @"sa_towns_list";
  NSString* const SA_TOWN_DETAILS = @"sa_town_details/?town_id=";
  NSString* const SA_CLUBS_LIST = @"sa_clubs_list";
- NSString* const SA_CLUB_DETAILS = @"sa_club_details";
+ NSString* const SA_CLUB_DETAILS = @"sa_club_details/?club_id=";
  NSString* const SA_PLACES_LIST = @"sa_places_list";
  NSString* const SA_PLACE_DETAILS = @"sa_place_details";
  NSString* const SA_THINGS_LIST = @"sa_things_list";
@@ -50,4 +50,5 @@
  NSString* const PARAM_FEED = @"http://www.clubbersapptoibiza.com/app/?feed=rss2&cat=";
  NSString* const PARAM_CAT = @"cat";
  NSString* const PARAM_PLATFORM = @"platform";
+
 @end

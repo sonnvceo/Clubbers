@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TownDetailModel.h"
+#import "ClubDetailModel.h"
 @protocol ClubDetailCellDelegate;
 
 @interface ClubDetailCell : UITableViewCell {
@@ -27,12 +27,12 @@
 @property (nonatomic, strong) UIView *contentSubView;
 @property (nonatomic, assign) BOOL isBtnReadmore;
 @property (nonatomic, assign) float realHeightOfTextView;
-- (void) creatSubviews;
+
 - (IBAction)btnVote:(id)sender;
 - (IBAction)btnCall:(id)sender;
 - (IBAction)btnMap:(id)sender;
 
-- (void) configueCellAtIndexPath:(NSIndexPath*) indexPath withTownDetai:(TownDetailModel *) townDetail;
+- (void) configueCellAtIndexPath:(NSIndexPath*) indexPath withClubDetai:(ClubDetailModel *) clubDetail;
 - (CGFloat)textViewHeightForAttributedText: (NSAttributedString*)text andWidth: (CGFloat)width;
 @end
 

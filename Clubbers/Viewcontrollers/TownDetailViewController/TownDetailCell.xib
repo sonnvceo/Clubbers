@@ -44,6 +44,7 @@
             <connections>
                 <outlet property="imgTemperature" destination="qfm-Mw-AZ5" id="hFz-jv-4I1"/>
                 <outlet property="imgWeatherCloundly" destination="w0u-oz-MrD" id="6I5-xk-afj"/>
+                <outlet property="lblDescription" destination="izn-T3-AGU" id="NkF-1Q-IB1"/>
                 <outlet property="lblTemperature" destination="Y3D-QD-DRV" id="4B1-Zf-134"/>
                 <outlet property="lblTitle" destination="ygV-yw-D9n" id="WeR-T2-CRI"/>
             </connections>

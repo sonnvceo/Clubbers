@@ -49,7 +49,7 @@
 		305E860E1A3050B800808E13 /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E860C1A3050B800808E13 /* LeftMenuViewController.xib */; };
 		30A900771A35890B00B657C3 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A900751A35890B00B657C3 /* MapView.m */; };
 		30A900781A35890B00B657C3 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30A900761A35890B00B657C3 /* MapView.xib */; };
-		30ABD6C71A414EB400AE328B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
+		8401AE9E1A42A89500C66170 /* ClubDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AE9D1A42A89500C66170 /* ClubDetailModel.m */; };
 		841A61021A34071000773107 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A61011A34071000773107 /* MBProgressHUD.m */; };
 		841A610E1A34220600773107 /* listing_pic_bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61041A34220600773107 /* listing_pic_bg1.jpg */; };
 		841A610F1A34220600773107 /* listing_pic_bg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A61051A34220600773107 /* listing_pic_bg2.jpg */; };
@@ -202,7 +202,8 @@
 		846C693F1A34D5A800F8D31A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C693E1A34D5A800F8D31A /* libz.dylib */; };
 		846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69401A34D5AD00F8D31A /* OpenGLES.framework */; };
 		846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69421A34D5B500F8D31A /* QuartzCore.framework */; };
-		846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69441A34D5C200F8D31A /* SystemConfiguration.framework */; };
+		8472B5F31A4316C200332B7E /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A900691A35706700B657C3 /* GoogleMaps.framework */; };
+		84EE8F4B1A42DFA600FC836F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C69441A34D5C200F8D31A /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,6 +294,8 @@
 		30A900741A35890B00B657C3 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
 		30A900751A35890B00B657C3 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		30A900761A35890B00B657C3 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		8401AE9C1A42A89500C66170 /* ClubDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubDetailModel.h; sourceTree = "<group>"; };
+		8401AE9D1A42A89500C66170 /* ClubDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubDetailModel.m; sourceTree = "<group>"; };
 		841A61001A34071000773107 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		841A61011A34071000773107 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		841A61041A34220600773107 /* listing_pic_bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = listing_pic_bg1.jpg; sourceTree = "<group>"; };
@@ -470,8 +473,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30ABD6C71A414EB400AE328B /* GoogleMaps.framework in Frameworks */,
-				846C69451A34D5C200F8D31A /* SystemConfiguration.framework in Frameworks */,
+				8472B5F31A4316C200332B7E /* GoogleMaps.framework in Frameworks */,
+				84EE8F4B1A42DFA600FC836F /* SystemConfiguration.framework in Frameworks */,
 				846C69431A34D5B500F8D31A /* QuartzCore.framework in Frameworks */,
 				846C69411A34D5AD00F8D31A /* OpenGLES.framework in Frameworks */,
 				846C693F1A34D5A800F8D31A /* libz.dylib in Frameworks */,
@@ -642,6 +645,8 @@
 				30299F301A31AEB700C4687C /* ShoppingModel.m */,
 				30299F2C1A31A4AB00C4687C /* ClubModel.h */,
 				30299F2D1A31A4AB00C4687C /* ClubModel.m */,
+				8401AE9C1A42A89500C66170 /* ClubDetailModel.h */,
+				8401AE9D1A42A89500C66170 /* ClubDetailModel.m */,
 				30299F291A31A03300C4687C /* TownDetailModel.h */,
 				30299F2A1A31A03300C4687C /* TownDetailModel.m */,
 				30299D971A3143F300C4687C /* TownModel.h */,
@@ -1233,6 +1238,7 @@
 				30299D991A3143F300C4687C /* TownModel.m in Sources */,
 				841E96051A3F49FF00E2A573 /* MWFeedItem.m in Sources */,
 				30299F401A31BBD500C4687C /* PhotoGalleryModel.m in Sources */,
+				8401AE9E1A42A89500C66170 /* ClubDetailModel.m in Sources */,
 				841E95FA1A3F491800E2A573 /* ClubDetailViewController.m in Sources */,
 				301BFA341A2EB95E00548B52 /* AppDelegate.m in Sources */,
 				30299F311A31AEB700C4687C /* ShoppingModel.m in Sources */,
@@ -1465,6 +1471,16 @@
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 				);
 				INFOPLIST_FILE = Clubbers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1481,6 +1497,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
+					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
+					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",
 					framework,
 					"$(PROJECT_DIR)/Clubbers/Utilities/GoogleMaps",

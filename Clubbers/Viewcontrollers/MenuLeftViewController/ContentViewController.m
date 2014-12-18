@@ -79,7 +79,7 @@
 }
 -(void)loadAllClubs{
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:OFFICIAL_SERVER]];
-    NSURLRequest *request = [client requestWithMethod:@"GET" path:@"sa_clubs_list/?town_id=1" parameters:nil];
+    NSURLRequest *request = [client requestWithMethod:@"GET" path:@"sa_all_clubs" parameters:nil];
     NSLog(@" %@", [request description]);
     AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
         NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];

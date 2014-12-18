@@ -12,12 +12,12 @@
 #import "ContentViewController.h"
 #import "DefinitionAPI.h"
 #import "AFNetworking.h"
-#import "TownDetailModel.h"
+#import "ClubDetailModel.h"
 
 @interface ClubDetailViewController () {
     SlideShowView *slideShowView;
     SideMenu *sideMenu;
-    TownDetailModel *townDetailModel;
+    ClubDetailModel *clubDetailModel;
 }
 @property (nonatomic) NSMutableArray * readMoreCells;
 @end
@@ -57,21 +57,21 @@
     HUD.delegate = (id)self;
     HUD.labelText = @"Loading...";
     [self showMBProgressHUDAtDetailView:YES];
-    [self loadDetailTown];
+    [self loadDetailClub];
 }
--(void)loadDetailTown {
+-(void)loadDetailClub {
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:OFFICIAL_SERVER]];
-    NSURLRequest *request = [client requestWithMethod:@"GET" path:[NSString stringWithFormat:@"%@%ld", SA_TOWN_DETAILS, townID+1
-                                                                   ] parameters:nil];
+    NSURLRequest *request = [client requestWithMethod:@"GET" path:[NSString stringWithFormat:@"%@%ld", SA_CLUB_DETAILS, townID+1] parameters:nil];
     NSLog(@" %@", [request description]);
     AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
          NSDictionary* dictResponse = [NSJSONSerialization JSONObjectWithData:requestOperation.responseData options:NSJSONReadingAllowFragments error:nil];
-        townDetailModel = [[TownDetailModel shareInstance] parseJson:dictResponse];
+        clubDetailModel = [[ClubDetailModel shareInstance] parseJson:dictResponse];
         [tableview reloadData];
         [self showMBProgressHUDAtDetailView:NO];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error:%@", error);
+         [self showMBProgressHUDAtDetailView:NO];
     }];
     
     [client enqueueHTTPRequestOperation:operation];
@@ -137,7 +137,7 @@
     }
     if (isBtnReadmoreDelegate)
     cell.isBtnReadmore = YES;
-    [cell configueCellAtIndexPath:indexPath withTownDetai:townDetailModel];
+    [cell configueCellAtIndexPath:indexPath withClubDetai:clubDetailModel];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
