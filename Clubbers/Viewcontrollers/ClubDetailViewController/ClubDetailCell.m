@@ -314,6 +314,7 @@
   [self.delegate didActivateReadMoreForCell:self];
 }
 - (void) showContentOfCell:(BOOL) isShow withClubDetai:(ClubDetailModel *) clubDetail {
+    BOOL ischeckFavClub = [[ClubDetailModel shareInstance] checkFavTownExists:clubDetail.clubId];
     if (isShow) {
         if (clubDetail.clubName)
             self.lblTitle.text = clubDetail.clubName;
@@ -324,6 +325,10 @@
         btnVote.hidden = NO;
         btnCall.hidden = NO;
         btnMap.hidden = NO;
+    if (ischeckFavClub) {
+            btnVote.enabled = NO;
+            [btnVote setBackgroundImage:[UIImage imageNamed:@"ic_heart.png"] forState:UIControlStateDisabled];
+        }
     }
     else {
         lblTitle.hidden = YES;
@@ -337,13 +342,13 @@
 - (IBAction)btnVote:(id)sender {
     btnVote.enabled = NO;
     [sender setBackgroundImage:[UIImage imageNamed:@"ic_heart.png"] forState:UIControlStateDisabled];
-//    if (clubDetailModel) {
-//        [[ClubDetailModel shareInstance] insertDataToSQLite:clubDetailModel];
-//    }
-    NSArray *arrClubs = [[ClubDetailModel shareInstance] getDataFromSQLite];
-    NSDictionary *dataDict = [arrClubs objectAtIndex:0];
-    ClubDetailModel *_clubDetailModel = [[ClubDetailModel shareInstance] parseJson:dataDict];
-    NSLog(@"++%@", _clubDetailModel.clubName);
+    if (clubDetailModel) {
+        [[ClubDetailModel shareInstance] insertDataToSQLite:clubDetailModel];
+    }
+//    NSArray *arrClubs = [[ClubDetailModel shareInstance] getDataFromSQLite];
+//    NSDictionary *dataDict = [arrClubs objectAtIndex:0];
+//    ClubDetailModel *_clubDetailModel = [[ClubDetailModel shareInstance] parseJson:dataDict];
+//    NSLog(@"++%@", _clubDetailModel.clubName);
 }
 - (IBAction)btnCall:(id)sender {
 

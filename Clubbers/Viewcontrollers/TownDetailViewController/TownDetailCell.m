@@ -158,8 +158,9 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.clipsToBounds = YES;
-    NSString *stringUrlImageGallery = nil;
+//    NSString *stringUrlImageGallery = nil;
     imageView.backgroundColor = [UIColor clearColor];
+    /*
     if (arrayImages.count > 0)
         stringUrlImageGallery = [NSString stringWithFormat:@"%@", [arrayImages objectAtIndex: row+column]];
     if (stringUrlImageGallery) {
@@ -175,9 +176,10 @@
         }];
     }
     else {
+     */
         NSString *defaultImage = [arrayMainPages objectAtIndex:row*3 +column];
         imageView.image = [UIImage imageNamed:defaultImage];
-    }
+//    }
     return imageView;
 }
 - (UIButton *)generateUIButtonWithFrame:(CGRect)frame atRow:(int)row column:(int)column{

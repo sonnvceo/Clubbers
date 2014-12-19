@@ -66,7 +66,7 @@ const CGFloat JDSideMenuDefaultCloseAnimationTime = 0.3;
                                                               self.view.bounds.size.height)];
 
     UIView *imgBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-    imgBackground.backgroundColor = [UIColor yellowColor];
+    imgBackground.backgroundColor = [UIColor colorWithRed:1 green:0.706 blue:0 alpha:1];
     [self.view addSubview:imgBackground];
     imgVCitiesIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 1, 9, 60)];
     [self.view addSubview:imgVCitiesIndicator];

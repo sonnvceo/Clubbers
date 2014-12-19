@@ -84,7 +84,6 @@ static ClubDetailModel* _instance = nil;
 #pragma mark - SQLite Manager Methods
 - (void)createEditableCopyOfDatabaseIfNeeded
 {
-    NSLog(@"Creating editable copy of database :?");
     BOOL success;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
@@ -175,8 +174,8 @@ static ClubDetailModel* _instance = nil;
 #pragma mark - Button Actions
 - (void)insertDataToSQLite:(ClubDetailModel*) clubDetailModel
 {
-    NSLog(@"+++ %ld", clubDetailModel.clubId);
-    NSLog(@"+++ %ld", clubDetailModel.townId);
+    NSLog(@"+++ %d", clubDetailModel.clubId);
+    NSLog(@"+++ %d", clubDetailModel.townId);
     NSLog(@"+++ %@", clubDetailModel.clubName);
     NSLog(@"+++ %@", clubDetailModel.clubPhone);
     NSLog(@"+++ %@", clubDetailModel.clubImage);
@@ -201,8 +200,8 @@ static ClubDetailModel* _instance = nil;
         sqlite3 *db=[self getNewDBConnection];
         sqlite3_stmt *stmt=nil;
         const char *sql=[[NSString stringWithFormat:@"insert into tblClub values ('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",
-                          [NSString stringWithFormat:@"%ld", clubDetailModel.clubId],
-                          [NSString stringWithFormat:@"%ld", clubDetailModel.townId],
+                          [NSString stringWithFormat:@"%d", clubDetailModel.clubId],
+                          [NSString stringWithFormat:@"%d", clubDetailModel.townId],
                           clubDetailModel.clubName,
                           clubDetailModel.clubPhone,
                           clubDetailModel.clubImage,
@@ -232,12 +231,25 @@ static ClubDetailModel* _instance = nil;
         sqlite3_close(db);
 //    }
 }
-
+- (BOOL) checkFavTownExists:(NSInteger) kClubId {
+    BOOL isCheckExitst = NO;
+    sqlite3 *db=[self getNewDBConnection];
+    sqlite3_stmt *stmt=nil;
+    const char *sql=[[NSString stringWithFormat:@"SELECT EXISTS(SELECT 1 FROM tblClub WHERE clubID='%@')", [NSString stringWithFormat:@"%d", kClubId]] UTF8String];
+    if(sqlite3_prepare_v2(db,sql,-1,&stmt,NULL)!=SQLITE_OK) {
+        NSLog(@"ERROR PREPARING STATEMENT");
+    }
+    else {
+        while(sqlite3_step(stmt)==SQLITE_ROW) {
+            isCheckExitst = (int)sqlite3_column_int(stmt, 0)?YES:NO;
+        }
+    }
+    sqlite3_close(db);
+    return isCheckExitst;
+}
 #pragma mark - Button Actions
-- (void)updateDataToSQLite:(NSString*) name andNote:(NSString*) note
-{
-    if(![note isEqualToString:@""])
-    {
+- (void)updateDataToSQLite:(NSString*) name andNote:(NSString*) note {
+    if(![note isEqualToString:@""]) {
         sqlite3 *db=[self getNewDBConnection];
         sqlite3_stmt *stmt=nil;
         const char *sql=[[NSString stringWithFormat:@"UPDATE Notes SET Note='%@' WHERE SubmittedBy='%@'", note, name] UTF8String];

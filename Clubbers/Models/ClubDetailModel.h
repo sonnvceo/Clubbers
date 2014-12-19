@@ -35,4 +35,5 @@
 - (sqlite3 *) getNewDBConnection;
 - (NSArray*)getDataFromSQLite;
 - (void)insertDataToSQLite:(ClubDetailModel*) clubDetailModel;
+- (BOOL) checkFavTownExists:(NSInteger) kClubId;
 @end

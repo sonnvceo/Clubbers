@@ -12,6 +12,7 @@
 #import "ClubModel.h"
 #import "DefinitionAPI.h"
 #import "TownDetailViewController.h"
+#import "ClubDetailModel.h"
 
 @interface ContentViewController ()
 @end
@@ -50,13 +51,13 @@
         [delegate disableBackMenuButton];
         [delegate showMBProgressHUD];
     }
+    [self.tableView setHidden:YES];
     if (kindOfTableView == kCityViewController)
         [self loadAllTowns];
     else if (kindOfTableView == kClubViewController)
         [self loadAllClubs];
     else if (kindOfTableView == kMyFavViewController)
         [self loadAllMyFav];
-    [self.tableView setHidden:YES];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 180, 0);
 }
 -(void)loadAllTowns {
@@ -96,9 +97,12 @@
     [client enqueueHTTPRequestOperation:operation];
 }
 -(void)loadAllMyFav {
-    [self.tableView setHidden:YES];
+    [self.tableView setHidden:NO];
     if (delegate)
         [delegate dismissMBProgressHUD];
+    NSArray *jsonDataArray = [[ClubDetailModel shareInstance] getDataFromSQLite];
+    tableDatasource = [[ClubModel shareInstance] parseJson:jsonDataArray];
+    [self.tableView reloadData];
 }
 - (void)viewDidUnload {
     [self.tableView removeFromSuperview];
@@ -151,7 +155,7 @@
         lblDetailCell = townModel.townDescription;
         urlImageCell = [NSURL URLWithString:townModel.townImage];
     }
-    else if (kindOfTableView == kClubViewController) {
+    else  {
         ClubModel *clubModel = [tableDatasource objectAtIndex:indexPath.row];
         lblTitleCell = clubModel.clubName;
         lblDetailCell = clubModel.clubDescription;

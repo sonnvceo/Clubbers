@@ -107,3 +107,30 @@ enum {
 
 @interface DefinitionAPI : NSObject
 @end
+/*
+ <item name="item_white" type="color">#f9f9f9</item> [UIColor colorWithRed:0.976 green:0.976 blue:0.976 alpha:1]
+ <item name="orange" type="color">#ffb400</item>    [UIColor colorWithRed:1 green:0.706 blue:0 alpha:1]
+ <item name="yellow" type="color">#ffde00</item>    [UIColor colorWithRed:1 green:0.871 blue:0 alpha:1]
+ <item name="green" type="color">#9edc6b</item>     [UIColor colorWithRed:0.62 green:0.863 blue:0.42 alpha:1]
+ <item name="aqua" type="color">#6bcbdc</item>      [UIColor colorWithRed:0.42 green:0.796 blue:0.863 alpha:1]
+ <item name="purple" type="color">#6b80dc</item>    [UIColor colorWithRed:0.42 green:0.502 blue:0.863 alpha:1]
+ 
+ <item name="main_listing_bar_blue" type="color">#0072dc</item> [UIColor colorWithRed:0 green:0.447 blue:0.863 alpha:1]
+ <item name="main_listing_bar_yellow" type="color">#ffb400</item> [UIColor colorWithRed:1 green:0.706 blue:0 alpha:1]
+ <item name="main_listing_bar_green" type="color">#aeda38</item> [UIColor colorWithRed:0.682 green:0.855 blue:0.22 alpha:1]
+ <item name="main_listing_bar_pink" type="color">#da3875</item>  [UIColor colorWithRed:0.855 green:0.22 blue:0.459 alpha:1]
+ 
+ <item name="map_tab_bar_item1_normal_background" type="color">#80ffde00</item>  [UIColor colorWithRed:0.502 green:1 blue:0.871 alpha:1]
+ <item name="map_tab_bar_item1_selected_background" type="color">#ffde00</item> [UIColor colorWithRed:1 green:0.871 blue:0 alpha:1]
+ <item name="map_tab_bar_item2_normal_background" type="color">#80ffb400</item> [UIColor colorWithRed:0.502 green:1 blue:0.706 alpha:1]
+ <item name="map_tab_bar_item2_selected_background" type="color">#ffb400</item> [UIColor colorWithRed:1 green:0.706 blue:0 alpha:1]
+ <item name="map_tab_bar_item3_normal_background" type="color">#809edc6b</item> [UIColor colorWithRed:0.502 green:0.62 blue:0.863 alpha:1]
+ <item name="map_tab_bar_item3_selected_background" type="color">#9edc6b</item> [UIColor colorWithRed:0.62 green:0.863 blue:0.42 alpha:1]
+ <item name="map_tab_bar_item4_normal_background" type="color">#80d23ef2</item> [UIColor colorWithRed:0.502 green:0.824 blue:0.243 alpha:1]
+ <item name="map_tab_bar_item4_selected_background" type="color">#d23ef2</item> [UIColor colorWithRed:0.824 green:0.243 blue:0.949 alpha:1]
+ <item name="map_tab_bar_item5_normal_background" type="color">#806bcbdc</item> [UIColor colorWithRed:0.502 green:0.42 blue:0.796 alpha:1]
+ <item name="map_tab_bar_item5_selected_background" type="color">#6bcbdc</item> [UIColor colorWithRed:0.42 green:0.796 blue:0.863 alpha:1]
+ 
+ <color name="GrayLight">#eeeeee</color> [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1]
+ <color name="table_color_selected">#50ffffff</color> [UIColor colorWithRed:0.314 green:1 blue:1 alpha:1]
+ */
